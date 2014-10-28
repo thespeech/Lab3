@@ -1,0 +1,88 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Lab3/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to C:/Lab3/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: TOP.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Lab3\Write_Addr_Multiplexer.vhd" into library work
+Parsing entity <Write_Addr_Multiplexer>.
+Parsing architecture <Behavioral> of entity <write_addr_multiplexer>.
+Parsing VHDL file "C:\Lab3\Sign_extension.vhd" into library work
+Parsing entity <Sign_extension>.
+Parsing architecture <Behavioral> of entity <sign_extension>.
+Parsing VHDL file "C:\Lab3\Shift_left2.vhd" into library work
+Parsing entity <Shift_left2>.
+Parsing architecture <Behavioral> of entity <shift_left2>.
+Parsing VHDL file "C:\Lab3\RegFile.vhd" into library work
+Parsing entity <RegFile>.
+Parsing architecture <arch_RegFile> of entity <regfile>.
+Parsing VHDL file "C:\Lab3\Read_Data_Multiplexer.vhd" into library work
+Parsing entity <Read_Data_Multiplexer>.
+Parsing architecture <Behavioral> of entity <read_data_multiplexer>.
+Parsing VHDL file "C:\Lab3\Read_Addr_Multiplexer.vhd" into library work
+Parsing entity <Read_Addr_Multiplexer>.
+Parsing architecture <Behavioral> of entity <read_addr_multiplexer>.
+Parsing VHDL file "C:\Lab3\PC_Multiplexer.vhd" into library work
+Parsing entity <PC_Multiplexer>.
+Parsing architecture <Behavioral> of entity <pc_multiplexer>.
+Parsing VHDL file "C:\Lab3\PC.vhd" into library work
+Parsing entity <PC>.
+Parsing architecture <arch_PC> of entity <pc>.
+Parsing VHDL file "C:\Lab3\ControlUnit.vhd" into library work
+Parsing entity <ControlUnit>.
+Parsing architecture <arch_ControlUnit> of entity <controlunit>.
+Parsing VHDL file "C:\Lab3\ALU_Control_Unit.vhd" into library work
+Parsing entity <ALU_Control_Unit>.
+Parsing architecture <Behavioral> of entity <alu_control_unit>.
+Parsing VHDL file "C:\Lab3\ALU.vhd" into library work
+Parsing entity <ALU>.
+Parsing architecture <arch_ALU> of entity <alu>.
+Parsing VHDL file "C:\Lab3\MIPS.vhd" into library work
+Parsing entity <MIPS>.
+Parsing architecture <arch_MIPS> of entity <mips>.
+ERROR:HDLCompiler:288 - "C:\Lab3\MIPS.vhd" Line 463: Cannot read from 'out' object data_out ; use 'buffer' or 'inout'
+ERROR:HDLCompiler:854 - "C:\Lab3\MIPS.vhd" Line 38: Unit <arch_mips> ignored due to previous errors.
+VHDL file C:\Lab3\MIPS.vhd ignored due to errors
+--> 
+
+Total memory usage is 216320 kilobytes
+
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
