@@ -41,7 +41,7 @@ end Write_Addr_Multiplexer;
 architecture Behavioral of Write_Addr_Multiplexer is
 
 begin
-process(RegDst_in)
+process(RegDst_in, Instr20_16, Instr15_11)
 begin
 if RegDst_in = '1' then
 	Write_Addr_out <= Instr15_11;

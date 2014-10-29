@@ -39,7 +39,7 @@ architecture Behavioral of ALU_Control_Unit is
 
 begin
 
-ALUControl_out <= Instruction_Low & ALUOp_in; --ALU1 already handling full 8 bits, so just concatenate here.
+ALUControl_out <= ALUOp_in & Instruction_Low; --ALU1 already handling full 8 bits, so just concatenate here.
 
 end Behavioral;
 

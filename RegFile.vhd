@@ -33,12 +33,16 @@ end RegFile;
 
 
 architecture arch_RegFile of RegFile is
-
-type register_array_type is array (0 to 31) of std_logic_vector(31 downto 0); --32 registers of 32 bits each 
-signal register_array : register_array_type; --Actually create register array
+	
+type register_array_type is array (0 to 31) of std_logic_vector (31 downto 0); --32 registers of 32 bits each 
+signal register_array : register_array_type := (others => x"00000000"); --Actually create register array
 
 begin
 --<Implement register file here >
+
+ReadData1_Reg <= register_array(conv_integer(ReadAddr1_Reg));
+ReadData2_Reg <= register_array(conv_integer(ReadAddr2_Reg));
+
 
 process(CLK)
 begin
@@ -50,8 +54,6 @@ if(CLK'event and CLK='1') then
 end if;
 end process;
 
-ReadData1_Reg <= register_array(conv_integer(ReadAddr1_Reg));
-ReadData2_Reg <= register_array(conv_integer(ReadAddr2_Reg));
 
 end arch_RegFile;
 

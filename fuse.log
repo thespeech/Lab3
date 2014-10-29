@@ -1,0 +1,41 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Lab3/MIPS_isim_beh.exe -prj C:/Lab3/MIPS_beh.prj work.MIPS 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Lab3/Write_Addr_Multiplexer.vhd" into library work
+Parsing VHDL file "C:/Lab3/Sign_extension.vhd" into library work
+Parsing VHDL file "C:/Lab3/Shift_left2.vhd" into library work
+Parsing VHDL file "C:/Lab3/RegFile.vhd" into library work
+Parsing VHDL file "C:/Lab3/Read_Data_Multiplexer.vhd" into library work
+Parsing VHDL file "C:/Lab3/Read_Addr_Multiplexer.vhd" into library work
+Parsing VHDL file "C:/Lab3/PC_Multiplexer.vhd" into library work
+Parsing VHDL file "C:/Lab3/PC.vhd" into library work
+Parsing VHDL file "C:/Lab3/ControlUnit.vhd" into library work
+Parsing VHDL file "C:/Lab3/ALU_Control_Unit.vhd" into library work
+Parsing VHDL file "C:/Lab3/ALU.vhd" into library work
+Parsing VHDL file "C:/Lab3/MIPS.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture arch_pc of entity PC [pc_default]
+Compiling architecture arch_alu of entity ALU [alu_default]
+Compiling architecture arch_controlunit of entity ControlUnit [controlunit_default]
+Compiling architecture arch_regfile of entity RegFile [regfile_default]
+Compiling architecture behavioral of entity ALU_Control_Unit [alu_control_unit_default]
+Compiling architecture behavioral of entity Write_Addr_Multiplexer [write_addr_multiplexer_default]
+Compiling architecture behavioral of entity Read_Addr_Multiplexer [read_addr_multiplexer_default]
+Compiling architecture behavioral of entity Read_Data_Multiplexer [read_data_multiplexer_default]
+Compiling architecture behavioral of entity PC_Multiplexer [pc_multiplexer_default]
+Compiling architecture behavioral of entity Shift_left2 [shift_left2_default]
+Compiling architecture behavioral of entity Sign_extension [sign_extension_default]
+Compiling architecture arch_mips of entity mips
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 27 VHDL Units
+Built simulation executable C:/Lab3/MIPS_isim_beh.exe
+Fuse Memory Usage: 34700 KB
+Fuse CPU Usage: 576 ms

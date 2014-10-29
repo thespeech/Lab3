@@ -77,8 +77,8 @@ Parsing entity <MIPS>.
 Parsing architecture <arch_MIPS> of entity <mips>.
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.30 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.66 secs
  
 --> 
 

@@ -49,7 +49,10 @@ begin
 		MemRead <= '0';
 		MemWrite <= '0';
 		Branch <= '0';
-		ALUOp <= "10";
+		ALUOp <= "10";	
+		Jump <= '0';
+		InstrtoReg <= '0';
+		SignExtend <= '0';
 
 	when "100011" => -- lw
 		RegDst <= '0';
@@ -60,57 +63,87 @@ begin
 		MemWrite <= '0';
 		Branch <= '0';
 		ALUOp <= "00";
+		Jump <= '0';
+		InstrtoReg <= '0';
+		SignExtend <= '1';
 
 	when "101011" => -- sw
-		RegDst <= 'X'; --don't care
+		RegDst <= '0'; --don't care
 		ALUSrc <= '1';
-		MemtoReg <= 'X'; --don't care
+		MemtoReg <= '0'; --don't care
 		RegWrite <= '0';
 		MemRead <= '0';
 		MemWrite <= '1';
 		Branch <= '0';
 		ALUOp <= "00";
+		Jump <= '0';
+		InstrtoReg <= '0';
+		SignExtend <= '1';
 
-	when "000100" => -- beq (next)
-		RegDst <= 'X'; --don't care
+	when "000100" => -- beq
+		RegDst <= '0'; --don't care
 		ALUSrc <= '0';
-		MemtoReg <= 'X'; --don't care
-		RegWrite <= '0';
-		MemRead <= '0';
-		MemWrite <= '0';
-		Branch <= '0';
-		ALUOp <= "01";
-
-	when "100001" => -- beq (jump)
-		RegDst <= 'X'; --don't care
-		ALUSrc <= '0';
-		MemtoReg <= 'X'; --don't care
+		MemtoReg <= '0'; --don't care
 		RegWrite <= '0';
 		MemRead <= '0';
 		MemWrite <= '0';
 		Branch <= '1';
 		ALUOp <= "01";
+		Jump <= '0';
+		InstrtoReg <= '0';
+		SignExtend <= '1';
+
+	when "000010" => -- beq (jump)
+		RegDst <= '0'; --don't care
+		ALUSrc <= '0';
+		MemtoReg <= '0'; --don't care
+		RegWrite <= '0';
+		MemRead <= '0';
+		MemWrite <= '0';
+		Branch <= '0';
+		ALUOp <= "01";
+		Jump <= '1';
+		InstrtoReg <= '0';
+		SignExtend <= '0';
 	
 	when "001111" => -- lui
 		RegDst <= '0';
-		ALUSrc <= '1';
+		ALUSrc <= '0';
 		MemtoReg <= '0'; --immediate so does not come from memory
 		RegWrite <= '1';
 		MemRead <= '0';
-		MemWrite <= '1'; -- data memory: write data input
+		MemWrite <= '0'; -- data memory: write data input
 		Branch <= '0';
 		ALUOp <= "00";
+		Jump <= '0';
+		InstrtoReg <= '1';
+		SignExtend <= '0';
 		
 	when "001101" => -- ori
 		RegDst <= '0';
-		ALUSrc <= '0';
+		ALUSrc <= '1'; --changed to all not asserted except ALUSrc and RegWrite
 		MemtoReg <= '0';
 		RegWrite <= '1';
 		MemRead <= '0';
-		MemWrite <= '1';
+		MemWrite <= '0';
 		Branch <= '0';
 		ALUOp <= "11";
-
+		Jump <= '0';
+		InstrtoReg <= '0';
+		SignExtend <= '0';
+		
+	when others =>
+		RegDst <= '0';
+		ALUSrc <= '0';
+		MemtoReg <= '0';
+		RegWrite <= '0';
+		MemRead <= '0';
+		MemWrite <= '0';
+		Branch <= '0';
+		ALUOp <= "00";
+		Jump <= '0';
+		InstrtoReg <= '0';
+		SignExtend <= '0';
 	end case;
 end process;
 

@@ -31,15 +31,24 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Sign_extension is
     Port ( input_16 : in  STD_LOGIC_VECTOR (15 downto 0);
-           extend_32 : out  STD_LOGIC_VECTOR (31 downto 0));
+           extend_32 : out  STD_LOGIC_VECTOR (31 downto 0);
+			  enable : in STD_LOGIC);
 end Sign_extension;
 
 architecture Behavioral of Sign_extension is
 
 begin
 
+process(input_16, enable)
+begin
+
+if enable = '1' then
 extend_32(31 downto 16) <= (others => input_16(15));
 extend_32(15 downto 0) <= input_16;
-
+else
+extend_32(31 downto 16) <= (others => '0');
+extend_32(15 downto 0) <= input_16;
+end if;
+end process;
 end Behavioral;
 

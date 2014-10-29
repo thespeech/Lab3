@@ -33,22 +33,26 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity PC_Multiplexer is
     Port ( PC_Multi_in : in  STD_LOGIC_VECTOR (31 downto 0);
            Shifter2_in : in  STD_LOGIC_VECTOR (31 downto 0);
+			  Jump_in : in STD_LOGIC;
+			  Instr_26_in : in STD_LOGIC_VECTOR (25 downto 0);
+			  PC_4_in : in STD_LOGIC_VECTOR (3 downto 0); 
 			  Branch_in : in STD_LOGIC;
 			  ALU_zero_in : in STD_LOGIC;
            PC_Multi_out : out  STD_LOGIC_VECTOR (31 downto 0));
 end PC_Multiplexer;
 
 architecture Behavioral of PC_Multiplexer is
-
 begin
 
-process(Branch_in, ALU_zero_in)
-
+process(Branch_in, ALU_zero_in, PC_Multi_in, Jump_in, shifter2_in, Instr_26_in, PC_4_in)
 begin
 
-if (Branch_in = '1' and ALU_zero_in = '1') then
+if (Jump_in = '1') then
+	PC_Multi_out(27 downto 0) <= Instr_26_in(25 downto 0) & "00";
+	PC_Multi_out(31 downto 28) <= PC_4_in;
+elsif (Branch_in = '1' and ALU_zero_in = '1') then
 	PC_Multi_out <= PC_Multi_in + Shifter2_in;
-	else
+else
 	PC_Multi_out <= PC_Multi_in;
 end if;
 

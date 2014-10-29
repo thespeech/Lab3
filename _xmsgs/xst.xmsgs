@@ -5,5 +5,185 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 223: Net &lt;<arg fmt="%s" index="1">Instruction_Low[5]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 224: Net &lt;<arg fmt="%s" index="1">ALUOp_in[1]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 230: Net &lt;<arg fmt="%s" index="1">Instr20_16[4]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 231: Net &lt;<arg fmt="%s" index="1">Instr15_11[4]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 232: Net &lt;<arg fmt="%s" index="1">RegDst_in</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 238: Net &lt;<arg fmt="%s" index="1">ReadData2_in[31]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 239: Net &lt;<arg fmt="%s" index="1">SignExtend_in[31]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 240: Net &lt;<arg fmt="%s" index="1">ALUSrc_in</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 247: Net &lt;<arg fmt="%s" index="1">Read_Data_in[31]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 248: Net &lt;<arg fmt="%s" index="1">ALU_Data_in[31]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 249: Net &lt;<arg fmt="%s" index="1">MemToReg_Data_in</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 250: Net &lt;<arg fmt="%s" index="1">InstrToReg_in</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 251: Net &lt;<arg fmt="%s" index="1">InstrForLUI_in[15]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 257: Net &lt;<arg fmt="%s" index="1">PC_Multi_in[31]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 258: Net &lt;<arg fmt="%s" index="1">Shifter2_in[31]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 259: Net &lt;<arg fmt="%s" index="1">Jump_in</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 260: Net &lt;<arg fmt="%s" index="1">Instr_26_in[25]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 261: Net &lt;<arg fmt="%s" index="1">PC_4_in[3]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 262: Net &lt;<arg fmt="%s" index="1">Branch_in</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 263: Net &lt;<arg fmt="%s" index="1">ALU_zero_in</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Lab3\MIPS.vhd" Line 270: Net &lt;<arg fmt="%s" index="1">input_32[31]</arg>&gt; does not have a driver.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%d" index="2">354</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ALUControl1</arg>&gt; of block &lt;<arg fmt="%s" index="4">ALU_Control_Unit</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">MIPS</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%d" index="2">364</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">WriteAddrMultiplex</arg>&gt; of block &lt;<arg fmt="%s" index="4">Write_Addr_Multiplexer</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">MIPS</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%d" index="2">375</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ReadAddrMultiplex</arg>&gt; of block &lt;<arg fmt="%s" index="4">Read_Addr_Multiplexer</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">MIPS</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%d" index="2">387</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">ReadDataMultiplex</arg>&gt; of block &lt;<arg fmt="%s" index="4">Read_Data_Multiplexer</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">MIPS</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%d" index="2">399</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">PCMultiplex</arg>&gt; of block &lt;<arg fmt="%s" index="4">PC_Multiplexer</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">MIPS</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%d" index="2">415</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">Shifter2</arg>&gt; of block &lt;<arg fmt="%s" index="4">Shift_left2</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">MIPS</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%s" index="2">354</arg>: Output port &lt;<arg fmt="%s" index="3">ALUControl_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ALUControl1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%s" index="2">364</arg>: Output port &lt;<arg fmt="%s" index="3">Write_Addr_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">WriteAddrMultiplex</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%s" index="2">375</arg>: Output port &lt;<arg fmt="%s" index="3">ALUReadData2_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ReadAddrMultiplex</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%s" index="2">387</arg>: Output port &lt;<arg fmt="%s" index="3">Write_Data_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">ReadDataMultiplex</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%s" index="2">399</arg>: Output port &lt;<arg fmt="%s" index="3">PC_Multi_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PCMultiplex</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Lab3\MIPS.vhd</arg>&quot; line <arg fmt="%s" index="2">415</arg>: Output port &lt;<arg fmt="%s" index="3">leftshift_32</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Shifter2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Instruction_Low</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">ALUOp_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Instr20_16</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Instr15_11</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">ReadData2_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">SignExtend_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Read_Data_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">ALU_Data_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">InstrForLUI_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">PC_Multi_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Shifter2_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Instr_26_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">PC_4_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">input_32</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">RegDst_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">ALUSrc_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">MemToReg_Data_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">InstrToReg_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Jump_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">Branch_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">ALU_zero_in</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_register_array</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_register_array1</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_DATA_MEM</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_Addr_Instr[9]_GND_5_o_wide_mux_8_OUT</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">MIPS1/PC1/PC_out_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">MIPS1/PC1/PC_out_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
 </messages>
 
