@@ -7,10 +7,6 @@ Identify -inferir
 identifyMPM 
 assignFile -p 1 -file "C:/Lab3/top.bit"
 Program -p 1 
-Program -p 1 
-assignFile -p 1 -file "C:/lab3master-test/top.bit"
-Program -p 1 
-Program -p 1 
 setMode -bs
 setMode -bs
 setMode -ss
@@ -33,6 +29,5 @@ setMode -spi
 setMode -acecf
 setMode -acempm
 setMode -pff
-
-setMode -acempm
+pm
 setMode -pff

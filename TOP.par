@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-BOB-PC::  Wed Oct 29 07:28:24 2014
+BOB-PC::  Fri Oct 31 14:22:49 2014
 
 par -w -intstyle ise -ol high -mt off TOP_map.ncd TOP.ncd TOP.pcf 
 
@@ -26,9 +26,9 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        780 out of  63,400    1%
-    Number used as logic:                      605 out of  63,400    1%
-      Number using O6 output only:             513
+  Number of Slice LUTs:                        782 out of  63,400    1%
+    Number used as logic:                      607 out of  63,400    1%
+      Number using O6 output only:             515
       Number using O5 output only:              76
       Number using O5 and O6:                   16
       Number used as ROM:                        0
@@ -48,11 +48,11 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   290 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          780
-    Number with an unused Flip Flop:           715 out of     780   91%
-    Number with an unused LUT:                   0 out of     780    0%
-    Number of fully used LUT-FF pairs:          65 out of     780    8%
+  Number of occupied Slices:                   220 out of  15,850    1%
+  Number of LUT Flip Flop pairs used:          782
+    Number with an unused Flip Flop:           717 out of     782   91%
+    Number with an unused LUT:                   0 out of     782    0%
+    Number of fully used LUT-FF pairs:          65 out of     782    8%
     Number of slice register sites lost
       to control set restrictions:               0 out of 126,800    0%
 
@@ -105,43 +105,43 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 13 secs 
-Finished initial Timing Analysis.  REAL time: 13 secs 
+Starting initial Timing Analysis.  REAL time: 16 secs 
+Finished initial Timing Analysis.  REAL time: 16 secs 
 
+WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array13_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array11_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array1_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array14_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array4_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array2_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array5_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array15_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array12_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array13_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array2_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array3_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal MIPS1/RegFile1/Mram_register_array14_RAMD_D1_O has no load.  PAR will not attempt to route this signal.
 Starting Router
 
 
-Phase  1  : 4409 unrouted;      REAL time: 14 secs 
+Phase  1  : 4423 unrouted;      REAL time: 18 secs 
 
-Phase  2  : 4167 unrouted;      REAL time: 15 secs 
+Phase  2  : 4165 unrouted;      REAL time: 19 secs 
 
-Phase  3  : 1329 unrouted;      REAL time: 16 secs 
+Phase  3  : 1507 unrouted;      REAL time: 19 secs 
 
-Phase  4  : 1329 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 20 secs 
+Phase  4  : 1507 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 26 secs 
 
 Updating file: TOP.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 21 secs 
-Total REAL time to Router completion: 21 secs 
-Total CPU time to Router completion: 21 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 27 secs 
+Total REAL time to Router completion: 27 secs 
+Total CPU time to Router completion: 26 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -159,9 +159,9 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|            CLK_BUFG | BUFGCTRL_X0Y0| No   |   54 |  0.107     |  1.715      |
+|            CLK_BUFG | BUFGCTRL_X0Y0| No   |   54 |  0.033     |  1.728      |
 +---------------------+--------------+------+------+------------+-------------+
-|     CLK_undiv_BUFGP |BUFGCTRL_X0Y31| No   |    8 |  0.002     |  1.634      |
+|     CLK_undiv_BUFGP |BUFGCTRL_X0Y31| No   |    8 |  0.009     |  1.623      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -181,7 +181,7 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |     7.304ns|     2.696ns|       0|           0
+  TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_ | SETUP       |     7.312ns|     2.688ns|       0|           0
   pin" 100 MHz HIGH 50%                     | HOLD        |     0.287ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
@@ -195,8 +195,8 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 10 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 21 secs 
-Total CPU time to PAR completion: 21 secs 
+Total REAL time to PAR completion: 28 secs 
+Total CPU time to PAR completion: 27 secs 
 
 Peak Memory Usage:  667 MB
 

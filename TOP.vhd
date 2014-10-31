@@ -54,7 +54,7 @@ architecture arch_TOP of TOP is
 ----------------------------------------------------------------
 -- Constants
 ----------------------------------------------------------------
-constant CLK_DIV_BITS	: integer := 25; --25 for a clock of the order of 1Hz
+constant CLK_DIV_BITS	: integer := 1; --25 for a clock of the order of 1Hz
 constant N_LEDs			: integer := 8;
 constant N_DIPs			: integer := 16;
 
@@ -91,7 +91,7 @@ signal MemWrite 		: STD_LOGIC;
 ----------------------------------------------------------------
 signal dec_DATA_MEM, dec_LED, dec_DIP : std_logic;  -- data memory address decoding
 signal DIP_debounced : STD_LOGIC_VECTOR (15 downto 0):=(others=>'0'); -- DIP switch debouncing
-signal CLK : std_logic; --divided (low freq) clock
+signal CLK : std_logic; --divided (l0ow freq) clock
 
 ----------------------------------------------------------------
 -- Memory type declaration
@@ -103,18 +103,22 @@ type MEM_256x32 is array (0 to 255) of std_logic_vector (31 downto 0); -- 256 wo
 ----------------------------------------------------------------
 constant INSTR_MEM : MEM_256x32 := (
 			x"3c090000", -- start : lui $t1, 0x0000
-			x"35290001", -- 			ori $t1, 0x0001 # constant 1
-			x"3c081003", -- 			lui $t0, 0x1003 # DIP pointer, for VHDL
-			x"8d0c0000", --			lw  $t4, 0($t0) 
-			x"3c081002", --			lui $t0, 0x1002 # LED pointer, for VHDL
-			x"3c0a0000", -- loop: 	lui $t2, 0x0000
-			x"354a0004", -- 			ori $t2, 0x0004 # delay counter (n). Change according to the clock
+			x"35290001", -- 			ori $t1, 0x0001 # constant 1, for subtraction for counter
+			x"3c081002", -- 			lui $t0, 0x1002 # DIP address before offset 
+			x"35088001", --			ori $t0, 0x8001 # offset added to make term non-even
+			x"8d0c7fff", --			lw  $t4, 0x7fff($t0) # DIP address 0x10030000 = 0x10028001 + 0x7fff - finally, 0x7fff added to prove lw works and can add to form 0x10030000. Load the value in 0x10030000 into t4 representing DIP positions.
+			x"3c081002", --			lui $t0, 0x1002 # LED address before offset - loading the value 0x10020000 into t0
+			x"35080001", --			ori $t0, 0x0001 #offsetting it to make later alterations needed
+			x"3c0a0000", -- loop: 	lui $t2, 0x0000 
+			x"354a0004", -- 			ori $t2, 0x0004 # delay counter (n) if using slow clock
+			-- x"3c0a00ff",-- 			#lui $t2, 0x00ff			
+			-- x"354affff",-- 			#ori $t2, 0xffff # delay counter (n) if using fast clock
 			x"01495022", -- delay: 	sub $t2, $t2, $t1 
 			x"0149582a", -- 			slt $t3, $t2, $t1
-			x"1160fffd", -- 			beq $t3, $zero, delay
-			x"ad0c0000", -- 			sw  $t4, 0($t0)	
-			x"01806027", --			nor $t4, $t4, $zero
-			x"08100005", -- 			j loop # infinite loop; n*3 (delay instructions) + 5 (non-delay instructions).
+			x"1160fffd", -- 			beq $t3, $zero, delay 
+			x"ad0cffff", -- 			sw  $t4, 0xffffffff($t0)	# LED address 0x10020000 = 0x10020001 + 0xffffffff. - Store the contents of 0x10030000 into 0x10020000 to trigger LEDs when 0x10020000 is read
+			x"01806027", --			nor $t4, $t4, $zero #Flip the contents of 0x10030000, aka the DIP switches
+			x"08100007", -- 			j loop # infinite loop; n*3 (delay instructions) + 5 (non-delay instructions).
 			others=> x"00000000");
 
 -- The Blinky program reads the DIP switches in the begining. Let the value read be VAL

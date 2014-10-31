@@ -10,7 +10,7 @@ Target Device  : xc7a100t
 Target Package : csg324
 Target Speed   : -1
 Mapper Version : artix7 -- $Revision: 1.55 $
-Mapped Date    : Wed Oct 29 07:27:54 2014
+Mapped Date    : Fri Oct 31 14:22:10 2014
 
 Mapping design into LUTs...
 Running directed packing...
@@ -19,54 +19,57 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 19 secs 
-Total CPU  time at the beginning of Placer: 19 secs 
+Total REAL time at the beginning of Placer: 24 secs 
+Total CPU  time at the beginning of Placer: 21 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:8e3b21c0) REAL time: 20 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:8e3b3bba) REAL time: 25 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:8e3b21c0) REAL time: 20 secs 
+Phase 2.7  Design Feasibility Check (Checksum:8e3b3bba) REAL time: 25 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:8e3b21c0) REAL time: 20 secs 
+Phase 3.31  Local Placement Optimization (Checksum:8e3b3bba) REAL time: 25 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:7f688078) REAL time: 22 secs 
+(Checksum:7f689a72) REAL time: 27 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:7f688078) REAL time: 22 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:7f689a72) REAL time: 27 secs 
 
 Phase 6.3  Local Placement Optimization
-Phase 6.3  Local Placement Optimization (Checksum:7f688078) REAL time: 22 secs 
+Phase 6.3  Local Placement Optimization (Checksum:7f689a72) REAL time: 27 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:7f688078) REAL time: 22 secs 
+Phase 7.5  Local Placement Optimization (Checksum:7f689a72) REAL time: 27 secs 
 
 Phase 8.8  Global Placement
-..............................
-.........................................
-.........................................
-Phase 8.8  Global Placement (Checksum:c269ddd6) REAL time: 23 secs 
+....................
+...................................................................................................................
+.....................................................................................................................................
+Phase 8.8  Global Placement (Checksum:3a769b8) REAL time: 29 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:c269ddd6) REAL time: 23 secs 
+Phase 9.5  Local Placement Optimization (Checksum:3a769b8) REAL time: 29 secs 
 
 Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:e890c3e7) REAL time: 24 secs 
+Phase 10.18  Placement Optimization (Checksum:f49ba754) REAL time: 30 secs 
 
 Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:e890c3e7) REAL time: 24 secs 
+Phase 11.5  Local Placement Optimization (Checksum:f49ba754) REAL time: 30 secs 
 
 Phase 12.34  Placement Validation
-Phase 12.34  Placement Validation (Checksum:e890c3e7) REAL time: 24 secs 
+Phase 12.34  Placement Validation (Checksum:f49ba754) REAL time: 30 secs 
 
-Total REAL time to Placer completion: 25 secs 
-Total CPU  time to Placer completion: 25 secs 
+Total REAL time to Placer completion: 31 secs 
+Total CPU  time to Placer completion: 28 secs 
 Running post-placement packing...
 Writing output files...
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS1/RegFile1/Mram_register_array13_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS1/RegFile1/Mram_register_array11_RAMD_D1_O> is incomplete. The signal
    does not drive any load pins in the design.
@@ -74,13 +77,7 @@ WARNING:PhysDesignRules:367 - The signal
    <MIPS1/RegFile1/Mram_register_array1_RAMD_D1_O> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS1/RegFile1/Mram_register_array14_RAMD_D1_O> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
    <MIPS1/RegFile1/Mram_register_array4_RAMD_D1_O> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal
-   <MIPS1/RegFile1/Mram_register_array2_RAMD_D1_O> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS1/RegFile1/Mram_register_array5_RAMD_D1_O> is incomplete. The signal
@@ -92,10 +89,13 @@ WARNING:PhysDesignRules:367 - The signal
    <MIPS1/RegFile1/Mram_register_array12_RAMD_D1_O> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
-   <MIPS1/RegFile1/Mram_register_array13_RAMD_D1_O> is incomplete. The signal
+   <MIPS1/RegFile1/Mram_register_array2_RAMD_D1_O> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <MIPS1/RegFile1/Mram_register_array3_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <MIPS1/RegFile1/Mram_register_array14_RAMD_D1_O> is incomplete. The signal
    does not drive any load pins in the design.
 
 Design Summary
@@ -110,9 +110,9 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        780 out of  63,400    1%
-    Number used as logic:                      605 out of  63,400    1%
-      Number using O6 output only:             513
+  Number of Slice LUTs:                        782 out of  63,400    1%
+    Number used as logic:                      607 out of  63,400    1%
+      Number using O6 output only:             515
       Number using O5 output only:              76
       Number using O5 and O6:                   16
       Number used as ROM:                        0
@@ -132,11 +132,11 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   290 out of  15,850    1%
-  Number of LUT Flip Flop pairs used:          780
-    Number with an unused Flip Flop:           715 out of     780   91%
-    Number with an unused LUT:                   0 out of     780    0%
-    Number of fully used LUT-FF pairs:          65 out of     780    8%
+  Number of occupied Slices:                   220 out of  15,850    1%
+  Number of LUT Flip Flop pairs used:          782
+    Number with an unused Flip Flop:           717 out of     782   91%
+    Number with an unused LUT:                   0 out of     782    0%
+    Number of fully used LUT-FF pairs:          65 out of     782    8%
     Number of unique control sets:               5
     Number of slice register sites lost
       to control set restrictions:               7 out of 126,800    1%
@@ -186,11 +186,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of XADCs:                               0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                5.62
+Average Fanout of Non-Clock Nets:                5.60
 
 Peak Memory Usage:  792 MB
-Total REAL time to MAP completion:  27 secs 
-Total CPU time to MAP completion:   27 secs 
+Total REAL time to MAP completion:  36 secs 
+Total CPU time to MAP completion:   32 secs 
 
 Mapping completed.
 See MAP report file "TOP_map.mrp" for details.

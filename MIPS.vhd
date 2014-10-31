@@ -72,7 +72,7 @@ component ControlUnit is
 			MemRead 		: out  STD_LOGIC;	
 			MemtoReg 	: out  STD_LOGIC;	
 			InstrtoReg	: out  STD_LOGIC; -- true for LUI. When true, Instr(15 downto 0)&x"0000" is written to rt
-				MemWrite		: out  STD_LOGIC;	
+			MemWrite		: out  STD_LOGIC;	
 			ALUSrc 		: out  STD_LOGIC;	
 			SignExtend 	: out  STD_LOGIC; -- false for ORI 
 			RegWrite		: out  STD_LOGIC;	
@@ -95,81 +95,6 @@ component RegFile is
 end component;
 
 ----------------------------------------------------------------
--- ALU Control Unit
-----------------------------------------------------------------
-
-component ALU_Control_Unit is
-	Port (
-			Instruction_Low : in STD_LOGIC_VECTOR (5 downto 0);
-			ALUOp_in : in STD_LOGIC_VECTOR(1 downto 0);
-			ALUControl_out : out STD_LOGIC_VECTOR(7 downto 0));
-end component;
-
-----------------------------------------------------------------
--- Write Address Multiplexer
-----------------------------------------------------------------
-
-component Write_Addr_Multiplexer is
-	Port (
-			Instr20_16 : in STD_LOGIC_VECTOR (4 downto 0);
-			Instr15_11 : in STD_LOGIC_VECTOR (4 downto 0);
-			RegDst_in : in STD_LOGIC;
-			Write_Addr_out : out STD_LOGIC_VECTOR (4 downto 0)
-			);
-end component;
-
-----------------------------------------------------------------
--- Read Address Multiplexer
-----------------------------------------------------------------
-
-component Read_Addr_Multiplexer is
-	Port (
-			ReadData2_in : in STD_LOGIC_VECTOR (31 downto 0);
-			SignExtend_in : in STD_LOGIC_VECTOR (31 downto 0);
-			ALUSrc_in : in STD_LOGIC;
-			ALUReadData2_out : out STD_LOGIC_VECTOR (31 downto 0));
-end component;
-
-----------------------------------------------------------------
--- PC Multiplexer
-----------------------------------------------------------------
-
-component PC_Multiplexer is
-	Port (
-			PC_Multi_in : in STD_LOGIC_VECTOR (31 downto 0);
-			Shifter2_in : in STD_LOGIC_VECTOR (31 downto 0);
-			Jump_in : in STD_LOGIC;
-			Instr_26_in : in STD_LOGIC_VECTOR (25 downto 0);
-			PC_4_in : in STD_LOGIC_VECTOR (3 downto 0); 
-			Branch_in : in STD_LOGIC;
-			ALU_zero_in : in STD_LOGIC;
-			PC_Multi_out : out STD_LOGIC_VECTOR (31 downto 0)
-			);
-end component;
-
-
-----------------------------------------------------------------
--- Read Data Multiplexer
-----------------------------------------------------------------
-component Read_Data_Multiplexer is
-	Port (
-			Read_Data_in : in STD_LOGIC_VECTOR (31 downto 0);
-			ALU_Data_in : in STD_LOGIC_VECTOR (31 downto 0);
-			InstrToReg_in : in STD_LOGIC;
-			InstrForLUI_in : in STD_LOGIC_VECTOR (15 downto 0);
-			MemToReg_Data_in : in STD_LOGIC;
-			Write_Data_out : out STD_LOGIC_VECTOR (31 downto 0));
-end component;
-----------------------------------------------------------------
--- Shifter2
-----------------------------------------------------------------
-
-component Shift_left2 is
-	Port (input_32 : in  STD_LOGIC_VECTOR (31 downto 0);
-           leftshift_32 : out  STD_LOGIC_VECTOR (31 downto 0));
-end component;			
-
-----------------------------------------------------------------
 -- Sign_extension
 ----------------------------------------------------------------
 component Sign_extension is
@@ -177,6 +102,7 @@ component Sign_extension is
            extend_32 : out  STD_LOGIC_VECTOR (31 downto 0);
 			  enable : in STD_LOGIC);
 end component;
+
 ----------------------------------------------------------------
 -- PC Signals
 ----------------------------------------------------------------
@@ -217,58 +143,6 @@ end component;
 	signal	WriteAddr_Reg	:  STD_LOGIC_VECTOR (4 downto 0); 
 	signal	WriteData_Reg 	:  STD_LOGIC_VECTOR (31 downto 0);
 	
-----------------------------------------------------------------
--- ALU Control Unit Signals
-----------------------------------------------------------------	
-	signal 	Instruction_Low : STD_LOGIC_VECTOR (5 downto 0);
-	signal	ALUOp_in : STD_LOGIC_VECTOR(1 downto 0);
-	signal	ALUControl_out : STD_LOGIC_VECTOR(7 downto 0);
-
-----------------------------------------------------------------
--- Write Address Multiplexer Signals
-----------------------------------------------------------------	
-	signal 	Instr20_16 : STD_LOGIC_VECTOR (4 downto 0);
-	signal	Instr15_11 : STD_LOGIC_VECTOR (4 downto 0);
-	signal	RegDst_in : STD_LOGIC;
-	signal	Write_Addr_out : STD_LOGIC_VECTOR (4 downto 0);
-	
-----------------------------------------------------------------
--- Read Address Multiplexer Signals
-----------------------------------------------------------------		
-	signal ReadData2_in : STD_LOGIC_VECTOR (31 downto 0);
-	signal SignExtend_in : STD_LOGIC_VECTOR (31 downto 0);
-	signal ALUSrc_in :  STD_LOGIC;
-	signal ALUReadData2_out : STD_LOGIC_VECTOR (31 downto 0);
-
-----------------------------------------------------------------
--- Read Data Multiplexer Signals
-----------------------------------------------------------------	
-	
-	signal Read_Data_in : STD_LOGIC_VECTOR (31 downto 0);
-	signal ALU_Data_in : STD_LOGIC_VECTOR (31 downto 0);
-	signal MemToReg_Data_in : STD_LOGIC;
-	signal InstrToReg_in : STD_LOGIC;
-	signal InstrForLUI_in : STD_LOGIC_VECTOR (15 downto 0);
-	signal Write_Data_out : STD_LOGIC_VECTOR (31 downto 0);
-	
-----------------------------------------------------------------
--- PC Multiplexer Signals
-----------------------------------------------------------------	
-	signal PC_Multi_in : STD_LOGIC_VECTOR (31 downto 0);
-	signal Shifter2_in : STD_LOGIC_VECTOR (31 downto 0);
-	signal Jump_in : STD_LOGIC;
-	signal Instr_26_in : STD_LOGIC_VECTOR (25 downto 0);
-	signal PC_4_in : STD_LOGIC_VECTOR (3 downto 0); 
-	signal Branch_in : STD_LOGIC;
-	signal ALU_zero_in : STD_LOGIC;
-	signal PC_Multi_out : STD_LOGIC_VECTOR (31 downto 0);
-	
-
-----------------------------------------------------------------
--- Shifter2 Signals
-----------------------------------------------------------------	
-	signal input_32 : STD_LOGIC_VECTOR (31 downto 0);
-   signal leftshift_32 : STD_LOGIC_VECTOR (31 downto 0);
 	
 ----------------------------------------------------------------
 -- Sign_extension Signals
@@ -281,7 +155,6 @@ end component;
 ----------------------------------------------------------------
 	--<any other signals used goes here>
  signal	PC_Four : STD_LOGIC_VECTOR (31 downto 0);
-	signal	PCSrc	:  STD_LOGIC;
 	
 
 ----------------------------------------------------------------	
@@ -348,75 +221,6 @@ RegFile1			: RegFile port map
 						CLK 				=> CLK				
 						);
 
-----------------------------------------------------------------
--- ALU Control port map
-----------------------------------------------------------------
-ALUControl1		: ALU_Control_Unit port map
-						(
-							Instruction_Low => Instruction_Low,
-							ALUOp_in => ALUOp_in,
-							ALUControl_out => ALUControl_out
-						);
-
-----------------------------------------------------------------
--- Write Address Multiplexer port map
-----------------------------------------------------------------
-WriteAddrMultiplex : Write_Addr_Multiplexer port map
-							(
-	Instr20_16 => Instr20_16,
-	Instr15_11 => Instr15_11,
-	RegDst_in => RegDst_in,
-	Write_Addr_out => Write_Addr_out
-							);
-							
-----------------------------------------------------------------
--- Read Address Multiplexer port map
-----------------------------------------------------------------
-ReadAddrMultiplex : Read_Addr_Multiplexer port map
-							(
-	ReadData2_in => ReadData2_in,
-	SignExtend_in => SignExtend_in,
-	ALUSrc_in => ALUSrc_in,
-	ALUReadData2_out => ALUReadData2_out
-							);
-
-----------------------------------------------------------------
--- Read Data Multiplexer port map
-----------------------------------------------------------------
-
-ReadDataMultiplex : Read_Data_Multiplexer port map
-							(
-	Read_Data_in => Read_Data_in,
-	ALU_Data_in => ALU_Data_in,
-	InstrToReg_in => InstrToReg_in,
-	InstrForLUI_in => InstrForLUI_in,
-	MemToReg_Data_in => MemToReg_Data_in,
-	Write_Data_out => Write_Data_out
-							);
-----------------------------------------------------------------
--- PC Multiplexer port map
-----------------------------------------------------------------							
-PCMultiplex : PC_Multiplexer port map
-					(
-	PC_Multi_in => PC_Multi_in,
-	Shifter2_in => Shifter2_in,
-	Jump_in => Jump_in,
-	Instr_26_in => Instr_26_in,
-	PC_4_in => PC_4_in, 
-	Branch_in => Branch_in,
-	ALU_zero_in => ALU_zero_in,
-	PC_Multi_out => PC_Multi_out
-					);
-							
-----------------------------------------------------------------
--- Shifter2 port map
-----------------------------------------------------------------
-
-Shifter2 : Shift_left2 port map
-				(
-				input_32 => input_32,
-           leftshift_32 => leftshift_32
-				);
 
 ----------------------------------------------------------------
 -- Sign_extension port map
@@ -432,51 +236,45 @@ SignExtender : sign_extension port map
 -- Processor logic
 ----------------------------------------------------------------
 --<Rest of the logic goes here>
-combinational: process (Instr, Data_In, AluOp, Branch, Jump, MemtoReg, InstrtoReg, AluSrc, PC_Four, PCSrc,
-								extend_32, RegDst, ReadData1_Reg, ReadData2_Reg, Alu_Out, PC_out, ALU_zero)
+combinational: process (PC_Four, PC_out, Branch, ALU_zero, Jump, Instr, AluOp, MemtoReg, InstrtoReg, AluSrc,
+								extend_32, RegDst, ReadData1_Reg, ReadData2_Reg, Alu_Out, Data_In)
 
 begin
 
-PC_Four <= PC_out + "100";
-PCSrc <= Branch and ALU_zero;
+PC_Four <= PC_out + "100"; --Instruction incrementer
+Addr_Instr <= PC_out;
+opcode <= Instr(31 downto 26); 
+ReadAddr1_Reg <= Instr(25 downto 21);
+ReadAddr2_Reg <= Instr(20 downto 16);
+ALU_Control(7 downto 6) <= ALUOp(1 downto 0);
+ALU_Control(5 downto 0) <= Instr(5 downto 0); --Combine ALUOp and Instr into the 8-bit form that ALU1 can process
+ALU_InA <= ReadData1_Reg; --Direct input with no shenanigans
+input_16 <= Instr(15 downto 0); --Split up of instructions into their respective parts
+Data_Out <= ReadData2_Reg;
+Addr_Data <= ALU_Out;
+
+
 if Jump = '1' then
 	PC_in <= PC_Four(31 downto 28) & Instr(25 downto 0) & "00";
 else
-	if PCSrc = '1' then	--if branch and branch is to be taken
+	if Branch = '1' and ALU_zero = '1' then	--The AND gate
 		PC_in <= PC_Four + (extend_32(29 downto 0) & "00");
 	else
 		PC_in <= PC_Four;
 	end if;
-end if;
-Addr_Instr <= PC_out;
-
-
-
-opcode <= Instr(31 downto 26);
-ReadAddr1_Reg <= Instr(25 downto 21);
-ReadAddr2_Reg <= Instr(20 downto 16);
-input_16 <= Instr(15 downto 0);
-
-
-
-ALU_Control(7 downto 6) <= ALUOp(1 downto 0);
-ALU_Control(5 downto 0) <= Instr(5 downto 0);
-ALU_InA <= ReadData1_Reg;
+end if; --PC multiplexer
 
 if ALUSrc = '1' then
 	ALU_InB <= extend_32;
 else
 	ALU_InB <= ReadData2_Reg;
-end if;
-
-Data_Out <= ReadData2_Reg;
-Addr_Data <= ALU_Out;
+end if; --ALU multiplexer
 
 if RegDst = '1' then
 	WriteAddr_Reg <= Instr(15 downto 11);
 else
 	WriteAddr_Reg <= Instr(20 downto 16);
-end if;
+end if; --Write Address Multiplexer
 
 if InstrtoReg = '1' then
 	WriteData_Reg <= Instr(15 downto 0) & x"0000";
@@ -486,7 +284,7 @@ else
 	else
 		WriteData_Reg <= ALU_Out;
 	end if;
-end if;
+end if; --Data Multiplexer
 
 
 end process;

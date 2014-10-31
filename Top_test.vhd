@@ -82,12 +82,17 @@ BEGIN
 
    -- Stimulus process
    stim_proc: process
-   begin		
+   begin
+		DIP <= "0000000000000000";
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
-      wait for CLK_undiv_period*10;
-
+		--One 'tick' takes 2*CLK_undiv_period.
+		--One instruction in the 17-count loop takes 4*CLK_undiv_period, e.g, 34 'ticks'
+      wait for CLK_undiv_period * 85; --Time before undefined stops being undefined
+		wait for CLK_undiv_period * 136;
+		DIP <= "0000000010101010";
+		RESET <= '1';
+		wait for CLK_undiv_period*4;
+		RESET <= '0';
       -- insert stimulus here 
 
       wait;

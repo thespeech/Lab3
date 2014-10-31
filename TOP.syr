@@ -105,36 +105,18 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Lab3\Write_Addr_Multiplexer.vhd" into library work
-Parsing entity <Write_Addr_Multiplexer>.
-Parsing architecture <Behavioral> of entity <write_addr_multiplexer>.
 Parsing VHDL file "C:\Lab3\Sign_extension.vhd" into library work
 Parsing entity <Sign_extension>.
 Parsing architecture <Behavioral> of entity <sign_extension>.
-Parsing VHDL file "C:\Lab3\Shift_left2.vhd" into library work
-Parsing entity <Shift_left2>.
-Parsing architecture <Behavioral> of entity <shift_left2>.
 Parsing VHDL file "C:\Lab3\RegFile.vhd" into library work
 Parsing entity <RegFile>.
 Parsing architecture <arch_RegFile> of entity <regfile>.
-Parsing VHDL file "C:\Lab3\Read_Data_Multiplexer.vhd" into library work
-Parsing entity <Read_Data_Multiplexer>.
-Parsing architecture <Behavioral> of entity <read_data_multiplexer>.
-Parsing VHDL file "C:\Lab3\Read_Addr_Multiplexer.vhd" into library work
-Parsing entity <Read_Addr_Multiplexer>.
-Parsing architecture <Behavioral> of entity <read_addr_multiplexer>.
-Parsing VHDL file "C:\Lab3\PC_Multiplexer.vhd" into library work
-Parsing entity <PC_Multiplexer>.
-Parsing architecture <Behavioral> of entity <pc_multiplexer>.
 Parsing VHDL file "C:\Lab3\PC.vhd" into library work
 Parsing entity <PC>.
 Parsing architecture <arch_PC> of entity <pc>.
 Parsing VHDL file "C:\Lab3\ControlUnit.vhd" into library work
 Parsing entity <ControlUnit>.
 Parsing architecture <arch_ControlUnit> of entity <controlunit>.
-Parsing VHDL file "C:\Lab3\ALU_Control_Unit.vhd" into library work
-Parsing entity <ALU_Control_Unit>.
-Parsing architecture <Behavioral> of entity <alu_control_unit>.
 Parsing VHDL file "C:\Lab3\ALU.vhd" into library work
 Parsing entity <ALU>.
 Parsing architecture <arch_ALU> of entity <alu>.
@@ -162,46 +144,7 @@ Elaborating entity <ControlUnit> (architecture <arch_ControlUnit>) from library 
 
 Elaborating entity <RegFile> (architecture <arch_RegFile>) from library <work>.
 
-Elaborating entity <ALU_Control_Unit> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Write_Addr_Multiplexer> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Read_Addr_Multiplexer> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Read_Data_Multiplexer> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <PC_Multiplexer> (architecture <Behavioral>) from library <work>.
-
-Elaborating entity <Shift_left2> (architecture <Behavioral>) from library <work>.
-
 Elaborating entity <Sign_extension> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 223: Net <Instruction_Low[5]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 224: Net <ALUOp_in[1]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 230: Net <Instr20_16[4]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 231: Net <Instr15_11[4]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 232: Net <RegDst_in> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 238: Net <ReadData2_in[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 239: Net <SignExtend_in[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 240: Net <ALUSrc_in> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 247: Net <Read_Data_in[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 248: Net <ALU_Data_in[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 249: Net <MemToReg_Data_in> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 250: Net <InstrToReg_in> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 251: Net <InstrForLUI_in[15]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 257: Net <PC_Multi_in[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 258: Net <Shifter2_in[31]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 259: Net <Jump_in> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 260: Net <Instr_26_in[25]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 261: Net <PC_4_in[3]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 262: Net <Branch_in> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 263: Net <ALU_zero_in> does not have a driver.
-WARNING:HDLCompiler:634 - "C:\Lab3\MIPS.vhd" Line 270: Net <input_32[31]> does not have a driver.
-WARNING:Xst:2972 - "C:\Lab3\MIPS.vhd" line 354. All outputs of instance <ALUControl1> of block <ALU_Control_Unit> are unconnected in block <MIPS>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Lab3\MIPS.vhd" line 364. All outputs of instance <WriteAddrMultiplex> of block <Write_Addr_Multiplexer> are unconnected in block <MIPS>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Lab3\MIPS.vhd" line 375. All outputs of instance <ReadAddrMultiplex> of block <Read_Addr_Multiplexer> are unconnected in block <MIPS>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Lab3\MIPS.vhd" line 387. All outputs of instance <ReadDataMultiplex> of block <Read_Data_Multiplexer> are unconnected in block <MIPS>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Lab3\MIPS.vhd" line 399. All outputs of instance <PCMultiplex> of block <PC_Multiplexer> are unconnected in block <MIPS>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Lab3\MIPS.vhd" line 415. All outputs of instance <Shifter2> of block <Shift_left2> are unconnected in block <MIPS>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -217,52 +160,25 @@ Synthesizing Unit <TOP>.
     Found 1-bit register for signal <LED<2>>.
     Found 1-bit register for signal <LED<1>>.
     Found 1-bit register for signal <LED<0>>.
-    Found 26-bit register for signal <CLK_DIV_PROCESS.clk_counter>.
+    Found 2-bit register for signal <CLK_DIV_PROCESS.clk_counter>.
     Found 1-bit register for signal <CLK>.
     Found 1-bit register for signal <LED<7>>.
-    Found 26-bit adder for signal <CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT> created at line 211.
+    Found 2-bit adder for signal <CLK_DIV_PROCESS.clk_counter[1]_GND_5_o_add_12_OUT> created at line 215.
     Found 256x32-bit Read Only RAM for signal <Addr_Instr[9]_GND_5_o_wide_mux_8_OUT>
-    Found 32-bit comparator lessequal for signal <n0000> created at line 156
-    Found 32-bit comparator lessequal for signal <n0002> created at line 156
+    Found 32-bit comparator lessequal for signal <n0000> created at line 160
+    Found 32-bit comparator lessequal for signal <n0002> created at line 160
     Summary:
 	inferred   2 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred  35 D-type flip-flop(s).
+	inferred  11 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred   3 Multiplexer(s).
 Unit <TOP> synthesized.
 
 Synthesizing Unit <MIPS>.
     Related source file is "C:\Lab3\MIPS.vhd".
-INFO:Xst:3210 - "C:\Lab3\MIPS.vhd" line 354: Output port <ALUControl_out> of the instance <ALUControl1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Lab3\MIPS.vhd" line 364: Output port <Write_Addr_out> of the instance <WriteAddrMultiplex> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Lab3\MIPS.vhd" line 375: Output port <ALUReadData2_out> of the instance <ReadAddrMultiplex> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Lab3\MIPS.vhd" line 387: Output port <Write_Data_out> of the instance <ReadDataMultiplex> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Lab3\MIPS.vhd" line 399: Output port <PC_Multi_out> of the instance <PCMultiplex> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Lab3\MIPS.vhd" line 415: Output port <leftshift_32> of the instance <Shifter2> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <Instruction_Low> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <ALUOp_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <Instr20_16> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <Instr15_11> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <ReadData2_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <SignExtend_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <Read_Data_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <ALU_Data_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <InstrForLUI_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <PC_Multi_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <Shifter2_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <Instr_26_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <PC_4_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <input_32> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <RegDst_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <ALUSrc_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <MemToReg_Data_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <InstrToReg_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <Jump_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <Branch_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <ALU_zero_in> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 32-bit adder for signal <PCPlusFour> created at line 440.
-    Found 32-bit adder for signal <PCPlusFour[31]_extend_32[29]_add_1_OUT> created at line 446.
+    Found 32-bit adder for signal <PC_Four> created at line 244.
+    Found 32-bit adder for signal <PC_Four[31]_extend_32[29]_add_1_OUT> created at line 261.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred   6 Multiplexer(s).
@@ -313,12 +229,12 @@ Macro Statistics
  256x32-bit single-port Read Only RAM                  : 1
  32x32-bit dual-port RAM                               : 2
 # Adders/Subtractors                                   : 5
- 26-bit adder                                          : 1
+ 2-bit adder                                           : 1
  32-bit adder                                          : 3
  32-bit subtractor                                     : 1
 # Registers                                            : 11
  1-bit register                                        : 9
- 26-bit register                                       : 1
+ 2-bit register                                        : 1
  32-bit register                                       : 1
 # Comparators                                          : 2
  32-bit comparator lessequal                           : 2
@@ -408,11 +324,11 @@ Macro Statistics
  256x32-bit single-port distributed Read Only RAM      : 1
  32x32-bit dual-port distributed RAM                   : 2
 # Adders/Subtractors                                   : 5
- 26-bit adder                                          : 1
+ 2-bit adder                                           : 1
  32-bit adder                                          : 3
  32-bit subtractor                                     : 1
 # Counters                                             : 1
- 26-bit up counter                                     : 1
+ 2-bit up counter                                      : 1
 # Registers                                            : 41
  Flip-Flops                                            : 41
 # Comparators                                          : 2
@@ -430,6 +346,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <CLK_DIV_PROCESS.clk_counter_1> in Unit <TOP> is equivalent to the following FF/Latch, which will be removed : <CLK> 
 
 Optimizing unit <PC> ...
 
@@ -451,8 +368,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 65
- Flip-Flops                                            : 65
+# Registers                                            : 40
+ Flip-Flops                                            : 40
 
 =========================================================================
 
@@ -475,20 +392,20 @@ Top Level Output File Name         : TOP.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 955
+# BELS                             : 830
 #      GND                         : 1
-#      INV                         : 4
-#      LUT1                        : 79
-#      LUT2                        : 16
+#      INV                         : 3
+#      LUT1                        : 29
+#      LUT2                        : 17
 #      LUT3                        : 27
 #      LUT4                        : 91
 #      LUT5                        : 117
-#      LUT6                        : 283
-#      MUXCY                       : 185
+#      LUT6                        : 285
+#      MUXCY                       : 135
 #      VCC                         : 1
-#      XORCY                       : 151
-# FlipFlops/Latches                : 65
-#      FD                          : 27
+#      XORCY                       : 124
+# FlipFlops/Latches                : 40
+#      FD                          : 2
 #      FDE                         : 8
 #      FDR                         : 29
 #      FDS                         : 1
@@ -510,17 +427,17 @@ Selected Device : 7a100tcsg324-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              65  out of  126800     0%  
- Number of Slice LUTs:                  793  out of  63400     1%  
-    Number used as Logic:               617  out of  63400     0%  
+ Number of Slice Registers:              40  out of  126800     0%  
+ Number of Slice LUTs:                  745  out of  63400     1%  
+    Number used as Logic:               569  out of  63400     0%  
     Number used as Memory:              176  out of  19000     0%  
        Number used as RAM:              176
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    793
-   Number with an unused Flip Flop:     728  out of    793    91%  
-   Number with an unused LUT:             0  out of    793     0%  
-   Number of fully used LUT-FF pairs:    65  out of    793     8%  
+ Number of LUT Flip Flop pairs used:    745
+   Number with an unused Flip Flop:     705  out of    745    94%  
+   Number with an unused LUT:             0  out of    745     0%  
+   Number of fully used LUT-FF pairs:    40  out of    745     5%  
    Number of unique control sets:         3
 
 IO Utilization: 
@@ -551,8 +468,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-CLK_undiv                          | BUFGP                  | 27    |
-CLK                                | BUFG                   | 84    |
+CLK_DIV_PROCESS.clk_counter_1      | BUFG                   | 84    |
+CLK_undiv                          | BUFGP                  | 2     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -563,9 +480,9 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 10.390ns (Maximum Frequency: 96.251MHz)
+   Minimum period: 10.378ns (Maximum Frequency: 96.362MHz)
    Minimum input arrival time before clock: 2.337ns
-   Maximum output required time after clock: 1.017ns
+   Maximum output required time after clock: 1.023ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -573,72 +490,24 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'CLK_undiv'
-  Clock period: 2.743ns (frequency: 364.564MHz)
-  Total number of paths / destination ports: 377 / 27
+Timing constraint: Default period analysis for Clock 'CLK_DIV_PROCESS.clk_counter_1'
+  Clock period: 10.378ns (frequency: 96.362MHz)
+  Total number of paths / destination ports: 199977239 / 532
 -------------------------------------------------------------------------
-Delay:               2.743ns (Levels of Logic = 27)
-  Source:            CLK_DIV_PROCESS.clk_counter_0 (FF)
-  Destination:       CLK (FF)
-  Source Clock:      CLK_undiv rising
-  Destination Clock: CLK_undiv rising
-
-  Data Path: CLK_DIV_PROCESS.clk_counter_0 to CLK
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               2   0.478   0.405  CLK_DIV_PROCESS.clk_counter_0 (CLK_DIV_PROCESS.clk_counter_0)
-     INV:I->O              1   0.146   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_lut<0>_INV_0 (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_lut<0>)
-     MUXCY:S->O            1   0.472   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<0> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<0>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<1> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<1>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<2> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<2>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<3> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<3>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<4> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<4>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<5> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<5>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<6> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<6>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<7> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<7>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<8> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<8>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<9> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<9>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<10> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<10>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<11> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<11>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<12> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<12>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<13> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<13>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<14> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<14>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<15> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<15>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<16> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<16>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<17> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<17>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<18> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<18>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<19> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<19>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<20> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<20>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<21> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<21>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<22> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<22>)
-     MUXCY:CI->O           1   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<23> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<23>)
-     MUXCY:CI->O           0   0.029   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<24> (Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_cy<24>)
-     XORCY:CI->O           1   0.510   0.000  Madd_CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT_xor<25> (CLK_DIV_PROCESS.clk_counter[25]_GND_5_o_add_12_OUT<25>)
-     FD:D                      0.030          CLK
-    ----------------------------------------
-    Total                      2.743ns (2.338ns logic, 0.405ns route)
-                                       (85.2% logic, 14.8% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 10.390ns (frequency: 96.251MHz)
-  Total number of paths / destination ports: 201478317 / 532
--------------------------------------------------------------------------
-Delay:               10.390ns (Levels of Logic = 33)
-  Source:            MIPS1/PC1/PC_out_8 (FF)
+Delay:               10.378ns (Levels of Logic = 33)
+  Source:            MIPS1/PC1/PC_out_23 (FF)
   Destination:       Mram_DATA_MEM2 (RAM)
-  Source Clock:      CLK rising
-  Destination Clock: CLK rising
+  Source Clock:      CLK_DIV_PROCESS.clk_counter_1 rising
+  Destination Clock: CLK_DIV_PROCESS.clk_counter_1 rising
 
-  Data Path: MIPS1/PC1/PC_out_8 to Mram_DATA_MEM2
+  Data Path: MIPS1/PC1/PC_out_23 to Mram_DATA_MEM2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              5   0.478   0.743  MIPS1/PC1/PC_out_8 (MIPS1/PC1/PC_out_8)
-     LUT3:I0->O           11   0.124   0.487  Mram_Addr_Instr[9]_GND_5_o_wide_mux_8_OUT1211_SW0 (N01)
-     LUT6:I5->O            6   0.124   0.972  Mram_Addr_Instr[9]_GND_5_o_wide_mux_8_OUT5411 (Addr_Instr[9]_GND_5_o_wide_mux_8_OUT<27>)
-     LUT6:I0->O          114   0.124   0.946  MIPS1/Mmux_ALU_InB1101 (MIPS1/Mmux_ALU_InB110)
+     FDR:C->Q              3   0.478   0.953  MIPS1/PC1/PC_out_23 (MIPS1/PC1/PC_out_23)
+     LUT6:I0->O            4   0.124   0.736  Addr_Instr[31]_GND_5_o_equal_8_o<31>3_1 (Addr_Instr[31]_GND_5_o_equal_8_o<31>31)
+     LUT4:I1->O           13   0.124   0.501  Addr_Instr[31]_GND_5_o_equal_8_o<31>5 (Addr_Instr[31]_GND_5_o_equal_8_o)
+     LUT6:I5->O          114   0.124   0.946  MIPS1/Mmux_ALU_InB1101 (MIPS1/Mmux_ALU_InB110)
      LUT5:I1->O            1   0.124   0.000  MIPS1/ALU1/Msub_AminusB_lut<0> (MIPS1/ALU1/Msub_AminusB_lut<0>)
      MUXCY:S->O            1   0.472   0.000  MIPS1/ALU1/Msub_AminusB_cy<0> (MIPS1/ALU1/Msub_AminusB_cy<0>)
      MUXCY:CI->O           1   0.029   0.000  MIPS1/ALU1/Msub_AminusB_cy<1> (MIPS1/ALU1/Msub_AminusB_cy<1>)
@@ -667,21 +536,43 @@ Delay:               10.390ns (Levels of Logic = 33)
      LUT6:I5->O            1   0.124   0.421  MIPS1/ALU1/Mmux_ALU_Out162 (MIPS1/ALU1/Mmux_ALU_Out161)
      LUT6:I5->O            5   0.124   0.946  MIPS1/ALU1/Mmux_ALU_Out163 (Addr_Data<23>)
      LUT6:I1->O           18   0.124   0.533  GND_5_o_Addr_Data[31]_LessThan_1_o22 (GND_5_o_Addr_Data[31]_LessThan_1_o21)
-     LUT6:I5->O            1   0.124   0.000  MemWrite_dec_DATA_MEM_AND_55_o1_lut (MemWrite_dec_DATA_MEM_AND_55_o1_lut)
-     MUXCY:S->O           32   0.777   0.552  MemWrite_dec_DATA_MEM_AND_55_o1_cy (MemWrite_dec_DATA_MEM_AND_55_o)
+     LUT6:I5->O            1   0.124   0.000  MemWrite_dec_DATA_MEM_AND_54_o1_lut (MemWrite_dec_DATA_MEM_AND_54_o1_lut)
+     MUXCY:S->O           32   0.777   0.552  MemWrite_dec_DATA_MEM_AND_54_o1_cy (MemWrite_dec_DATA_MEM_AND_54_o)
      RAM256X1S:WE              0.490          Mram_DATA_MEM2
     ----------------------------------------
-    Total                     10.390ns (4.363ns logic, 6.027ns route)
+    Total                     10.378ns (4.363ns logic, 6.015ns route)
                                        (42.0% logic, 58.0% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+Timing constraint: Default period analysis for Clock 'CLK_undiv'
+  Clock period: 1.458ns (frequency: 685.871MHz)
+  Total number of paths / destination ports: 3 / 2
+-------------------------------------------------------------------------
+Delay:               1.458ns (Levels of Logic = 1)
+  Source:            CLK_DIV_PROCESS.clk_counter_0 (FF)
+  Destination:       CLK_DIV_PROCESS.clk_counter_0 (FF)
+  Source Clock:      CLK_undiv rising
+  Destination Clock: CLK_undiv rising
+
+  Data Path: CLK_DIV_PROCESS.clk_counter_0 to CLK_DIV_PROCESS.clk_counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.478   0.405  CLK_DIV_PROCESS.clk_counter_0 (CLK_DIV_PROCESS.clk_counter_0)
+     INV:I->O              1   0.146   0.399  Mcount_CLK_DIV_PROCESS.clk_counter_xor<0>11_INV_0 (Result<0>)
+     FD:D                      0.030          CLK_DIV_PROCESS.clk_counter_0
+    ----------------------------------------
+    Total                      1.458ns (0.654ns logic, 0.804ns route)
+                                       (44.9% logic, 55.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_DIV_PROCESS.clk_counter_1'
   Total number of paths / destination ports: 62 / 62
 -------------------------------------------------------------------------
 Offset:              2.337ns (Levels of Logic = 3)
   Source:            DIP<10> (PAD)
   Destination:       MIPS1/RegFile1/Mram_register_array2 (RAM)
-  Destination Clock: CLK rising
+  Destination Clock: CLK_DIV_PROCESS.clk_counter_1 rising
 
   Data Path: DIP<10> to MIPS1/RegFile1/Mram_register_array2
                                 Gate     Net
@@ -699,72 +590,72 @@ Offset:              2.337ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_undiv'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              0.877ns (Levels of Logic = 1)
-  Source:            CLK (FF)
+Offset:              0.883ns (Levels of Logic = 1)
+  Source:            CLK_DIV_PROCESS.clk_counter_1 (FF)
   Destination:       LED<15> (PAD)
   Source Clock:      CLK_undiv rising
 
-  Data Path: CLK to LED<15>
+  Data Path: CLK_DIV_PROCESS.clk_counter_1 to LED<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.478   0.399  CLK (CLK)
+     FD:C->Q               2   0.478   0.405  CLK_DIV_PROCESS.clk_counter_1 (CLK_DIV_PROCESS.clk_counter_1)
      OBUF:I->O                 0.000          LED_15_OBUF (LED<15>)
     ----------------------------------------
-    Total                      0.877ns (0.478ns logic, 0.399ns route)
-                                       (54.5% logic, 45.5% route)
+    Total                      0.883ns (0.478ns logic, 0.405ns route)
+                                       (54.1% logic, 45.9% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_DIV_PROCESS.clk_counter_1'
   Total number of paths / destination ports: 15 / 15
 -------------------------------------------------------------------------
-Offset:              1.017ns (Levels of Logic = 1)
+Offset:              1.023ns (Levels of Logic = 1)
   Source:            MIPS1/PC1/PC_out_7 (FF)
   Destination:       LED<13> (PAD)
-  Source Clock:      CLK rising
+  Source Clock:      CLK_DIV_PROCESS.clk_counter_1 rising
 
   Data Path: MIPS1/PC1/PC_out_7 to LED<13>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             23   0.478   0.539  MIPS1/PC1/PC_out_7 (MIPS1/PC1/PC_out_7)
+     FDR:C->Q             24   0.478   0.545  MIPS1/PC1/PC_out_7 (MIPS1/PC1/PC_out_7)
      OBUF:I->O                 0.000          LED_13_OBUF (LED<13>)
     ----------------------------------------
-    Total                      1.017ns (0.478ns logic, 0.539ns route)
-                                       (47.0% logic, 53.0% route)
+    Total                      1.023ns (0.478ns logic, 0.545ns route)
+                                       (46.7% logic, 53.3% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock CLK
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-CLK            |   10.390|         |         |         |
----------------+---------+---------+---------+---------+
+Clock to Setup on destination clock CLK_DIV_PROCESS.clk_counter_1
+-----------------------------+---------+---------+---------+---------+
+                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------+---------+---------+---------+---------+
+CLK_DIV_PROCESS.clk_counter_1|   10.378|         |         |         |
+-----------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock CLK_undiv
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK_undiv      |    2.743|         |         |         |
+CLK_undiv      |    1.458|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 12.41 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 13.32 secs
  
 --> 
 
-Total memory usage is 456424 kilobytes
+Total memory usage is 444712 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   50 (   0 filtered)
-Number of infos    :   10 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 
