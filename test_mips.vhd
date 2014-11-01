@@ -105,17 +105,17 @@ BEGIN
 
       -- insert stimulus here 
 		-- lw $s0, 2
-		Instr <= "10001100000100000000000000000010"; -- op = x23, rs = 0, rt = 16, imm = 2
-		Data_in <= x"00000002";
+		Instr <= "10001100000100000000000000000100"; -- op = x23, rs = 0, rt = 16, imm = 4
+		Data_in <= x"00000004";
 		wait for CLK_period*10;
 		
 		-- lw $s1, 3
-		Instr <= "10001100000100000000000000000010"; -- op = x23, rs = 0, rt = 16, imm = 2
+		Instr <= "10001100000100010000000000000011"; -- op = x23, rs = 0, rt = 17, imm = 3
 		Data_in <= x"00000003";
 		wait for CLK_period*10;
 		
 		-- add $s2, $s0, $s1
-		Instr <= "00000010000100011001000000100100"; -- op = 0, rs = 16, rt = 17, rd = 18, shamt = 0, funct = x24
+		Instr <= "00000010000100011001000000100000"; -- op = 0, rs = 16, rt = 17, rd = 18, shamt = 0, funct = x24
 		Data_in <= (others => '0');
 		
 		wait for CLK_period*10;
