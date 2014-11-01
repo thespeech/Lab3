@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Lab3/Top_test.vhd";
+static const char *ng0 = "C:/Users/Andre/Documents/GitHub/Lab3/Top_test.vhd";
 
 
 
@@ -114,7 +114,7 @@ LAB0:    t1 = (t0 + 3040U);
 LAB3:    goto *t2;
 
 LAB2:    xsi_set_current_line(86, ng0);
-    t2 = (t0 + 5320);
+    t2 = (t0 + 5616);
     t4 = (t0 + 3488);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -149,7 +149,7 @@ LAB5:    goto LAB4;
 LAB7:    goto LAB5;
 
 LAB8:    xsi_set_current_line(92, ng0);
-    t2 = (t0 + 5336);
+    t2 = (t0 + 5632);
     t4 = (t0 + 3488);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -188,7 +188,22 @@ LAB12:    xsi_set_current_line(95, ng0);
     t6 = *((char **)t5);
     *((unsigned char *)t6) = (unsigned char)2;
     xsi_driver_first_trans_fast(t2);
-    xsi_set_current_line(98, ng0);
+    xsi_set_current_line(97, ng0);
+    t2 = (t0 + 5648);
+    t4 = (t0 + 3488);
+    t5 = (t4 + 56U);
+    t6 = *((char **)t5);
+    t7 = (t6 + 56U);
+    t8 = *((char **)t7);
+    memcpy(t8, t2, 16U);
+    xsi_driver_first_trans_fast(t4);
+    xsi_set_current_line(100, ng0);
+    t2 = (t0 + 1808U);
+    t3 = *((char **)t2);
+    t9 = *((int64 *)t3);
+    t10 = (t9 * 10);
+    t2 = (t0 + 2848);
+    xsi_process_wait(t2, t10);
 
 LAB18:    *((char **)t1) = &&LAB19;
     goto LAB1;
