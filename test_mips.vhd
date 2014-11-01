@@ -104,7 +104,7 @@ BEGIN
       wait for CLK_period*10;
 
       -- insert stimulus here 
-		-- lw $s0, 2
+		-- lw $s0, 4
 		Instr <= "10001100000100000000000000000100"; -- op = x23, rs = 0, rt = 16, imm = 4
 		Data_in <= x"00000004";
 		wait for CLK_period*10;
@@ -115,9 +115,23 @@ BEGIN
 		wait for CLK_period*10;
 		
 		-- add $s2, $s0, $s1
-		Instr <= "00000010000100011001000000100000"; -- op = 0, rs = 16, rt = 17, rd = 18, shamt = 0, funct = x24
-		Data_in <= (others => '0');
+		Instr <= "00000010000100011001000000100000"; -- op = 0, rs = 16, rt = 17, rd = 18, shamt = 0, funct = x20
+		Data_in <= (others => '0');	
+		wait for CLK_period*10;
 		
+		-- lw $s3, 12
+		Instr <= "10001100000100110000000000001100"; -- op = x23, rs = 0, rt = 19, imm = 12
+		Data_in <= x"0000000C";
+		wait for CLK_period*10;
+		
+		-- lw $s4, 5
+		Instr <= "10001100000101000000000000000101"; -- op = x23, rs = 0, rt = 20, imm = 5
+		Data_in <= x"00000005";
+		wait for CLK_period*10;
+		
+		-- sub $s5, $s3, $s4
+		Instr <= "00000010011101001010100000100010"; -- op = 0, rs = 19, rt = 20, rd = 21, shamt = 0, funct = x20
+		Data_in <= (others => '0');	
 		wait for CLK_period*10;
       wait;
    end process;
