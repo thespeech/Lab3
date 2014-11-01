@@ -14,4 +14,3 @@ at 0 ps, Instance /test_mips/uut/ALU1/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-
 at 0 ps, Instance /test_mips/uut/RegFile1/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /test_mips/uut/RegFile1/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 Finished circuit initialization process.
-# run 1.00us
