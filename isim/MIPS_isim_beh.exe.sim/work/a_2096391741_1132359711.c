@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Lab3/ControlUnit.vhd";
+static const char *ng0 = "C:/Users/Fujitsu 1/Documents/GitHub/Lab3/ControlUnit.vhd";
 
 
 
@@ -61,37 +61,37 @@ LAB0:    xsi_set_current_line(43, ng0);
     t4 = (t3 * 1U);
     t5 = (0 + t4);
     t1 = (t2 + t5);
-    t6 = (t0 + 7146);
+    t6 = (t0 + 7642);
     t8 = xsi_mem_cmp(t6, t1, 6U);
     if (t8 == 1)
         goto LAB3;
 
-LAB11:    t9 = (t0 + 7152);
+LAB11:    t9 = (t0 + 7648);
     t11 = xsi_mem_cmp(t9, t1, 6U);
     if (t11 == 1)
         goto LAB4;
 
-LAB12:    t12 = (t0 + 7158);
+LAB12:    t12 = (t0 + 7654);
     t14 = xsi_mem_cmp(t12, t1, 6U);
     if (t14 == 1)
         goto LAB5;
 
-LAB13:    t15 = (t0 + 7164);
+LAB13:    t15 = (t0 + 7660);
     t17 = xsi_mem_cmp(t15, t1, 6U);
     if (t17 == 1)
         goto LAB6;
 
-LAB14:    t18 = (t0 + 7170);
+LAB14:    t18 = (t0 + 7666);
     t20 = xsi_mem_cmp(t18, t1, 6U);
     if (t20 == 1)
         goto LAB7;
 
-LAB15:    t21 = (t0 + 7176);
+LAB15:    t21 = (t0 + 7672);
     t23 = xsi_mem_cmp(t21, t1, 6U);
     if (t23 == 1)
         goto LAB8;
 
-LAB16:    t24 = (t0 + 7182);
+LAB16:    t24 = (t0 + 7678);
     t26 = xsi_mem_cmp(t24, t1, 6U);
     if (t26 == 1)
         goto LAB9;
@@ -154,7 +154,7 @@ LAB10:    xsi_set_current_line(136, ng0);
     *((unsigned char *)t9) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(143, ng0);
-    t1 = (t0 + 7202);
+    t1 = (t0 + 7698);
     t6 = (t0 + 4800);
     t7 = (t6 + 56U);
     t9 = *((char **)t7);
@@ -248,7 +248,7 @@ LAB3:    xsi_set_current_line(45, ng0);
     *((unsigned char *)t9) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(52, ng0);
-    t1 = (t0 + 7188);
+    t1 = (t0 + 7684);
     t6 = (t0 + 4800);
     t7 = (t6 + 56U);
     t9 = *((char **)t7);
@@ -339,7 +339,7 @@ LAB4:    xsi_set_current_line(58, ng0);
     *((unsigned char *)t9) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(65, ng0);
-    t1 = (t0 + 7190);
+    t1 = (t0 + 7686);
     t6 = (t0 + 4800);
     t7 = (t6 + 56U);
     t9 = *((char **)t7);
@@ -430,7 +430,7 @@ LAB5:    xsi_set_current_line(71, ng0);
     *((unsigned char *)t9) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(78, ng0);
-    t1 = (t0 + 7192);
+    t1 = (t0 + 7688);
     t6 = (t0 + 4800);
     t7 = (t6 + 56U);
     t9 = *((char **)t7);
@@ -521,7 +521,7 @@ LAB6:    xsi_set_current_line(84, ng0);
     *((unsigned char *)t9) = (unsigned char)3;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(91, ng0);
-    t1 = (t0 + 7194);
+    t1 = (t0 + 7690);
     t6 = (t0 + 4800);
     t7 = (t6 + 56U);
     t9 = *((char **)t7);
@@ -612,7 +612,7 @@ LAB7:    xsi_set_current_line(97, ng0);
     *((unsigned char *)t9) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(104, ng0);
-    t1 = (t0 + 7196);
+    t1 = (t0 + 7692);
     t6 = (t0 + 4800);
     t7 = (t6 + 56U);
     t9 = *((char **)t7);
@@ -703,7 +703,7 @@ LAB8:    xsi_set_current_line(110, ng0);
     *((unsigned char *)t9) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(117, ng0);
-    t1 = (t0 + 7198);
+    t1 = (t0 + 7694);
     t6 = (t0 + 4800);
     t7 = (t6 + 56U);
     t9 = *((char **)t7);
@@ -794,7 +794,7 @@ LAB9:    xsi_set_current_line(123, ng0);
     *((unsigned char *)t9) = (unsigned char)2;
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(130, ng0);
-    t1 = (t0 + 7200);
+    t1 = (t0 + 7696);
     t6 = (t0 + 4800);
     t7 = (t6 + 56U);
     t9 = *((char **)t7);

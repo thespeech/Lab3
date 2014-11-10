@@ -1,16 +1,14 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Lab3/Top_test_isim_beh.exe -prj C:/Lab3/Top_test_beh.prj work.Top_test 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Fujitsu 1/Documents/GitHub/Lab3/MIPS_isim_beh.exe -prj C:/Users/Fujitsu 1/Documents/GitHub/Lab3/MIPS_beh.prj MIPS 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 8
-Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Lab3/Sign_extension.vhd" into library work
-Parsing VHDL file "C:/Lab3/RegFile.vhd" into library work
-Parsing VHDL file "C:/Lab3/PC.vhd" into library work
-Parsing VHDL file "C:/Lab3/ControlUnit.vhd" into library work
-Parsing VHDL file "C:/Lab3/ALU.vhd" into library work
-Parsing VHDL file "C:/Lab3/MIPS.vhd" into library work
-Parsing VHDL file "C:/Lab3/TOP.vhd" into library work
-Parsing VHDL file "C:/Lab3/Top_test.vhd" into library work
+Parsing VHDL file "C:/Users/Fujitsu 1/Documents/GitHub/Lab3/Sign_extension.vhd" into library work
+Parsing VHDL file "C:/Users/Fujitsu 1/Documents/GitHub/Lab3/RegFile.vhd" into library work
+Parsing VHDL file "C:/Users/Fujitsu 1/Documents/GitHub/Lab3/PC.vhd" into library work
+Parsing VHDL file "C:/Users/Fujitsu 1/Documents/GitHub/Lab3/ControlUnit.vhd" into library work
+Parsing VHDL file "C:/Users/Fujitsu 1/Documents/GitHub/Lab3/ALU.vhd" into library work
+Parsing VHDL file "C:/Users/Fujitsu 1/Documents/GitHub/Lab3/MIPS.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -22,11 +20,10 @@ Compiling architecture arch_alu of entity ALU [alu_default]
 Compiling architecture arch_controlunit of entity ControlUnit [controlunit_default]
 Compiling architecture arch_regfile of entity RegFile [regfile_default]
 Compiling architecture behavioral of entity Sign_extension [sign_extension_default]
-Compiling architecture arch_mips of entity MIPS [mips_default]
-Compiling architecture arch_top of entity TOP [top_default]
-Compiling architecture behavior of entity top_test
+Compiling architecture arch_mips of entity mips
 Time Resolution for simulation is 1ps.
-Compiled 19 VHDL Units
-Built simulation executable C:/Lab3/Top_test_isim_beh.exe
-Fuse Memory Usage: 34592 KB
-Fuse CPU Usage: 546 ms
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\MIPS_isim_beh.exe.sim\libPortability.dll".
+Compiled 15 VHDL Units
+Built simulation executable C:/Users/Fujitsu 1/Documents/GitHub/Lab3/MIPS_isim_beh.exe
+Fuse Memory Usage: 32212 KB
+Fuse CPU Usage: 811 ms
