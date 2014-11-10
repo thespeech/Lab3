@@ -1,6 +1,1 @@
-work	"ALU.vhd"
 work	"ControlUnit.vhd"
-work	"MIPS.vhd"
-work	"PC.vhd"
-work	"RegFile.vhd"
-work	"Sign_extension.vhd"

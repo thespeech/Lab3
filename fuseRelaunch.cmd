@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Fujitsu 1/Documents/GitHub/Lab3/MIPS_isim_beh.exe" -prj "C:/Users/Fujitsu 1/Documents/GitHub/Lab3/MIPS_beh.prj" "MIPS" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Lab3/Top_test_isim_beh.exe" -prj "C:/Lab3/Top_test_beh.prj" "work.Top_test" 
