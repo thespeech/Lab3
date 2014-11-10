@@ -94,8 +94,9 @@ BEGIN
 		wait for CLK_undiv_period*4;
 		RESET <= '0';
       -- insert stimulus here 
-
-      wait;
+		DIP <= x"FFFF";
+      
+		
    end process;
 
 END;
