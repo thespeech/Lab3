@@ -5,5 +5,14 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 59: &lt;<arg fmt="%s" index="1">alu_zero</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 98: &lt;<arg fmt="%s" index="1">alu_out</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="854" delta="old" >"C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 37: Unit &lt;<arg fmt="%s" index="1">wrapper_arch</arg>&gt; ignored due to previous errors.
+</msg>
+
 </messages>
 

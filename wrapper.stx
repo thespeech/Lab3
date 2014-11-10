@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to C:/Users/Andre/Documents/GitHub/Lab3/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to C:/Users/Andre/Documents/GitHub/Lab3/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: wrapper.prj
 
@@ -42,16 +42,15 @@ TABLE OF CONTENTS
 Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" into library work
 Parsing entity <wrapper>.
 Parsing architecture <wrapper_arch> of entity <wrapper>.
-
-
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.52 secs
- 
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 59: <alu_zero> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 98: <alu_out> is not declared.
+ERROR:HDLCompiler:854 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 37: Unit <wrapper_arch> ignored due to previous errors.
+VHDL file C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd ignored due to errors
 --> 
 
-Total memory usage is 214004 kilobytes
+Total memory usage is 214516 kilobytes
 
-Number of errors   :    0 (   0 filtered)
+Number of errors   :    3 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
