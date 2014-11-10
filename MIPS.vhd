@@ -51,13 +51,25 @@ end component;
 ----------------------------------------------------------------
 -- ALU
 ----------------------------------------------------------------
+--component ALU is
+--    Port ( 	
+--			ALU_InA 		: in  STD_LOGIC_VECTOR (31 downto 0);				
+--			ALU_InB 		: in  STD_LOGIC_VECTOR (31 downto 0);
+--			ALU_Out 		: out STD_LOGIC_VECTOR (31 downto 0);
+--			ALU_Control	: in  STD_LOGIC_VECTOR (7 downto 0);
+--			ALU_zero		: out STD_LOGIC);
+--end component;
 component ALU is
-    Port ( 	
-			ALU_InA 		: in  STD_LOGIC_VECTOR (31 downto 0);				
-			ALU_InB 		: in  STD_LOGIC_VECTOR (31 downto 0);
-			ALU_Out 		: out STD_LOGIC_VECTOR (31 downto 0);
-			ALU_Control	: in  STD_LOGIC_VECTOR (7 downto 0);
-			ALU_zero		: out STD_LOGIC);
+	generic (width 	: integer := 32);
+	Port	(
+			Clk			: in	STD_LOGIC;
+			Control		: in	STD_LOGIC_VECTOR (5 downto 0);
+			Operand1		: in	STD_LOGIC_VECTOR (width-1 downto 0);
+			Operand2		: in	STD_LOGIC_VECTOR (width-1 downto 0);
+			Result1		: out	STD_LOGIC_VECTOR (width-1 downto 0);
+			Result2		: out	STD_LOGIC_VECTOR (width-1 downto 0);
+			Status		: out	STD_LOGIC_VECTOR (2 downto 0); -- busy (multicycle only), overflow (add and sub), zero (sub)
+			Debug			: out	STD_LOGIC_VECTOR (width-1 downto 0));	
 end component;
 
 ----------------------------------------------------------------
@@ -78,6 +90,28 @@ component ControlUnit is
 			RegWrite		: out  STD_LOGIC;	
 			RegDst		: out  STD_LOGIC);
 end component;
+
+----------------------------------------------------------------
+-- ALU Control
+----------------------------------------------------------------
+
+component ALU_Control_Unit is
+    Port (
+			Instruction_Low : in  STD_LOGIC_VECTOR (5 downto 0);
+         ALUOp_in : in  STD_LOGIC_VECTOR (1 downto 0);
+         ALUControl_out : out  STD_LOGIC_VECTOR (7 downto 0));
+end component;
+
+
+----------------------------------------------------------------
+-- Wrapper
+----------------------------------------------------------------
+component wrapper is
+	Port (
+			ALUControl_in	: in	STD_LOGIC_VECTOR(7 downto 0);
+			Wrap_Control	: out	STD_LOGIC_VECTOR(5 downto 0));
+end component;
+
 
 ----------------------------------------------------------------
 -- Register File
@@ -110,15 +144,25 @@ end component;
 	signal	PC_out 		:  STD_LOGIC_VECTOR (31 downto 0);
 	signal 	PC_out_add4 : STD_LOGIC_VECTOR(31 downto 0);
 
+
 ----------------------------------------------------------------
 -- ALU Signals
 ----------------------------------------------------------------
-	signal	ALU_InA 		:  STD_LOGIC_VECTOR (31 downto 0);
-	signal	ALU_InB 		:  STD_LOGIC_VECTOR (31 downto 0);
-	signal	ALU_Out 		:  STD_LOGIC_VECTOR (31 downto 0);
-	signal	ALU_Control	:  STD_LOGIC_VECTOR (7 downto 0);
-	signal	ALU_zero		:  STD_LOGIC;			
-
+--	signal	ALU_InA 		:  STD_LOGIC_VECTOR (31 downto 0);
+--	signal	ALU_InB 		:  STD_LOGIC_VECTOR (31 downto 0);
+--	signal	ALU_Out 		:  STD_LOGIC_VECTOR (31 downto 0);
+--	signal	ALU_Control	:  STD_LOGIC_VECTOR (7 downto 0);
+--	signal	ALU_zero		:  STD_LOGIC;			
+--	signal	Clk			:	STD_LOGIC;
+	constant	width 		: 	integer := 32;
+	signal	Control		:	STD_LOGIC_VECTOR (5 downto 0);
+	signal	Operand1		:	STD_LOGIC_VECTOR (width-1 downto 0);
+	signal	Operand2		:	STD_LOGIC_VECTOR (width-1 downto 0);
+	signal	Result1		:	STD_LOGIC_VECTOR (width-1 downto 0);
+	signal	Result2		:	STD_LOGIC_VECTOR (width-1 downto 0);
+	signal	Status		:	STD_LOGIC_VECTOR (2 downto 0); -- busy (multicycle only), overflow (add and sub), zero (sub)
+	signal	Debug			:	STD_LOGIC_VECTOR (width-1 downto 0);
+	
 ----------------------------------------------------------------
 -- Control Unit Signals
 ----------------------------------------------------------------				
@@ -132,6 +176,21 @@ end component;
 	signal	SignExtend 	: 	STD_LOGIC;
 	signal	RegWrite		: 	STD_LOGIC;	
 	signal	RegDst		:  STD_LOGIC;
+
+----------------------------------------------------------------
+-- ALU Control
+----------------------------------------------------------------
+
+	signal	Instruction_Low :	STD_LOGIC_VECTOR (5 downto 0);
+   signal 	ALUOp_in : 			STD_LOGIC_VECTOR (1 downto 0);
+   signal 	ALUControl_out :	STD_LOGIC_VECTOR (7 downto 0);
+
+
+----------------------------------------------------------------
+-- Wrapper Signals
+----------------------------------------------------------------
+	signal	ALUControl_in	:	STD_LOGIC_VECTOR(7 downto 0);
+	signal	Wrap_Control	:	STD_LOGIC_VECTOR(5 downto 0);
 
 ----------------------------------------------------------------
 -- Register File Signals
@@ -180,15 +239,19 @@ PC1				: PC port map
 ----------------------------------------------------------------
 ALU1 				: ALU port map
 						(
-						ALU_InA 		=> ALU_InA, 
-						ALU_InB 		=> ALU_InB, 
-						ALU_Out 		=> ALU_Out, 
-						ALU_Control => ALU_Control, 
-						ALU_zero  	=> ALU_zero
+						Clk		=> Clk,
+						Control	=> Control,
+						Operand1	=> Operand1,
+						Operand2	=> Operand2,
+						Result1	=> Result1,
+						Result2	=> Result2,
+						Status	=> Status, -- busy (multicycle only), overflow (add and sub), zero (sub)
+						Debug		=> Debug
 						);
 						
+						
 ----------------------------------------------------------------
--- PC port map
+-- ControlUnit port map
 ----------------------------------------------------------------
 ControlUnit1 	: ControlUnit port map
 						(
@@ -204,6 +267,25 @@ ControlUnit1 	: ControlUnit port map
 						SignExtend 	=> SignExtend, 
 						RegWrite 	=> RegWrite, 
 						RegDst 		=> RegDst
+						);
+
+----------------------------------------------------------------
+-- ALU_Control_Unit port map
+----------------------------------------------------------------
+ALUControl1		: ALU_Control_Unit port map
+						(
+						Instruction_Low 	=> Instruction_Low,
+						ALUOp_in				=> ALUOp_in,
+						ALUControl_out		=> ALUControl_out
+						);
+						
+----------------------------------------------------------------
+-- Wrapper port map
+----------------------------------------------------------------
+Wrapper1			: wrapper port map
+						(
+						ALUControl_in		=> ALUControl_in,
+						Wrap_Control 		=> Wrap_Control
 						);
 						
 ----------------------------------------------------------------
@@ -246,13 +328,18 @@ Addr_Instr <= PC_out;
 opcode <= Instr(31 downto 26); 
 ReadAddr1_Reg <= Instr(25 downto 21);
 ReadAddr2_Reg <= Instr(20 downto 16);
-ALU_Control(7 downto 6) <= ALUOp(1 downto 0);
-ALU_Control(5 downto 0) <= Instr(5 downto 0); --Combine ALUOp and Instr into the 8-bit form that ALU1 can process
-ALU_InA <= ReadData1_Reg; --Direct input with no shenanigans
+Instruction_Low <= Instr(5 downto 0);
+ALUOp_in <= ALUOp;
+--ALU_Control(7 downto 6) <= ALUOp(1 downto 0);
+--ALU_Control(5 downto 0) <= Instr(5 downto 0); --Combine ALUOp and Instr into the 8-bit form that ALU1 can process
+Control <= Wrap_Control;
+
+--ALU_InA <= ReadData1_Reg; --Direct input with no shenanigans
+Operand1 <= ReadData1_Reg; --Direct input with no shenanigans
 input_16 <= Instr(15 downto 0); --Split up of instructions into their respective parts
 Data_Out <= ReadData2_Reg;
-Addr_Data <= ALU_Out;
-
+--Addr_Data <= ALU_Out;
+Addr_Data <= Result1;
 
 if Jump = '1' then
 	PC_in <= PC_Four(31 downto 28) & Instr(25 downto 0) & "00";
@@ -265,9 +352,11 @@ else
 end if; --PC multiplexer
 
 if ALUSrc = '1' then
-	ALU_InB <= extend_32;
+	--ALU_InB <= extend_32;
+	Operand2 <= extend_32;
 else
-	ALU_InB <= ReadData2_Reg;
+	--ALU_InB <= ReadData2_Reg;
+	Operand2 <= ReadData2_Reg;
 end if; --ALU multiplexer
 
 if RegDst = '1' then
@@ -282,7 +371,8 @@ else
 	if MemtoReg = '1' then
 		WriteData_Reg <= Data_In;
 	else
-		WriteData_Reg <= ALU_Out;
+		--WriteData_Reg <= ALU_Out;
+		WriteData_Reg <= Result1;
 	end if;
 end if; --Data Multiplexer
 

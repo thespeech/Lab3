@@ -1,15 +1,15 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:/Lab3/xst/projnav.tmp
+--> Parameter TMPDIR set to C:/Users/Andre/Documents/GitHub/Lab3/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
---> Parameter xsthdpdir set to C:/Lab3/xst
+--> Parameter xsthdpdir set to C:/Users/Andre/Documents/GitHub/Lab3/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: MIPS.prj
@@ -39,52 +39,47 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Lab3\Write_Addr_Multiplexer.vhd" into library work
-Parsing entity <Write_Addr_Multiplexer>.
-Parsing architecture <Behavioral> of entity <write_addr_multiplexer>.
-Parsing VHDL file "C:\Lab3\Sign_extension.vhd" into library work
+Parsing VHDL file "C:\Users\Andre\Desktop\CG3207\Lab2ALU\adder.vhd" into library work
+Parsing entity <adder>.
+Parsing architecture <adder_arch> of entity <adder>.
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" into library work
+Parsing entity <wrapper>.
+Parsing architecture <wrapper_arch> of entity <wrapper>.
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\Sign_extension.vhd" into library work
 Parsing entity <Sign_extension>.
 Parsing architecture <Behavioral> of entity <sign_extension>.
-Parsing VHDL file "C:\Lab3\Shift_left2.vhd" into library work
-Parsing entity <Shift_left2>.
-Parsing architecture <Behavioral> of entity <shift_left2>.
-Parsing VHDL file "C:\Lab3\RegFile.vhd" into library work
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\RegFile.vhd" into library work
 Parsing entity <RegFile>.
 Parsing architecture <arch_RegFile> of entity <regfile>.
-Parsing VHDL file "C:\Lab3\Read_Data_Multiplexer.vhd" into library work
-Parsing entity <Read_Data_Multiplexer>.
-Parsing architecture <Behavioral> of entity <read_data_multiplexer>.
-Parsing VHDL file "C:\Lab3\Read_Addr_Multiplexer.vhd" into library work
-Parsing entity <Read_Addr_Multiplexer>.
-Parsing architecture <Behavioral> of entity <read_addr_multiplexer>.
-Parsing VHDL file "C:\Lab3\PC_Multiplexer.vhd" into library work
-Parsing entity <PC_Multiplexer>.
-Parsing architecture <Behavioral> of entity <pc_multiplexer>.
-Parsing VHDL file "C:\Lab3\PC.vhd" into library work
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\PC.vhd" into library work
 Parsing entity <PC>.
 Parsing architecture <arch_PC> of entity <pc>.
-Parsing VHDL file "C:\Lab3\ControlUnit.vhd" into library work
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\ControlUnit.vhd" into library work
 Parsing entity <ControlUnit>.
 Parsing architecture <arch_ControlUnit> of entity <controlunit>.
-Parsing VHDL file "C:\Lab3\ALU_Control_Unit.vhd" into library work
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\ALU_Control_Unit.vhd" into library work
 Parsing entity <ALU_Control_Unit>.
 Parsing architecture <Behavioral> of entity <alu_control_unit>.
-Parsing VHDL file "C:\Lab3\ALU.vhd" into library work
-Parsing entity <ALU>.
-Parsing architecture <arch_ALU> of entity <alu>.
-Parsing VHDL file "C:\Lab3\MIPS.vhd" into library work
+Parsing VHDL file "C:\Users\Andre\Desktop\CG3207\Lab2ALU\alu.vhd" into library work
+Parsing entity <alu>.
+Parsing architecture <Behavioral> of entity <alu>.
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" into library work
 Parsing entity <MIPS>.
 Parsing architecture <arch_MIPS> of entity <mips>.
-
-
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.53 secs
- 
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 340: <alu_out> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 346: <alu_zero> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 354: <alu_inb> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 356: <alu_inb> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 371: <alu_out> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 321: <alu_zero> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 322: <alu_out> is not declared.
+ERROR:HDLCompiler:854 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 38: Unit <arch_mips> ignored due to previous errors.
+VHDL file C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd ignored due to errors
 --> 
 
-Total memory usage is 216960 kilobytes
+Total memory usage is 215796 kilobytes
 
-Number of errors   :    0 (   0 filtered)
+Number of errors   :    8 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
