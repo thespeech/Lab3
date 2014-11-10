@@ -42,13 +42,13 @@ begin
 process(input_16, enable)
 begin
 
-if enable = '1' then
-extend_32(31 downto 16) <= (others => input_16(15));
-extend_32(15 downto 0) <= input_16;
-else
-extend_32(31 downto 16) <= (others => '0');
-extend_32(15 downto 0) <= input_16;
-end if;
+	if enable = '1' then
+		extend_32(31 downto 16) <= (others => input_16(15));
+		extend_32(15 downto 0) <= input_16;
+	else
+		extend_32(31 downto 16) <= (others => '0');
+		extend_32(15 downto 0) <= input_16;
+	end if;
 end process;
 end Behavioral;
 

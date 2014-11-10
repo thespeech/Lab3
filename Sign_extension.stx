@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to C:/Users/Andre/Documents/GitHub/Lab3/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
---> Reading design: ALU_Control_Unit.prj
+--> Reading design: Sign_extension.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -39,17 +39,17 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\ALU_Control_Unit.vhd" into library work
-Parsing entity <ALU_Control_Unit>.
-Parsing architecture <Behavioral> of entity <alu_control_unit>.
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\Sign_extension.vhd" into library work
+Parsing entity <Sign_extension>.
+Parsing architecture <Behavioral> of entity <sign_extension>.
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.08 secs
+Total CPU time to Xst completion: 5.80 secs
  
 --> 
 
-Total memory usage is 214900 kilobytes
+Total memory usage is 214004 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

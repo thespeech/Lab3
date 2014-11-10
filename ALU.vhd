@@ -33,6 +33,7 @@ Port (Clk			: in	STD_LOGIC;
 		Operand2		: in	STD_LOGIC_VECTOR (width-1 downto 0);
 		Result1		: out	STD_LOGIC_VECTOR (width-1 downto 0);
 		Result2		: out	STD_LOGIC_VECTOR (width-1 downto 0);
+		ALU_zero		: out STD_LOGIC;
 		Status		: out	STD_LOGIC_VECTOR (2 downto 0); -- busy (multicycle only), overflow (add and sub), zero (sub)
 		Debug			: out	STD_LOGIC_VECTOR (width-1 downto 0));		
 end alu;
@@ -113,6 +114,7 @@ begin
 Status(2 downto 0) <= "000"; -- both statuses '0' by default 
 Result1 <= (others=>'0');
 Result2 <= (others=>'0');
+ALU_zero <= '0'; -- default. changed only by BEQ
 Debug <= (others=>'0');
 n_state <= state;
 
@@ -159,6 +161,23 @@ case state is
 			end if;
 		-- Set on less than
 		when "00111" =>
+		
+		-- beq
+		when "01111" =>
+			B <= not(Operand2);
+			C_in <= '1';
+			Result1 <= S;
+			-- overflow
+			--Status(1) <= ( Operand1(width-1) xor  Operand2(width-1) )  and ( Operand2(width-1) xnor S(width-1) );
+			--zero
+			if S = x"00000000" then 
+				ALU_zero <= '1'; 
+			else
+				ALU_zero <= '0';
+			end if;
+		
+		-- ori
+		when "01110" =>
 			
 		
 		-- Set on less than unsigned
@@ -167,7 +186,7 @@ case state is
 					Result1 <= (0 => '1', others=>'0');
 			else
 				Result1 <= (others=>'0');
-			end if;	
+			end if;
 		-- multi-cycle operations
 		when "10000" | "10001" | "10010" | "10011" =>  --Multiplication/Division
 			n_state <= MULTI_CYCLE;

@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to C:/Users/Andre/Documents/GitHub/Lab3/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to C:/Users/Andre/Documents/GitHub/Lab3/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: MIPS.prj
 
@@ -45,41 +45,24 @@ Parsing architecture <adder_arch> of entity <adder>.
 Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" into library work
 Parsing entity <wrapper>.
 Parsing architecture <wrapper_arch> of entity <wrapper>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\Sign_extension.vhd" into library work
-Parsing entity <Sign_extension>.
-Parsing architecture <Behavioral> of entity <sign_extension>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\RegFile.vhd" into library work
-Parsing entity <RegFile>.
-Parsing architecture <arch_RegFile> of entity <regfile>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\PC.vhd" into library work
-Parsing entity <PC>.
-Parsing architecture <arch_PC> of entity <pc>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\ControlUnit.vhd" into library work
-Parsing entity <ControlUnit>.
-Parsing architecture <arch_ControlUnit> of entity <controlunit>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\ALU_Control_Unit.vhd" into library work
-Parsing entity <ALU_Control_Unit>.
-Parsing architecture <Behavioral> of entity <alu_control_unit>.
-Parsing VHDL file "C:\Users\Andre\Desktop\CG3207\Lab2ALU\alu.vhd" into library work
-Parsing entity <alu>.
-Parsing architecture <Behavioral> of entity <alu>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" into library work
-Parsing entity <MIPS>.
-Parsing architecture <arch_MIPS> of entity <mips>.
-ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 340: <alu_out> is not declared.
-ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 346: <alu_zero> is not declared.
-ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 354: <alu_inb> is not declared.
-ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 356: <alu_inb> is not declared.
-ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 371: <alu_out> is not declared.
-ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 321: <alu_zero> is not declared.
-ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 322: <alu_out> is not declared.
-ERROR:HDLCompiler:854 - "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" Line 38: Unit <arch_mips> ignored due to previous errors.
-VHDL file C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd ignored due to errors
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 55: <alucontrol_out> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 56: <alucontrol_out> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 70: <control> is not declared.
+ERROR:HDLCompiler:1731 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 74: found '0' definitions of operator "-", cannot determine exact overloaded matching definition for "-"
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 81: <control> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 84: <control> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 87: <control> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 90: <control> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 93: <control> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 97: <control> is not declared.
+ERROR:HDLCompiler:69 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 52: <alucontrol_out> is not declared.
+ERROR:HDLCompiler:854 - "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" Line 41: Unit <wrapper_arch> ignored due to previous errors.
+VHDL file C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd ignored due to errors
 --> 
 
-Total memory usage is 215796 kilobytes
+Total memory usage is 216052 kilobytes
 
-Number of errors   :    8 (   0 filtered)
+Number of errors   :   12 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

@@ -30,18 +30,19 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity wrapper is
-    Port ( ALUControl_out	: in	STD_LOGIC_VECTOR(7 downto 0);
-           Control			: out	STD_LOGIC_VECTOR(5 downto 0));
+generic (width 	: integer := 32);
+    Port ( 	ALUControl_in	: in	STD_LOGIC_VECTOR(7 downto 0);
+				Wrap_Control	: out	STD_LOGIC_VECTOR(5 downto 0));
 end wrapper;
 
 architecture wrapper_arch of wrapper is
 
 variable ALUOp	: STD_LOGIC_VECTOR(1 downto 0) := (others=>'0');
 variable funct : STD_LOGIC_VECTOR(5 downto 0) := (others=>'0');
-variable AplusB 	: STD_LOGIC_VECTOR (31 downto 0);
-variable AminusB 	: STD_LOGIC_VECTOR (31 downto 0);
-variable suboverflow: STD_LOGIC;
-variable AorB 		: STD_LOGIC_VECTOR (31 downto 0);
+--variable AplusB 	: STD_LOGIC_VECTOR (31 downto 0);
+--variable AminusB 	: STD_LOGIC_VECTOR (31 downto 0);
+--variable suboverflow: STD_LOGIC;
+--variable AorB 		: STD_LOGIC_VECTOR (31 downto 0);
 
 begin
 
@@ -62,40 +63,40 @@ begin
 	when "00" => -- lw, sw
 		--ALU_Out <= AplusB;
 		-- addition
-		Control <= "00010";
+		Wrap_Control <= "00010";
 	
 	when "01" => -- beq
 		-- assert ALU_zero
-		--if AminusB = x"00000000" then
-		--	ALU_zero <= '1';
-		--end if;
+		Wrap_Control <= "01111"; -- control signal for beq
 	
 	when "10" =>		-- R-type
 		case funct is
 		when "100000"=> --add
-			Control <= "00010";
+			Wrap_Control <= "00010";
 	
 		when "100010"=> --sub
-			Control <= "00110";
+			Wrap_Control <= "00110";
 	
 		when "100100"=> --and
-			Control <= "00000";
+			Wrap_Control <= "00000";
 	
 		when "100101"=> --or
-			Control <= "00001";
+			Wrap_Control <= "00001";
 	
 		when "100111"=> --nor
-			Control <= "01100";
+			Wrap_Control <= "01100";
 		
 		when "101010"=> --slt
 			--ALU_Out(0) <= AminusB(31) xor suboverflow;
-			Control <= "00111";
+			Wrap_Control <= "00111";
 
 		when others =>	null;
 		end case;
 
 	when "11" => -- ori
-		ALU_Out <= AorB;
+		--ALU_Out <= AorB;
+		Wrap_Control <= "00001";
+		
 
 	when others => null;
 	end case;

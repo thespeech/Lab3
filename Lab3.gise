@@ -51,6 +51,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="RegFile.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="RegFile.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="RegFile.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Sign_extension.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Sign_extension.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Sign_extension.xst"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="TOP.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="TOP.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="TOP.lso"/>

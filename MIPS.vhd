@@ -107,9 +107,13 @@ end component;
 -- Wrapper
 ----------------------------------------------------------------
 component wrapper is
+	generic (width 	: integer := 32);
 	Port (
 			ALUControl_in	: in	STD_LOGIC_VECTOR(7 downto 0);
-			Wrap_Control	: out	STD_LOGIC_VECTOR(5 downto 0));
+			InputA			: in 	STD_LOGIC_VECTOR(width-1 downto 0);
+			InputB			: in 	STD_LOGIC_VECTOR(width-1 downto 0);
+			Wrap_Control	: out	STD_LOGIC_VECTOR(5 downto 0);
+			ALU_zero			: out	STD_LOGIC);
 end component;
 
 
@@ -189,8 +193,12 @@ end component;
 ----------------------------------------------------------------
 -- Wrapper Signals
 ----------------------------------------------------------------
+	constant	width 			: 	integer := 32;
 	signal	ALUControl_in	:	STD_LOGIC_VECTOR(7 downto 0);
+	signal	InputA			: 	STD_LOGIC_VECTOR(width-1 downto 0);
+	signal	InputB			: 	STD_LOGIC_VECTOR(width-1 downto 0);
 	signal	Wrap_Control	:	STD_LOGIC_VECTOR(5 downto 0);
+	signal	ALU_zero			: 	STD_LOGIC;
 
 ----------------------------------------------------------------
 -- Register File Signals
@@ -285,7 +293,10 @@ ALUControl1		: ALU_Control_Unit port map
 Wrapper1			: wrapper port map
 						(
 						ALUControl_in		=> ALUControl_in,
-						Wrap_Control 		=> Wrap_Control
+						InputA				=> InputA,
+						InputB				=> InputB,
+						Wrap_Control 		=> Wrap_Control,
+						ALU_zero				=> ALU_zero
 						);
 						
 ----------------------------------------------------------------
@@ -358,6 +369,9 @@ else
 	--ALU_InB <= ReadData2_Reg;
 	Operand2 <= ReadData2_Reg;
 end if; --ALU multiplexer
+
+InputA <= Operand1;
+InputB <= Operand2;
 
 if RegDst = '1' then
 	WriteAddr_Reg <= Instr(15 downto 11);
