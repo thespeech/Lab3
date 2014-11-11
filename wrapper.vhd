@@ -89,6 +89,18 @@ begin
 		when "101010"=> --slt
 			--ALU_Out(0) <= AminusB(31) xor suboverflow;
 			Wrap_Control <= "00111";
+		
+		when "000000" => -- sll
+			Wrap_Control <= "00101";
+			
+		when "000010" => -- srl
+			Wrap_Control <= "01101";
+			
+		when "000011" => -- sra
+			Wrap_Control <= "01001";
+			
+		when "000100" => -- sllv
+			Wrap_Control <= "01010";
 
 		when others =>	null;
 		end case;

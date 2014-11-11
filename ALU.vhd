@@ -200,7 +200,8 @@ case state is
 		when "01110" =>
 			
 		
-		
+		when "00011" =>
+			
 		when "00101"|"01101"|"01001" =>
 			Result1 <= shift_result1;	
 		-- multi-cycle operations
