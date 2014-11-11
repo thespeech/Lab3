@@ -25,6 +25,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ALU_Control_Unit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ALU_Control_Unit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ALU_Control_Unit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ALU_Multiplex.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ALU_Multiplex.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ALU_Multiplex.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ALU_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ControlUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ControlUnit.stx"/>

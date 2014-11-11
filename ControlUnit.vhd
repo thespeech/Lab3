@@ -131,6 +131,19 @@ begin
 		Jump <= '0';
 		InstrtoReg <= '0';
 		SignExtend <= '0';
+	
+	when "001000" =>	-- addi
+		RegDst <= '0';
+		ALUSrc <= '1'; --changed to all not asserted except ALUSrc and RegWrite
+		MemtoReg <= '0';
+		RegWrite <= '1';
+		MemRead <= '0';
+		MemWrite <= '0';
+		Branch <= '0';
+		ALUOp <= "00";
+		Jump <= '0';
+		InstrtoReg <= '0';
+		SignExtend <= '0';
 		
 	when others =>
 		RegDst <= '0';
