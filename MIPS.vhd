@@ -68,6 +68,7 @@ component ALU is
 			Operand2		: in	STD_LOGIC_VECTOR (width-1 downto 0);
 			Result1		: out	STD_LOGIC_VECTOR (width-1 downto 0);
 			Result2		: out	STD_LOGIC_VECTOR (width-1 downto 0);
+			ALU_zero		: out STD_LOGIC;
 			Status		: out	STD_LOGIC_VECTOR (2 downto 0); -- busy (multicycle only), overflow (add and sub), zero (sub)
 			Debug			: out	STD_LOGIC_VECTOR (width-1 downto 0));	
 end component;
@@ -107,13 +108,9 @@ end component;
 -- Wrapper
 ----------------------------------------------------------------
 component wrapper is
-	generic (width 	: integer := 32);
 	Port (
 			ALUControl_in	: in	STD_LOGIC_VECTOR(7 downto 0);
-			InputA			: in 	STD_LOGIC_VECTOR(width-1 downto 0);
-			InputB			: in 	STD_LOGIC_VECTOR(width-1 downto 0);
-			Wrap_Control	: out	STD_LOGIC_VECTOR(5 downto 0);
-			ALU_zero			: out	STD_LOGIC);
+			Wrap_Control	: out	STD_LOGIC_VECTOR(5 downto 0));
 end component;
 
 
@@ -164,6 +161,7 @@ end component;
 	signal	Operand2		:	STD_LOGIC_VECTOR (width-1 downto 0);
 	signal	Result1		:	STD_LOGIC_VECTOR (width-1 downto 0);
 	signal	Result2		:	STD_LOGIC_VECTOR (width-1 downto 0);
+	signal	ALU_zero		:	STD_LOGIC;
 	signal	Status		:	STD_LOGIC_VECTOR (2 downto 0); -- busy (multicycle only), overflow (add and sub), zero (sub)
 	signal	Debug			:	STD_LOGIC_VECTOR (width-1 downto 0);
 	
@@ -193,12 +191,8 @@ end component;
 ----------------------------------------------------------------
 -- Wrapper Signals
 ----------------------------------------------------------------
-	constant	width 			: 	integer := 32;
 	signal	ALUControl_in	:	STD_LOGIC_VECTOR(7 downto 0);
-	signal	InputA			: 	STD_LOGIC_VECTOR(width-1 downto 0);
-	signal	InputB			: 	STD_LOGIC_VECTOR(width-1 downto 0);
 	signal	Wrap_Control	:	STD_LOGIC_VECTOR(5 downto 0);
-	signal	ALU_zero			: 	STD_LOGIC;
 
 ----------------------------------------------------------------
 -- Register File Signals
@@ -253,6 +247,7 @@ ALU1 				: ALU port map
 						Operand2	=> Operand2,
 						Result1	=> Result1,
 						Result2	=> Result2,
+						ALU_zero	=> ALU_zero,
 						Status	=> Status, -- busy (multicycle only), overflow (add and sub), zero (sub)
 						Debug		=> Debug
 						);
@@ -293,10 +288,7 @@ ALUControl1		: ALU_Control_Unit port map
 Wrapper1			: wrapper port map
 						(
 						ALUControl_in		=> ALUControl_in,
-						InputA				=> InputA,
-						InputB				=> InputB,
-						Wrap_Control 		=> Wrap_Control,
-						ALU_zero				=> ALU_zero
+						Wrap_Control		=> Wrap_Control
 						);
 						
 ----------------------------------------------------------------
@@ -330,7 +322,7 @@ SignExtender : sign_extension port map
 ----------------------------------------------------------------
 --<Rest of the logic goes here>
 combinational: process (PC_Four, PC_out, Branch, ALU_zero, Jump, Instr, AluOp, MemtoReg, InstrtoReg, AluSrc,
-								extend_32, RegDst, ReadData1_Reg, ReadData2_Reg, Alu_Out, Data_In)
+								extend_32, RegDst, ReadData1_Reg, ReadData2_Reg, Result1, Data_In)
 
 begin
 
@@ -369,9 +361,6 @@ else
 	--ALU_InB <= ReadData2_Reg;
 	Operand2 <= ReadData2_Reg;
 end if; --ALU multiplexer
-
-InputA <= Operand1;
-InputB <= Operand2;
 
 if RegDst = '1' then
 	WriteAddr_Reg <= Instr(15 downto 11);

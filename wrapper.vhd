@@ -46,11 +46,11 @@ variable funct : STD_LOGIC_VECTOR(5 downto 0) := (others=>'0');
 
 begin
 
-process (ALUControl_out)
+process (ALUControl_in)
 
 begin
-	ALUOp	:= ALUControl_out(7 downto 6);
-	funct := ALUControl_out(5 downto 0);
+	ALUOp	:= ALUControl_in(7 downto 6);
+	funct := ALUControl_in(5 downto 0);
 
 	--AplusB := ALU_InA + ALU_InB;
 	--AminusB := ALU_InA - ALU_InB;
