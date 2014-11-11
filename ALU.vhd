@@ -61,19 +61,23 @@ port (A 		: in 	std_logic_vector(width-1 downto 0);
 		C_out	: out std_logic);
 end component adder;
 
+component shifter is
+    Port ( Control : in  STD_LOGIC_VECTOR (2 downto 0);
+           OP1 : in  STD_LOGIC_VECTOR (31 downto 0);
+           OP2 : in  STD_LOGIC_VECTOR (4 downto 0);
+           Result1 : out  STD_LOGIC_VECTOR (31 downto 0);
+           Result2 : out  STD_LOGIC_VECTOR (31 downto 0));
+end component;
+
 ----------------------------------------------------------------------------
 -- Adder signals
 ----------------------------------------------------------------------------
-signal A			: std_logic_vector(width-1 downto 0) := (others => '0');
-signal B 		: std_logic_vector(width-1 downto 0) := (others => '0'); 
 signal C_in 	: std_logic := '0';
 signal S 		: std_logic_vector(width-1 downto 0) := (others => '0'); 
 signal C_out	: std_logic := '0'; --not used
 
-----------------------------------------------------------------------------
---  instantiation
-----------------------------------------------------------------------------
-signal Sub_vec : std_logic_vector(width-1 downto 0) := (others => '1');
+signal shift_result1: std_logic_vector(31 downto 0) := (others => '0');
+signal shift_result2: std_logic_vector(31 downto 0) := (others => '0');
 
 
 ----------------------------------------------------------------------------
@@ -83,21 +87,20 @@ signal Result1_multi		: STD_LOGIC_VECTOR (width-1 downto 0) := (others => '0');
 signal Result2_multi		: STD_LOGIC_VECTOR (width-1 downto 0) := (others => '0');
 signal Debug_multi		: STD_LOGIC_VECTOR (width-1 downto 0) := (others => '0'); 
 signal done		 			: STD_LOGIC := '0';
-signal dividend_divisor: std_logic := '0';
-signal dividend_remainder: std_logic := '0';
+signal count2				: STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+signal Sub_vec : std_logic_vector(width-1 downto 0) := (others => '1');
 --signal count : 			std_logic_vector(15 downto 0) := (others => '0');
-
-----------------------------------------------------------------------------
--- Signals for using shifter
-----------------------------------------------------------------------------
-signal ShiftOp1			: STD_LOGIC_VECTOR (width-1 downto 0) := (others => '0');
-signal ShiftOp2			: STD_LOGIC_VECTOR (4 downto 0) := (others => '0');
 
 begin
 
 -- <port maps>
-adder32 : adder generic map (width =>  width) port map (A=>A, B=>B, C_in=>C_in, S=>S, C_out=>C_out );
+adder32 : adder generic map (width =>  width) port map (  A=>Operand1, B=>Operand2, C_in=>C_in, S=>S, C_out=>C_out );
 -- </port maps>
+shifter32 : shifter port map (Control => Control(4 downto 2), 
+           OP1 => Operand1,
+           OP2 => Operand2(4 downto 0),
+           Result1 => shift_result1,
+           Result2 => shift_result2);
 
 
 ----------------------------------------------------------------------------
@@ -138,17 +141,16 @@ case state is
 		--nor
 		when "01100" => 
 			Result1 <= Operand1 nor Operand2;
+		--xor
+		when "00100" =>
+			Result1 <= Operand1 xor Operand2;
 		--add
 		when "00010" =>
-			A <=Operand1;
-			B <=Operand2;
-			C_in <= '0';
 			Result1 <= S;
 			-- overflow
 			Status(1) <= ( Operand1(width-1) xnor  Operand2(width-1) )  and ( Operand2(width-1) xor S(width-1) );
 		-- sub
 		when "00110" =>
-			B <= not(Operand2);
 			C_in <= '1';
 			Result1 <= S;
 			-- overflow
@@ -161,14 +163,32 @@ case state is
 			end if;
 		-- Set on less than
 		when "00111" =>
-		
+			if (Operand1(31) xor Operand2(31)) = '0' then --Sign difference
+				C_in <= '1';
+				if S(31) = '1' then
+					Result1<=x"00000001";
+				else
+					Result1<=x"00000000";
+				end if;
+			elsif Operand1(31) = '1' then
+				Result1<=x"00000001";
+			else
+				Result1<=x"00000000";
+			end if;
+		-- sltu
+		when "01110" =>
+			C_in <= '1';
+			if S(31) = '1' then
+				Result1<=x"00000001";
+			else
+				Result1<=x"00000000";
+			end if;
 		-- beq
 		when "01111" =>
-			B <= not(Operand2);
 			C_in <= '1';
 			Result1 <= S;
 			-- overflow
-			--Status(1) <= ( Operand1(width-1) xor  Operand2(width-1) )  and ( Operand2(width-1) xnor S(width-1) );
+			Status(1) <= ( Operand1(width-1) xor  Operand2(width-1) )  and ( Operand2(width-1) xnor S(width-1) );
 			--zero
 			if S = x"00000000" then 
 				ALU_zero <= '1'; 
@@ -180,15 +200,11 @@ case state is
 		when "01110" =>
 			
 		
-		-- Set on less than unsigned
-		when "01110" =>
-			if(Operand1 < Operand2) then
-					Result1 <= (0 => '1', others=>'0');
-			else
-				Result1 <= (others=>'0');
-			end if;
+		
+		when "00101"|"01101"|"01001" =>
+			Result1 <= shift_result1;	
 		-- multi-cycle operations
-		when "10000" | "10001" | "10010" | "10011" =>  --Multiplication/Division
+		when "10000" | "11110" | "10001" | "10010" | "10011"	=> 
 			n_state <= MULTI_CYCLE;
 			Status(2) <= '1';
 		-- default cases (already covered)

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to C:/Users/Andre/Documents/GitHub/Lab3/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: alu.prj
 
@@ -39,20 +39,23 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\shifter.vhd" into library work
+Parsing entity <shifter>.
+Parsing architecture <Beh_shift> of entity <shifter>.
 Parsing VHDL file "C:\Users\Andre\Desktop\CG3207\Lab2ALU\adder.vhd" into library work
 Parsing entity <adder>.
 Parsing architecture <adder_arch> of entity <adder>.
-Parsing VHDL file "C:\Users\Andre\Desktop\CG3207\Lab2ALU\alu.vhd" into library work
+Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\alu.vhd" into library work
 Parsing entity <alu>.
 Parsing architecture <Behavioral> of entity <alu>.
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.38 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.49 secs
  
 --> 
 
-Total memory usage is 215860 kilobytes
+Total memory usage is 215540 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
