@@ -68,7 +68,7 @@ ARCHITECTURE behavior OF test_mips IS
    signal MemWrite : std_logic;
 
    -- Clock period definitions
-   constant CLK_period : time := 10 ns;
+   constant CLK_period : time := 50 ns;
  
 BEGIN
  
@@ -124,15 +124,22 @@ BEGIN
 		Data_in <= x"0000000C";
 		wait for CLK_period*10;
 		
-		-- lw $s4, 5
-		Instr <= "10001100000101000000000000000101"; -- op = x23, rs = 0, rt = 20, imm = 5
-		Data_in <= x"00000005";
-		wait for CLK_period*10;
-		
+	
 		-- sub $s5, $s3, $s4
 		Instr <= "00000010011101001010100000100010"; -- op = 0, rs = 19, rt = 20, rd = 21, shamt = 0, funct = x20
 		Data_in <= (others => '0');	
 		wait for CLK_period*10;
+		
+	-- lw $s4, 5
+		Instr <= "10001100000101000000000000000101"; -- op = x23, rs = 0, rt = 20, imm = 5
+		Data_in <= x"00000005";
+		wait for CLK_period*10;
+		
+		-- addi $s2, $s4, 0x07
+		Instr <= "00100010011010100000000000000111";
+		Data_in <= (others => '0');
+		wait for CLK_period*10;
+		
       wait;
    end process;
 

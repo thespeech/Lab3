@@ -1,16 +1,16 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to C:/Users/Andre/Documents/GitHub/Lab3/xst/projnav.tmp
+--> Parameter TMPDIR set to C:/Users/Bob/Desktop/Lab3/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.08 secs
  
---> Parameter xsthdpdir set to C:/Users/Andre/Documents/GitHub/Lab3/xst
+--> Parameter xsthdpdir set to C:/Users/Bob/Desktop/Lab3/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: MIPS.prj
 
@@ -39,41 +39,41 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Andre\Desktop\CG3207\Lab2ALU\adder.vhd" into library work
+Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\shifter.vhd" into library work
+Parsing entity <shifter>.
+Parsing architecture <Beh_shift> of entity <shifter>.
+Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\adder.vhd" into library work
 Parsing entity <adder>.
 Parsing architecture <adder_arch> of entity <adder>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\wrapper.vhd" into library work
+Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\wrapper.vhd" into library work
 Parsing entity <wrapper>.
 Parsing architecture <wrapper_arch> of entity <wrapper>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\Sign_extension.vhd" into library work
+Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\Sign_extension.vhd" into library work
 Parsing entity <Sign_extension>.
 Parsing architecture <Behavioral> of entity <sign_extension>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\RegFile.vhd" into library work
+Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\RegFile.vhd" into library work
 Parsing entity <RegFile>.
 Parsing architecture <arch_RegFile> of entity <regfile>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\PC.vhd" into library work
+Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\PC.vhd" into library work
 Parsing entity <PC>.
 Parsing architecture <arch_PC> of entity <pc>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\ControlUnit.vhd" into library work
+Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\ControlUnit.vhd" into library work
 Parsing entity <ControlUnit>.
 Parsing architecture <arch_ControlUnit> of entity <controlunit>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\ALU_Control_Unit.vhd" into library work
-Parsing entity <ALU_Control_Unit>.
-Parsing architecture <Behavioral> of entity <alu_control_unit>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\alu.vhd" into library work
+Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\alu.vhd" into library work
 Parsing entity <alu>.
 Parsing architecture <Behavioral> of entity <alu>.
-Parsing VHDL file "C:\Users\Andre\Documents\GitHub\Lab3\MIPS.vhd" into library work
+Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\MIPS.vhd" into library work
 Parsing entity <MIPS>.
 Parsing architecture <arch_MIPS> of entity <mips>.
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.70 secs
+Total CPU time to Xst completion: 6.24 secs
  
 --> 
 
-Total memory usage is 215412 kilobytes
+Total memory usage is 216448 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

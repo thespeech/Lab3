@@ -1,5 +1,5 @@
-set -tmpdir "C:/Users/Andre/Documents/GitHub/Lab3/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/Andre/Documents/GitHub/Lab3/xst"
+set -tmpdir "C:/Users/Fujitsu 1/Desktop/NUS School Matters/Yr 3 Sem 1/CG3207/github/Lab3/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Fujitsu 1/Desktop/NUS School Matters/Yr 3 Sem 1/CG3207/github/Lab3/xst"
 run -compileonly yes
 -p xc7a100t-1-csg324
 -top alu

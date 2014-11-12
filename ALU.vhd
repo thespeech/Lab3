@@ -85,11 +85,14 @@ signal shift_result2: std_logic_vector(31 downto 0) := (others => '0');
 ----------------------------------------------------------------------------
 signal Result1_multi		: STD_LOGIC_VECTOR (width-1 downto 0) := (others => '0'); 
 signal Result2_multi		: STD_LOGIC_VECTOR (width-1 downto 0) := (others => '0');
-signal Debug_multi		: STD_LOGIC_VECTOR (width-1 downto 0) := (others => '0'); 
 signal done		 			: STD_LOGIC := '0';
 signal count2				: STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
 signal Sub_vec : std_logic_vector(width-1 downto 0) := (others => '1');
 --signal count : 			std_logic_vector(15 downto 0) := (others => '0');
+
+--special register Hi-Lo in multiply unit of MIPS
+signal hi_reg					: STD_LOGIC_VECTOR (31 downto 0)	:= (others => '0');
+signal lo_reg					: STD_LOGIC_VECTOR (31 downto 0)	:= (others => '0');
 
 begin
 
@@ -109,7 +112,7 @@ shifter32 : shifter port map (Control => Control(4 downto 2),
 COMBINATIONAL_PROCESS : process (
 											Control, Operand1, Operand2, state, -- external inputs
 											S, -- ouput from the adder (or other components)
-											Result1_multi, Result2_multi, Debug_multi, done -- from multi-cycle process(es)
+											Result1_multi, Result2_multi, lo_reg, hi_reg, shift_result1, done -- from multi-cycle process(es)
 											)
 begin
 
@@ -135,7 +138,7 @@ case state is
 		--and
 		when "00000" =>   -- takes 0 cycles to execute
 			Result1 <= Operand1 and Operand2;
-		--or
+		--or/ori
 		when "00001" =>
 			Result1 <= Operand1 or Operand2;
 		--nor
@@ -157,9 +160,9 @@ case state is
 			Status(1) <= ( Operand1(width-1) xor  Operand2(width-1) )  and ( Operand2(width-1) xnor S(width-1) );
 			--zero
 			if S = x"00000000" then 
-				Status(0) <= '1'; 
+				ALU_zero <= '1'; 
 			else
-				Status(0) <= '0';
+				ALU_zero <= '0';
 			end if;
 		-- Set on less than
 		when "00111" =>
@@ -195,13 +198,17 @@ case state is
 			else
 				ALU_zero <= '0';
 			end if;
-		
-		-- ori
-		when "01110" =>
-			
-		
-		when "00011" =>
-			
+		--bgez/bgezal
+		when "11010" =>
+			--if there is an overflow (i.e. op1 < op2)
+			ALU_zero <= not(Operand1(width-1) xor  '0');
+		--MFHI
+		when "11001" =>
+			Result1 <= hi_reg;
+		--MFLO
+		when "11000" =>
+			Result1 <= lo_reg;
+		--SLL/SRL/SRA
 		when "00101"|"01101"|"01001" =>
 			Result1 <= shift_result1;	
 		-- multi-cycle operations
@@ -211,11 +218,13 @@ case state is
 		-- default cases (already covered)
 		when others=> null;
 		end case;
+		
 	when MULTI_CYCLE => 
 		if done = '1' then
 			Result1 <= Result1_multi;
 			Result2 <= Result2_multi;
-			Debug <= Debug_multi;
+			hi_reg <= Result1_multi;
+			lo_reg <= Result2_multi;
 			n_state <= COMBINATIONAL;
 			Status(2) <= '0';
 		else
@@ -281,7 +290,6 @@ begin
 				if state = COMBINATIONAL then
 					Result1_multi <= Operand1;
 					Result2_multi <= Operand2;
-					Debug_multi <= Operand1(width-1 downto width/2) & Operand2(width-1 downto width/2);
 					done <= '1';
 				end if;
 			

@@ -48,30 +48,7 @@ component PC is
 			CLK		: in STD_LOGIC);
 end component;
 
-----------------------------------------------------------------
--- ALU
-----------------------------------------------------------------
---component ALU is
---    Port ( 	
---			ALU_InA 		: in  STD_LOGIC_VECTOR (31 downto 0);				
---			ALU_InB 		: in  STD_LOGIC_VECTOR (31 downto 0);
---			ALU_Out 		: out STD_LOGIC_VECTOR (31 downto 0);
---			ALU_Control	: in  STD_LOGIC_VECTOR (7 downto 0);
---			ALU_zero		: out STD_LOGIC);
---end component;
-component ALU is
-	generic (width 	: integer := 32);
-	Port	(
-			Clk			: in	STD_LOGIC;
-			Control		: in	STD_LOGIC_VECTOR (5 downto 0);
-			Operand1		: in	STD_LOGIC_VECTOR (width-1 downto 0);
-			Operand2		: in	STD_LOGIC_VECTOR (width-1 downto 0);
-			Result1		: out	STD_LOGIC_VECTOR (width-1 downto 0);
-			Result2		: out	STD_LOGIC_VECTOR (width-1 downto 0);
-			ALU_zero		: out STD_LOGIC;
-			Status		: out	STD_LOGIC_VECTOR (2 downto 0); -- busy (multicycle only), overflow (add and sub), zero (sub)
-			Debug			: out	STD_LOGIC_VECTOR (width-1 downto 0));	
-end component;
+
 
 ----------------------------------------------------------------
 -- Control Unit
@@ -79,7 +56,9 @@ end component;
 component ControlUnit is
     Port ( 	
 			opcode 		: in   STD_LOGIC_VECTOR (5 downto 0);
-			ALUOp 		: out  STD_LOGIC_VECTOR (1 downto 0);
+			ImmControl	: out  STD_LOGIC;
+			ALUOp 		: out  STD_LOGIC_VECTOR (2 downto 0);
+			LinkOut		: out	 STD_LOGIC;
 			Branch 		: out  STD_LOGIC;
 			Jump	 		: out  STD_LOGIC;				
 			MemRead 		: out  STD_LOGIC;	
@@ -92,25 +71,20 @@ component ControlUnit is
 			RegDst		: out  STD_LOGIC);
 end component;
 
-----------------------------------------------------------------
--- ALU Control
-----------------------------------------------------------------
-
-component ALU_Control_Unit is
-    Port (
-			Instruction_Low : in  STD_LOGIC_VECTOR (5 downto 0);
-         ALUOp_in : in  STD_LOGIC_VECTOR (1 downto 0);
-         ALUControl_out : out  STD_LOGIC_VECTOR (7 downto 0));
-end component;
-
 
 ----------------------------------------------------------------
 -- Wrapper
 ----------------------------------------------------------------
 component wrapper is
-	Port (
-			ALUControl_in	: in	STD_LOGIC_VECTOR(7 downto 0);
-			Wrap_Control	: out	STD_LOGIC_VECTOR(5 downto 0));
+		generic (width 	: integer := 32);
+	    Port ( 	CLK						: in	STD_LOGIC;
+				Operand1_wrapper			: in 	STD_LOGIC_VECTOR(width-1 downto 0);
+				Operand2_wrapper			: in	STD_LOGIC_VECTOR(width-1 downto 0);
+				ALUControl_in_wrapper	: in	STD_LOGIC_VECTOR(8 downto 0);
+				Result_wrapper				: out	STD_LOGIC_VECTOR(width-1 downto 0);
+				ALU_Zero_wrapper			: out	STD_LOGIC;
+				ALU_Jump_wrapper			: out STD_LOGIC;
+				Immediate_wrapper			: in 	STD_LOGIC);
 end component;
 
 
@@ -146,30 +120,15 @@ end component;
 	signal 	PC_out_add4 : STD_LOGIC_VECTOR(31 downto 0);
 
 
-----------------------------------------------------------------
--- ALU Signals
-----------------------------------------------------------------
---	signal	ALU_InA 		:  STD_LOGIC_VECTOR (31 downto 0);
---	signal	ALU_InB 		:  STD_LOGIC_VECTOR (31 downto 0);
---	signal	ALU_Out 		:  STD_LOGIC_VECTOR (31 downto 0);
---	signal	ALU_Control	:  STD_LOGIC_VECTOR (7 downto 0);
---	signal	ALU_zero		:  STD_LOGIC;			
---	signal	Clk			:	STD_LOGIC;
-	constant	width 		: 	integer := 32;
-	signal	Control		:	STD_LOGIC_VECTOR (5 downto 0);
-	signal	Operand1		:	STD_LOGIC_VECTOR (width-1 downto 0);
-	signal	Operand2		:	STD_LOGIC_VECTOR (width-1 downto 0);
-	signal	Result1		:	STD_LOGIC_VECTOR (width-1 downto 0);
-	signal	Result2		:	STD_LOGIC_VECTOR (width-1 downto 0);
-	signal	ALU_zero		:	STD_LOGIC;
-	signal	Status		:	STD_LOGIC_VECTOR (2 downto 0); -- busy (multicycle only), overflow (add and sub), zero (sub)
-	signal	Debug			:	STD_LOGIC_VECTOR (width-1 downto 0);
+
 	
 ----------------------------------------------------------------
 -- Control Unit Signals
 ----------------------------------------------------------------				
  	signal	opcode 		:  STD_LOGIC_VECTOR (5 downto 0);
-	signal	ALUOp 		:  STD_LOGIC_VECTOR (1 downto 0);
+	signal	ALUOp 		:  STD_LOGIC_VECTOR (2 downto 0);
+	signal	ImmControl	:	STD_LOGIC;
+	signal	LinkOut		:  STD_LOGIC;
 	signal	Branch 		:  STD_LOGIC;
 	signal	Jump	 		:  STD_LOGIC;	
 	signal	MemtoReg 	:  STD_LOGIC;
@@ -180,20 +139,17 @@ end component;
 	signal	RegDst		:  STD_LOGIC;
 
 ----------------------------------------------------------------
--- ALU Control
-----------------------------------------------------------------
-
-	signal	Instruction_Low :	STD_LOGIC_VECTOR (5 downto 0);
-   signal 	ALUOp_in : 			STD_LOGIC_VECTOR (1 downto 0);
-   signal 	ALUControl_out :	STD_LOGIC_VECTOR (7 downto 0);
-
-
-----------------------------------------------------------------
 -- Wrapper Signals
 ----------------------------------------------------------------
-	signal	ALUControl_in	:	STD_LOGIC_VECTOR(7 downto 0);
-	signal	Wrap_Control	:	STD_LOGIC_VECTOR(5 downto 0);
-
+	 --signal 	CLK							: STD_LOGIC;
+	 signal  Operand1_wrapper			: STD_LOGIC_VECTOR(32-1 downto 0);
+	 signal  Operand2_wrapper			: STD_LOGIC_VECTOR(32-1 downto 0);
+	 signal  ALUControl_in_wrapper	: STD_LOGIC_VECTOR(8 downto 0);
+	 signal  Result_wrapper				: STD_LOGIC_VECTOR(32-1 downto 0);
+	 signal  ALU_Zero_wrapper			: STD_LOGIC;
+	 signal  ALU_Jump_wrapper			: STD_LOGIC;
+	 signal  Immediate_wrapper			: STD_LOGIC;
+	
 ----------------------------------------------------------------
 -- Register File Signals
 ----------------------------------------------------------------
@@ -216,7 +172,6 @@ end component;
 ----------------------------------------------------------------
 	--<any other signals used goes here>
  signal	PC_Four : STD_LOGIC_VECTOR (31 downto 0);
-	
 
 ----------------------------------------------------------------	
 ----------------------------------------------------------------
@@ -236,21 +191,7 @@ PC1				: PC port map
 						CLK 		=> CLK
 						);
 						
-----------------------------------------------------------------
--- ALU port map
-----------------------------------------------------------------
-ALU1 				: ALU port map
-						(
-						Clk		=> Clk,
-						Control	=> Control,
-						Operand1	=> Operand1,
-						Operand2	=> Operand2,
-						Result1	=> Result1,
-						Result2	=> Result2,
-						ALU_zero	=> ALU_zero,
-						Status	=> Status, -- busy (multicycle only), overflow (add and sub), zero (sub)
-						Debug		=> Debug
-						);
+
 						
 						
 ----------------------------------------------------------------
@@ -259,8 +200,10 @@ ALU1 				: ALU port map
 ControlUnit1 	: ControlUnit port map
 						(
 						opcode 		=> opcode, 
-						ALUOp 		=> ALUOp, 
-						Branch 		=> Branch, 
+						ALUOp 		=> ALUOp,
+						ImmControl	=> ImmControl,
+						Branch 		=> Branch,
+						LinkOut		=>	LinkOut,
 						Jump 			=> Jump, 
 						MemRead 		=> MemRead, 
 						MemtoReg 	=> MemtoReg, 
@@ -273,23 +216,18 @@ ControlUnit1 	: ControlUnit port map
 						);
 
 ----------------------------------------------------------------
--- ALU_Control_Unit port map
-----------------------------------------------------------------
-ALUControl1		: ALU_Control_Unit port map
-						(
-						Instruction_Low 	=> Instruction_Low,
-						ALUOp_in				=> ALUOp_in,
-						ALUControl_out		=> ALUControl_out
-						);
-						
-----------------------------------------------------------------
 -- Wrapper port map
 ----------------------------------------------------------------
 Wrapper1			: wrapper port map
-						(
-						ALUControl_in		=> ALUControl_in,
-						Wrap_Control		=> Wrap_Control
-						);
+						( 	
+				CLK => CLK,
+				Operand1_wrapper	=> Operand1_wrapper,
+				Operand2_wrapper	=> Operand2_wrapper,
+				ALUControl_in_wrapper => ALUControl_in_wrapper,
+				Result_wrapper	=> Result_wrapper,
+				ALU_Zero_wrapper => ALU_Zero_wrapper,
+				ALU_Jump_wrapper => ALU_Jump_wrapper,
+				Immediate_wrapper	=> Immediate_wrapper);
 						
 ----------------------------------------------------------------
 -- Register file port map
@@ -321,52 +259,63 @@ SignExtender : sign_extension port map
 -- Processor logic
 ----------------------------------------------------------------
 --<Rest of the logic goes here>
-combinational: process (PC_Four, PC_out, Branch, ALU_zero, Jump, Instr, AluOp, MemtoReg, InstrtoReg, AluSrc,
-								extend_32, RegDst, ReadData1_Reg, ReadData2_Reg, Result1, Data_In)
+combinational: process (PC_Four, PC_out, Branch, ALU_zero_wrapper, Jump, Instr, AluOp, MemtoReg, InstrtoReg, AluSrc,
+								extend_32, RegDst, ReadData1_Reg, ReadData2_Reg, Result_wrapper, Data_In, ImmControl, ALU_Jump_wrapper, LinkOut)
 
 begin
 
+WriteAddr_Reg<=(others=>'0');
+WriteData_Reg<=(others=>'0');
+Immediate_wrapper <= ImmControl;
 PC_Four <= PC_out + "100"; --Instruction incrementer
 Addr_Instr <= PC_out;
 opcode <= Instr(31 downto 26); 
 ReadAddr1_Reg <= Instr(25 downto 21);
 ReadAddr2_Reg <= Instr(20 downto 16);
-Instruction_Low <= Instr(5 downto 0);
-ALUOp_in <= ALUOp;
---ALU_Control(7 downto 6) <= ALUOp(1 downto 0);
---ALU_Control(5 downto 0) <= Instr(5 downto 0); --Combine ALUOp and Instr into the 8-bit form that ALU1 can process
-Control <= Wrap_Control;
-
+ALUControl_in_wrapper(8 downto 6) <= ALUOp(2 downto 0);
+ALUControl_in_wrapper(5 downto 0) <= Instr(5 downto 0); --Combine ALUOp and Instr into the 8-bit form that ALU1 can process
 --ALU_InA <= ReadData1_Reg; --Direct input with no shenanigans
-Operand1 <= ReadData1_Reg; --Direct input with no shenanigans
+Operand1_wrapper <= ReadData1_Reg; --Direct input with no shenanigans
 input_16 <= Instr(15 downto 0); --Split up of instructions into their respective parts
 Data_Out <= ReadData2_Reg;
 --Addr_Data <= ALU_Out;
-Addr_Data <= Result1;
+Addr_Data <= Result_wrapper;
+
+if ALU_Jump_wrapper = '1' then
+PC_in <= ReadData1_Reg;
+end if;
 
 if Jump = '1' then
+	if LinkOut = '1' then 
+		WriteAddr_Reg <= "11111";
+		WriteData_Reg <= PC_Out + "1000";
+	end if; --JAL
 	PC_in <= PC_Four(31 downto 28) & Instr(25 downto 0) & "00";
 else
-	if Branch = '1' and ALU_zero = '1' then	--The AND gate
-		PC_in <= PC_Four + (extend_32(29 downto 0) & "00");
+	if Branch = '1' and ALU_zero_wrapper = '1' then --The AND gate for if branch and > or = 0
+		if LinkOut = '1' and Instr(20) = '1' then --BGEZAL since Instr(20) = 1
+			WriteAddr_Reg <= "11111";
+			WriteData_Reg <= PC_out + "1000"; --Result of LinkOut
+		end if;
+		PC_in <= PC_Four + (extend_32(29 downto 0) & "00"); --BGEZ and J
 	else
 		PC_in <= PC_Four;
 	end if;
 end if; --PC multiplexer
 
 if ALUSrc = '1' then
-	--ALU_InB <= extend_32;
-	Operand2 <= extend_32;
+	Operand2_wrapper <= extend_32;
 else
-	--ALU_InB <= ReadData2_Reg;
-	Operand2 <= ReadData2_Reg;
+	Operand2_wrapper <= ReadData2_Reg;
 end if; --ALU multiplexer
-
+--
+if LinkOut = '0' then
 if RegDst = '1' then
 	WriteAddr_Reg <= Instr(15 downto 11);
 else
 	WriteAddr_Reg <= Instr(20 downto 16);
 end if; --Write Address Multiplexer
+
 
 if InstrtoReg = '1' then
 	WriteData_Reg <= Instr(15 downto 0) & x"0000";
@@ -374,11 +323,12 @@ else
 	if MemtoReg = '1' then
 		WriteData_Reg <= Data_In;
 	else
-		--WriteData_Reg <= ALU_Out;
-		WriteData_Reg <= Result1;
+		WriteData_Reg <= Result_wrapper;
 	end if;
 end if; --Data Multiplexer
-
+end if; --LinkOut=0 end if - Don't let anything mess with PC write data
+--	
+--
 
 end process;
 
