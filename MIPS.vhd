@@ -264,8 +264,9 @@ combinational: process (PC_Four, PC_out, Branch, ALU_zero_wrapper, Jump, Instr, 
 
 begin
 
-WriteAddr_Reg<=(others=>'0');
-WriteData_Reg<=(others=>'0');
+--WriteAddr_Reg<=(others=>'0');
+--WriteData_Reg<=(others=>'0');
+
 Immediate_wrapper <= ImmControl;
 PC_Four <= PC_out + "100"; --Instruction incrementer
 Addr_Instr <= PC_out;
@@ -278,7 +279,7 @@ ALUControl_in_wrapper(5 downto 0) <= Instr(5 downto 0); --Combine ALUOp and Inst
 Operand1_wrapper <= ReadData1_Reg; --Direct input with no shenanigans
 input_16 <= Instr(15 downto 0); --Split up of instructions into their respective parts
 Data_Out <= ReadData2_Reg;
---Addr_Data <= ALU_Out;
+--Addr_Data <= ALU_Out;1
 Addr_Data <= Result_wrapper;
 
 if ALU_Jump_wrapper = '1' then

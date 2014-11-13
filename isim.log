@@ -14,3 +14,10 @@ at 0 ps, Instance /test_mips/uut/Wrapper1/ALU1/adder32/ : Warning: There is an '
 at 0 ps, Instance /test_mips/uut/RegFile1/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 0 ps, Instance /test_mips/uut/RegFile1/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 Finished circuit initialization process.
+# restart
+# run all
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /test_mips/uut/RegFile1/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 0 ps, Instance /test_mips/uut/RegFile1/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+Finished circuit initialization process.
+Stopped at time : 7942450 ns : File "C:/Users/Bob/Desktop/Lab3/test_mips.vhd" Line 91
