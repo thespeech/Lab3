@@ -91,8 +91,9 @@ ALU1 				: ALU port map
 						ALU_zero	=> ALU_zero,
 						Status	=> Status -- busy (multicycle only), overflow (add and sub), zero (sub)
 						--Debug		=> Debug
-						);						
+						);		
 						
+Result_wrapper <= Result1;
 
 process (ALUControl_in_wrapper, Immediate_wrapper)
 variable ALUOp	: STD_LOGIC_VECTOR(2 downto 0) := (others=>'0');
@@ -106,7 +107,6 @@ begin
 	Operand1 <= Operand1_wrapper;
 	Operand2 <= Operand2_wrapper;
 	ALU_zero_wrapper <= ALU_zero;
-	Result_wrapper <= Result1;
 	
 if immed = '0' then
 	case ALUOp is
