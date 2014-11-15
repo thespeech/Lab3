@@ -201,11 +201,11 @@
     <transform xil_pn:end_ts="1416065651" xil_pn:in_ck="1346166221313481282" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1414872035294022777" xil_pn:start_ts="1416065650">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="test_mips_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1415762654" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1415762654">
       <status xil_pn:value="SuccessfullyRun"/>

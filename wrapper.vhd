@@ -136,10 +136,6 @@ if immed = '0' then
 		when "100010"=> --sub
 			Control <= "000110";
 			ALU_Jump_wrapper <= '0';
-			
-		when "100110"=> --xor
-			control <= "000100";
-			ALU_Jump_wrapper <= '0';
 
 		when "011000"=> --mult
 			Control <= "010000";
@@ -174,12 +170,6 @@ if immed = '0' then
 			ALU_Jump_wrapper <= '0';
 		when "000100" => -- sllv
 			Control <= "000101";
-			ALU_Jump_wrapper <= '0';
-		when "000111" => --srav
-			Control <= "001001";
-			ALU_Jump_wrapper <= '0';
-		when "000110" => --srlv
-			Control <= "001101";
 			ALU_Jump_wrapper <= '0';
 		when "010000" => --mfhi
 			Control <= "011001";
