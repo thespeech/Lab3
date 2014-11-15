@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Lab3/shifter.vhd";
+static const char *ng0 = "C:/Users/Andre/Documents/GitHub/Lab3/shifter.vhd";
 extern char *IEEE_P_2592010699;
 
 
@@ -74,17 +74,17 @@ LAB0:    xsi_set_current_line(49, ng0);
     xsi_set_current_line(50, ng0);
     t1 = (t0 + 1032U);
     t2 = *((char **)t1);
-    t1 = (t0 + 5337);
+    t1 = (t0 + 5625);
     t4 = xsi_mem_cmp(t1, t2, 3U);
     if (t4 == 1)
         goto LAB3;
 
-LAB6:    t5 = (t0 + 5340);
+LAB6:    t5 = (t0 + 5628);
     t7 = xsi_mem_cmp(t5, t2, 3U);
     if (t7 == 1)
         goto LAB4;
 
-LAB7:    t8 = (t0 + 5343);
+LAB7:    t8 = (t0 + 5631);
     t10 = xsi_mem_cmp(t8, t2, 3U);
     if (t10 == 1)
         goto LAB4;
@@ -103,7 +103,7 @@ LAB2:    xsi_set_current_line(112, ng0);
     memcpy(t8, t2, 32U);
     xsi_driver_first_trans_fast_port(t1);
     xsi_set_current_line(113, ng0);
-    t1 = (t0 + 5379);
+    t1 = (t0 + 5667);
     t3 = (t0 + 3536);
     t5 = (t3 + 56U);
     t6 = *((char **)t5);
@@ -190,7 +190,7 @@ LAB23:    goto LAB2;
 LAB4:    xsi_set_current_line(76, ng0);
     t1 = (t0 + 1032U);
     t2 = *((char **)t1);
-    t1 = (t0 + 5376);
+    t1 = (t0 + 5664);
     t17 = 1;
     if (3U == 3U)
         goto LAB28;
@@ -322,7 +322,7 @@ LAB13:    xsi_set_current_line(59, ng0);
     t22 = (t21 * 1U);
     t23 = (0 + t22);
     t3 = (t5 + t23);
-    t6 = (t0 + 5346);
+    t6 = (t0 + 5634);
     t11 = ((IEEE_P_2592010699) + 4024);
     t12 = (t27 + 0U);
     t19 = (t12 + 0U);
@@ -363,7 +363,7 @@ LAB16:    xsi_set_current_line(63, ng0);
     t22 = (t21 * 1U);
     t23 = (0 + t22);
     t3 = (t5 + t23);
-    t6 = (t0 + 5348);
+    t6 = (t0 + 5636);
     t11 = ((IEEE_P_2592010699) + 4024);
     t12 = (t27 + 0U);
     t19 = (t12 + 0U);
@@ -404,7 +404,7 @@ LAB19:    xsi_set_current_line(67, ng0);
     t22 = (t21 * 1U);
     t23 = (0 + t22);
     t3 = (t5 + t23);
-    t6 = (t0 + 5352);
+    t6 = (t0 + 5640);
     t11 = ((IEEE_P_2592010699) + 4024);
     t12 = (t27 + 0U);
     t19 = (t12 + 0U);
@@ -445,7 +445,7 @@ LAB22:    xsi_set_current_line(70, ng0);
     t22 = (t21 * 1U);
     t23 = (0 + t22);
     t3 = (t5 + t23);
-    t6 = (t0 + 5360);
+    t6 = (t0 + 5648);
     t11 = ((IEEE_P_2592010699) + 4024);
     t12 = (t27 + 0U);
     t19 = (t12 + 0U);

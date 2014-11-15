@@ -156,7 +156,7 @@ BEGIN
 		wait for CLK_period*10;
 		
 		--lw $17, 10
-		Instr <= "10001100000100010000000000010000";
+		Instr <= "10001100000100010000000000001010";
 		Data_in <= x"0000000A";
 		wait for CLK_period*10;
 
@@ -200,8 +200,20 @@ BEGIN
 		Data_in <= (x"00000003");
 		wait for CLK_period*10;
 		
-		--
+		--lw $17, 14
+		Instr <= "10001100000100010000000000001110";
+		Data_in <= x"0000000A";
+		wait for CLK_period*10;
+
+		--lw $18, 5
+		Instr <= "10001100000100100000000000000101";
+		Data_in <= x"00000005";
+		wait for CLK_period*10;
 		
+		--mult $17, $18
+		Instr <= "00000010001100100000000000011000";
+		Data_in <= (others => '0');
+		wait for CLK_period*10;
    end process;
 
 END;

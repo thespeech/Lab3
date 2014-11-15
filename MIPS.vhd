@@ -25,7 +25,7 @@ entity MIPS is -- DO NOT modify the interface (entity)
 			Addr_Instr 		: out STD_LOGIC_VECTOR (31 downto 0);
 			Instr 			: in STD_LOGIC_VECTOR (31 downto 0);
 			Addr_Data		: out STD_LOGIC_VECTOR (31 downto 0);
-			Data_In			: in STD_LOGIC_VECTOR (31 downto 0); 
+			Data_In			: in STD_LOGIC_VECTOR (31 downto 0);
 			Data_Out			: out  STD_LOGIC_VECTOR (31 downto 0);
 			MemRead 			: out STD_LOGIC; 
 			MemWrite 		: out STD_LOGIC; 
@@ -75,15 +75,17 @@ end component;
 ----------------------------------------------------------------
 -- Wrapper
 ----------------------------------------------------------------
+
 component wrapper is
-		generic (width 	: integer := 32);
-	    Port ( 	CLK						: in	STD_LOGIC;
+	 generic (width 	: integer := 32);
+    Port ( 	CLK							: in	STD_LOGIC;
 				Operand1_wrapper			: in 	STD_LOGIC_VECTOR(width-1 downto 0);
 				Operand2_wrapper			: in	STD_LOGIC_VECTOR(width-1 downto 0);
 				ALUControl_in_wrapper	: in	STD_LOGIC_VECTOR(8 downto 0);
 				Result_wrapper				: out	STD_LOGIC_VECTOR(width-1 downto 0);
 				ALU_Zero_wrapper			: out	STD_LOGIC;
 				ALU_Jump_wrapper			: out STD_LOGIC;
+				ALU_Busy_wrapper			: out STD_LOGIC;
 				Immediate_wrapper			: in 	STD_LOGIC);
 end component;
 
@@ -148,6 +150,7 @@ end component;
 	 signal  Result_wrapper				: STD_LOGIC_VECTOR(32-1 downto 0);
 	 signal  ALU_Zero_wrapper			: STD_LOGIC;
 	 signal  ALU_Jump_wrapper			: STD_LOGIC;
+	 signal	ALU_Busy_wrapper			: STD_LOGIC;
 	 signal  Immediate_wrapper			: STD_LOGIC;
 	
 ----------------------------------------------------------------
@@ -227,6 +230,7 @@ Wrapper1			: wrapper port map
 				Result_wrapper	=> Result_wrapper,
 				ALU_Zero_wrapper => ALU_Zero_wrapper,
 				ALU_Jump_wrapper => ALU_Jump_wrapper,
+				ALU_Busy_wrapper => ALU_Busy_wrapper,
 				Immediate_wrapper	=> Immediate_wrapper);
 						
 ----------------------------------------------------------------
@@ -281,7 +285,8 @@ input_16 <= Instr(15 downto 0); --Split up of instructions into their respective
 Data_Out <= ReadData2_Reg; -- The presence or absence of this should not affect internal workings of MIPS
 Addr_Data <= Result_wrapper; --It is connected as it should be in the sche
 
-PC_in <= ReadData1_Reg when ALU_Jump_wrapper = '1' and Jump = '0' else -- Jump Register [JR], jump to address in register $s with a 1 instruction delay.
+PC_in <= PC_Out when ALU_Busy_wrapper = '1' else
+			ReadData1_Reg when ALU_Jump_wrapper = '1' and Jump = '0' else -- Jump Register [JR], jump to address in register $s with a 1 instruction delay.
 			PC_Four (31 downto 28) & Instr(25 downto 0) & "00" when Jump = '1' else -- Normal jump, BGEZ
 			PC_Four + (extend_32(29 downto 0) & "00") when Branch = '1' and ALU_zero_wrapper = '1' else -- BEQ
 			PC_Four; --Normal instruction increment
@@ -292,8 +297,8 @@ WriteAddr_Reg <= "11111" when Jump = '1' and LinkOut = '1' else --Register is se
 WriteData_Reg <= PC_out + "1000" when (Jump = '1' and LinkOut = '1') --JAL
 											  or (Branch = '1' and ALU_zero_wrapper = '1' and LinkOut = '1' and Instr(20) = '1') else --BGEZAL 
 				     Instr(15 downto 0) & x"0000" when InstrtoReg = '1' else --LUI
-					  Data_In when InstrtoReg = '0' and MemtoReg = '1' else -- For data coming into MIPS from memory
-					  Result_wrapper when InstrtoReg = '0' and MemtoReg = '0'; 
+					  Data_In when InstrtoReg = '0' and MemtoReg = '1' else --On general principle of MemtoReg = 1, apparently.
+					  Result_wrapper when InstrtoReg = '0' and MemtoReg = '0';
 					  
 Operand2_wrapper <= extend_32 when ALUSrc = '1' else
 					  ReadData2_Reg when ALUSrc = '0';

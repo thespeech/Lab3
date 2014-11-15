@@ -38,6 +38,7 @@ generic (width 	: integer := 32);
 				Result_wrapper				: out	STD_LOGIC_VECTOR(width-1 downto 0);
 				ALU_Zero_wrapper			: out	STD_LOGIC;
 				ALU_Jump_wrapper			: out STD_LOGIC;
+				ALU_Busy_wrapper			: out STD_LOGIC;
 				Immediate_wrapper			: in 	STD_LOGIC);
 end wrapper;
 
@@ -107,6 +108,7 @@ begin
 	Operand1 <= Operand1_wrapper;
 	Operand2 <= Operand2_wrapper;
 	ALU_zero_wrapper <= ALU_zero;
+	ALU_Busy_wrapper <= Status(2);
 	
 if immed = '0' then
 	case ALUOp is
