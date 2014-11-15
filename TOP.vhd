@@ -93,7 +93,7 @@ signal dec_DATA_MEM, dec_LED, dec_DIP : std_logic;  -- data memory address decod
 signal DIP_debounced : STD_LOGIC_VECTOR (15 downto 0):=(others=>'0'); -- DIP switch debouncing
 signal CLK : std_logic; --divided (l0ow freq) clock
 
-----------------------------------------------------------------
+---------------	-------------------------------------------------
 -- Memory type declaration
 ----------------------------------------------------------------
 type MEM_256x32 is array (0 to 255) of std_logic_vector (31 downto 0); -- 256 words

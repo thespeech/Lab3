@@ -1,1 +1,4 @@
+vhdl work "shifter.vhd"
+vhdl work "adder.vhd"
+vhdl work "alu.vhd"
 vhdl work "wrapper.vhd"

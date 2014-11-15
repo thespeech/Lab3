@@ -151,9 +151,57 @@ BEGIN
 		wait for CLK_period*10;
 		
 		--and $5, $5, $s3
-		Instr <= "000000 00101 00101 00011 
+		Instr <= "00000010100101001010100000100100";
+		Data_in <= (others => '0');
+		wait for CLK_period*10;
 		
-      wait;
+		--lw $17, 10
+		Instr <= "10001100000100010000000000010000";
+		Data_in <= x"0000000A";
+		wait for CLK_period*10;
+
+		--lw $18, 5
+		Instr <= "10001100000100100000000000000101";
+		Data_in <= x"00000005";
+		wait for CLK_period*10;
+		
+		--or $19, $17, $18
+		Instr <= "00000010001100101001100000100101";
+		Data_in <= (others => '0');
+		wait for CLK_period*10;
+		
+		--nor $20, $17, $18
+		Instr <= "00000010001100101010000000100111";
+		Data_in <= (others => '0');
+		wait for CLK_period*10;
+		
+		-- ori $19, $17, 1
+		Instr <= "00110110001100110000000000000001";
+		Data_in <= (x"00000001");
+		wait for CLK_period*10;
+		
+		-- xor $20, $17, $18
+		Instr <= "00000010001100101010000000100110";
+		Data_in <= (others => '0');
+		wait for CLK_period*10;
+		
+		--sll $19, $19, 2
+		Instr <= "00000000000100111001100010000000";
+		Data_in <= (x"00000002");
+		wait for CLK_period*10;
+		
+		--sra $19, $19, 2
+		Instr <= "00000000000100111001100010000011";
+		Data_in <= (x"00000002");
+		wait for CLK_period*10;
+		
+		--srl $19, $19, 3
+		Instr <= "00000000000100111001100011000010";
+		Data_in <= (x"00000003");
+		wait for CLK_period*10;
+		
+		--
+		
    end process;
 
 END;

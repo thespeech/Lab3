@@ -25,7 +25,7 @@ entity MIPS is -- DO NOT modify the interface (entity)
 			Addr_Instr 		: out STD_LOGIC_VECTOR (31 downto 0);
 			Instr 			: in STD_LOGIC_VECTOR (31 downto 0);
 			Addr_Data		: out STD_LOGIC_VECTOR (31 downto 0);
-			Data_In			: in STD_LOGIC_VECTOR (31 downto 0);
+			Data_In			: in STD_LOGIC_VECTOR (31 downto 0); 
 			Data_Out			: out  STD_LOGIC_VECTOR (31 downto 0);
 			MemRead 			: out STD_LOGIC; 
 			MemWrite 		: out STD_LOGIC; 
@@ -292,8 +292,8 @@ WriteAddr_Reg <= "11111" when Jump = '1' and LinkOut = '1' else --Register is se
 WriteData_Reg <= PC_out + "1000" when (Jump = '1' and LinkOut = '1') --JAL
 											  or (Branch = '1' and ALU_zero_wrapper = '1' and LinkOut = '1' and Instr(20) = '1') else --BGEZAL 
 				     Instr(15 downto 0) & x"0000" when InstrtoReg = '1' else --LUI
-					  Data_In when InstrtoReg = '0' and MemtoReg = '1' else --On general principle of MemtoReg = 1, apparently.
-					  Result_wrapper when InstrtoReg = '0' and MemtoReg = '0';
+					  Data_In when InstrtoReg = '0' and MemtoReg = '1' else -- For data coming into MIPS from memory
+					  Result_wrapper when InstrtoReg = '0' and MemtoReg = '0'; 
 					  
 Operand2_wrapper <= extend_32 when ALUSrc = '1' else
 					  ReadData2_Reg when ALUSrc = '0';

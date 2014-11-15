@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Oct 31 14:22:42 2014
+// Written by: Map P.20131013 on Sat Nov 15 19:38:41 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -37,24 +37,8 @@ COMP "LED<6>" LOCATE = SITE "U7" LEVEL 1;
 COMP "LED<7>" LOCATE = SITE "U6" LEVEL 1;
 COMP "LED<8>" LOCATE = SITE "V4" LEVEL 1;
 COMP "LED<9>" LOCATE = SITE "U3" LEVEL 1;
-TIMEGRP sys_clk_pin = BEL "CLK" BEL "CLK_DIV_PROCESS.clk_counter_0" BEL
-        "CLK_DIV_PROCESS.clk_counter_1" BEL "CLK_DIV_PROCESS.clk_counter_2"
-        BEL "CLK_DIV_PROCESS.clk_counter_3" BEL
-        "CLK_DIV_PROCESS.clk_counter_4" BEL "CLK_DIV_PROCESS.clk_counter_5"
-        BEL "CLK_DIV_PROCESS.clk_counter_6" BEL
-        "CLK_DIV_PROCESS.clk_counter_7" BEL "CLK_DIV_PROCESS.clk_counter_8"
-        BEL "CLK_DIV_PROCESS.clk_counter_9" BEL
-        "CLK_DIV_PROCESS.clk_counter_10" BEL "CLK_DIV_PROCESS.clk_counter_11"
-        BEL "CLK_DIV_PROCESS.clk_counter_12" BEL
-        "CLK_DIV_PROCESS.clk_counter_13" BEL "CLK_DIV_PROCESS.clk_counter_14"
-        BEL "CLK_DIV_PROCESS.clk_counter_15" BEL
-        "CLK_DIV_PROCESS.clk_counter_16" BEL "CLK_DIV_PROCESS.clk_counter_17"
-        BEL "CLK_DIV_PROCESS.clk_counter_18" BEL
-        "CLK_DIV_PROCESS.clk_counter_19" BEL "CLK_DIV_PROCESS.clk_counter_20"
-        BEL "CLK_DIV_PROCESS.clk_counter_21" BEL
-        "CLK_DIV_PROCESS.clk_counter_22" BEL "CLK_DIV_PROCESS.clk_counter_23"
-        BEL "CLK_DIV_PROCESS.clk_counter_24" BEL
-        "CLK_DIV_PROCESS.clk_counter_25" BEL "CLK_undiv_BUFGP/BUFG";
+TIMEGRP sys_clk_pin = BEL "CLK_DIV_PROCESS.clk_counter_0" BEL
+        "CLK_DIV_PROCESS.clk_counter_1" BEL "CLK_undiv_BUFGP/BUFG";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 SCHEMATIC END;
 
