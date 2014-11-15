@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: TOP.prj
@@ -105,34 +105,34 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\shifter.vhd" into library work
+Parsing VHDL file "C:\Lab3\shifter.vhd" into library work
 Parsing entity <shifter>.
 Parsing architecture <Beh_shift> of entity <shifter>.
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\adder.vhd" into library work
+Parsing VHDL file "C:\Lab3\adder.vhd" into library work
 Parsing entity <adder>.
 Parsing architecture <adder_arch> of entity <adder>.
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\alu.vhd" into library work
+Parsing VHDL file "C:\Lab3\alu.vhd" into library work
 Parsing entity <alu>.
 Parsing architecture <Behavioral> of entity <alu>.
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\wrapper.vhd" into library work
+Parsing VHDL file "C:\Lab3\wrapper.vhd" into library work
 Parsing entity <wrapper>.
 Parsing architecture <wrapper_arch> of entity <wrapper>.
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\Sign_extension.vhd" into library work
+Parsing VHDL file "C:\Lab3\Sign_extension.vhd" into library work
 Parsing entity <Sign_extension>.
 Parsing architecture <Behavioral> of entity <sign_extension>.
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\RegFile.vhd" into library work
+Parsing VHDL file "C:\Lab3\RegFile.vhd" into library work
 Parsing entity <RegFile>.
 Parsing architecture <arch_RegFile> of entity <regfile>.
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\PC.vhd" into library work
+Parsing VHDL file "C:\Lab3\PC.vhd" into library work
 Parsing entity <PC>.
 Parsing architecture <arch_PC> of entity <pc>.
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\ControlUnit.vhd" into library work
+Parsing VHDL file "C:\Lab3\ControlUnit.vhd" into library work
 Parsing entity <ControlUnit>.
 Parsing architecture <arch_ControlUnit> of entity <controlunit>.
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\MIPS.vhd" into library work
+Parsing VHDL file "C:\Lab3\MIPS.vhd" into library work
 Parsing entity <MIPS>.
 Parsing architecture <arch_MIPS> of entity <mips>.
-Parsing VHDL file "C:\Users\Bob\Desktop\Lab3\TOP.vhd" into library work
+Parsing VHDL file "C:\Lab3\TOP.vhd" into library work
 Parsing entity <TOP>.
 Parsing architecture <arch_TOP> of entity <top>.
 
@@ -151,15 +151,14 @@ Elaborating entity <ControlUnit> (architecture <arch_ControlUnit>) from library 
 Elaborating entity <wrapper> (architecture <wrapper_arch>) with generics from library <work>.
 
 Elaborating entity <alu> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:871 - "C:\Users\Bob\Desktop\Lab3\alu.vhd" Line 90: Using initial value "11111111111111111111111111111111" for sub_vec since it is never assigned
+WARNING:HDLCompiler:871 - "C:\Lab3\alu.vhd" Line 90: Using initial value "11111111111111111111111111111111" for sub_vec since it is never assigned
 
 Elaborating entity <adder> (architecture <adder_arch>) with generics from library <work>.
 
 Elaborating entity <shifter> (architecture <Beh_shift>) from library <work>.
-WARNING:HDLCompiler:92 - "C:\Users\Bob\Desktop\Lab3\wrapper.vhd" Line 106: operand1_wrapper should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\Bob\Desktop\Lab3\wrapper.vhd" Line 107: operand2_wrapper should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\Bob\Desktop\Lab3\wrapper.vhd" Line 108: alu_zero should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\Users\Bob\Desktop\Lab3\wrapper.vhd" Line 109: result1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Lab3\wrapper.vhd" Line 107: operand1_wrapper should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Lab3\wrapper.vhd" Line 108: operand2_wrapper should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Lab3\wrapper.vhd" Line 109: alu_zero should be on the sensitivity list of the process
 
 Elaborating entity <RegFile> (architecture <arch_RegFile>) from library <work>.
 
@@ -170,7 +169,7 @@ Elaborating entity <Sign_extension> (architecture <Behavioral>) from library <wo
 =========================================================================
 
 Synthesizing Unit <TOP>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\TOP.vhd".
+    Related source file is "C:\Lab3\TOP.vhd".
     Found 256x32-bit single-port RAM <Mram_DATA_MEM> for signal <DATA_MEM>.
     Found 1-bit register for signal <LED<6>>.
     Found 1-bit register for signal <LED<5>>.
@@ -195,16 +194,10 @@ Synthesizing Unit <TOP>.
 Unit <TOP> synthesized.
 
 Synthesizing Unit <MIPS>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\MIPS.vhd".
-INFO:Xst:3210 - "C:\Users\Bob\Desktop\Lab3\MIPS.vhd" line 221: Output port <ALU_Jump_wrapper> of the instance <Wrapper1> is unconnected or connected to loadless signal.
-    Found 32-bit adder for signal <PC_Four> created at line 271.
-    Found 32-bit adder for signal <PC_out[31]_GND_6_o_add_5_OUT> created at line 299.
-    Found 32-bit adder for signal <PC_Four[31]_extend_32[29]_add_8_OUT> created at line 301.
-WARNING:Xst:737 - Found 1-bit latch for signal <WriteAddr_Reg<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <WriteAddr_Reg<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <WriteAddr_Reg<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <WriteAddr_Reg<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <WriteData_Reg<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Related source file is "C:\Lab3\MIPS.vhd".
+    Found 32-bit adder for signal <PC_Four> created at line 272.
+    Found 32-bit adder for signal <PC_Four[31]_extend_32[29]_add_11_OUT> created at line 286.
+    Found 32-bit adder for signal <PC_out[31]_GND_6_o_add_20_OUT> created at line 292.
 WARNING:Xst:737 - Found 1-bit latch for signal <WriteData_Reg<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <WriteData_Reg<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <WriteData_Reg<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -236,37 +229,32 @@ WARNING:Xst:737 - Found 1-bit latch for signal <WriteData_Reg<3>>. Latches may b
 WARNING:Xst:737 - Found 1-bit latch for signal <WriteData_Reg<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <WriteData_Reg<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <WriteData_Reg<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <WriteAddr_Reg<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <WriteData_Reg<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
 	inferred   3 Adder/Subtractor(s).
-	inferred  37 Latch(s).
-	inferred 153 Multiplexer(s).
+	inferred  32 Latch(s).
+	inferred 102 Multiplexer(s).
 Unit <MIPS> synthesized.
 
 Synthesizing Unit <PC>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\PC.vhd".
+    Related source file is "C:\Lab3\PC.vhd".
     Found 32-bit register for signal <PC_out>.
     Summary:
 	inferred  32 D-type flip-flop(s).
 Unit <PC> synthesized.
 
 Synthesizing Unit <ControlUnit>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\ControlUnit.vhd".
-    Found 32x1-bit Read Only RAM for signal <Jump>
-    Found 32x1-bit Read Only RAM for signal <LinkOut>
-    Found 64x13-bit Read Only RAM for signal <_n0080>
-WARNING:Xst:737 - Found 1-bit latch for signal <MemWrite>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Related source file is "C:\Lab3\ControlUnit.vhd".
     Summary:
-	inferred   3 RAM(s).
-	inferred   1 Latch(s).
+	inferred   2 Multiplexer(s).
 Unit <ControlUnit> synthesized.
 
 Synthesizing Unit <wrapper>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\wrapper.vhd".
+    Related source file is "C:\Lab3\wrapper.vhd".
         width = 32
-INFO:Xst:3210 - "C:\Users\Bob\Desktop\Lab3\wrapper.vhd" line 83: Output port <Result2> of the instance <ALU1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Bob\Desktop\Lab3\wrapper.vhd" line 83: Output port <Status> of the instance <ALU1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Bob\Desktop\Lab3\wrapper.vhd" line 83: Output port <Debug> of the instance <ALU1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Lab3\wrapper.vhd" line 83: Output port <Result2> of the instance <ALU1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Lab3\wrapper.vhd" line 83: Output port <Status> of the instance <ALU1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Lab3\wrapper.vhd" line 83: Output port <Debug> of the instance <ALU1> is unconnected or connected to loadless signal.
     Found 64x3-bit Read Only RAM for signal <_n0254>
 WARNING:Xst:737 - Found 1-bit latch for signal <Control<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <Control<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -282,10 +270,10 @@ WARNING:Xst:737 - Found 1-bit latch for signal <Control<5>>. Latches may be gene
 Unit <wrapper> synthesized.
 
 Synthesizing Unit <alu>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\alu.vhd".
+    Related source file is "C:\Lab3\alu.vhd".
         width = 32
-INFO:Xst:3210 - "C:\Users\Bob\Desktop\Lab3\alu.vhd" line 100: Output port <C_out> of the instance <adder32> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Bob\Desktop\Lab3\alu.vhd" line 102: Output port <Result2> of the instance <shifter32> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Lab3\alu.vhd" line 100: Output port <C_out> of the instance <adder32> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Lab3\alu.vhd" line 102: Output port <Result2> of the instance <shifter32> is unconnected or connected to loadless signal.
     Found 1-bit register for signal <state>.
     Found 16-bit register for signal <MULTI_CYCLE_PROCESS.count>.
     Found 1-bit register for signal <done>.
@@ -303,23 +291,23 @@ INFO:Xst:3210 - "C:\Users\Bob\Desktop\Lab3\alu.vhd" line 102: Output port <Resul
     Found 32-bit register for signal <MULTI_CYCLE_PROCESS.remainder>.
     Found 33-bit register for signal <MULTI_CYCLE_PROCESS.quotient_unsigned>.
     Found 33-bit register for signal <MULTI_CYCLE_PROCESS.remainder_unsigned>.
-    Found 32-bit adder for signal <Operand1[31]_GND_11_o_add_37_OUT> created at line 305.
-    Found 32-bit adder for signal <Operand2[31]_GND_11_o_add_40_OUT> created at line 308.
-    Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.multiplicand[31]_GND_11_o_add_47_OUT> created at line 321.
-    Found 32-bit adder for signal <GND_11_o_GND_11_o_add_50_OUT> created at line 324.
+    Found 32-bit adder for signal <Operand1[31]_GND_10_o_add_37_OUT> created at line 305.
+    Found 32-bit adder for signal <Operand2[31]_GND_10_o_add_40_OUT> created at line 308.
+    Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.multiplicand[31]_GND_10_o_add_47_OUT> created at line 321.
+    Found 32-bit adder for signal <GND_10_o_GND_10_o_add_50_OUT> created at line 324.
     Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.multiplicand[31]_MULTI_CYCLE_PROCESS.multiplicand_original_unsigned[31]_add_68_OUT> created at line 346.
     Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.multiplicand[31]_MULTI_CYCLE_PROCESS.multiplier_original[31]_add_72_OUT> created at line 360.
     Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.remainder[30]_MULTI_CYCLE_PROCESS.divisor_original_unsigned[31]_add_96_OUT> created at line 399.
     Found 32-bit adder for signal <n0473> created at line 404.
-    Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.remainder[30]_PWR_11_o_add_99_OUT> created at line 404.
+    Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.remainder[30]_PWR_10_o_add_99_OUT> created at line 404.
     Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.divisor_original_unsigned[31]_MULTI_CYCLE_PROCESS.remainder[30]_add_103_OUT> created at line 419.
-    Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.quotient[30]_GND_11_o_add_106_OUT> created at line 422.
-    Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.remainder[30]_GND_11_o_add_109_OUT> created at line 425.
-    Found 33-bit adder for signal <MULTI_CYCLE_PROCESS.remainder_unsigned[31]_GND_11_o_add_128_OUT> created at line 460.
+    Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.quotient[30]_GND_10_o_add_106_OUT> created at line 422.
+    Found 32-bit adder for signal <MULTI_CYCLE_PROCESS.remainder[30]_GND_10_o_add_109_OUT> created at line 425.
+    Found 33-bit adder for signal <MULTI_CYCLE_PROCESS.remainder_unsigned[31]_GND_10_o_add_128_OUT> created at line 460.
     Found 33-bit adder for signal <n0488> created at line 465.
-    Found 33-bit adder for signal <MULTI_CYCLE_PROCESS.remainder_unsigned[31]_PWR_11_o_add_131_OUT> created at line 465.
-    Found 16-bit adder for signal <MULTI_CYCLE_PROCESS.count[15]_GND_11_o_add_133_OUT> created at line 476.
-    Found 33-bit adder for signal <GND_11_o_MULTI_CYCLE_PROCESS.remainder_unsigned[31]_add_135_OUT> created at line 480.
+    Found 33-bit adder for signal <MULTI_CYCLE_PROCESS.remainder_unsigned[31]_PWR_10_o_add_131_OUT> created at line 465.
+    Found 16-bit adder for signal <MULTI_CYCLE_PROCESS.count[15]_GND_10_o_add_133_OUT> created at line 476.
+    Found 33-bit adder for signal <GND_10_o_MULTI_CYCLE_PROCESS.remainder_unsigned[31]_add_135_OUT> created at line 480.
 WARNING:Xst:737 - Found 1-bit latch for signal <hi_reg<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <hi_reg<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <hi_reg<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -392,7 +380,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <hi_reg<31>>. Latches may be gene
 Unit <alu> synthesized.
 
 Synthesizing Unit <adder>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\adder.vhd".
+    Related source file is "C:\Lab3\adder.vhd".
         width = 32
     Found 33-bit adder for signal <n0020> created at line 39.
     Found 33-bit adder for signal <S_wider> created at line 39.
@@ -401,20 +389,20 @@ Synthesizing Unit <adder>.
 Unit <adder> synthesized.
 
 Synthesizing Unit <shifter>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\shifter.vhd".
+    Related source file is "C:\Lab3\shifter.vhd".
     Summary:
 	inferred  17 Multiplexer(s).
 Unit <shifter> synthesized.
 
 Synthesizing Unit <RegFile>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\RegFile.vhd".
+    Related source file is "C:\Lab3\RegFile.vhd".
     Found 32x32-bit dual-port RAM <Mram_register_array> for signal <register_array>.
     Summary:
 	inferred   2 RAM(s).
 Unit <RegFile> synthesized.
 
 Synthesizing Unit <Sign_extension>.
-    Related source file is "C:\Users\Bob\Desktop\Lab3\Sign_extension.vhd".
+    Related source file is "C:\Lab3\Sign_extension.vhd".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <Sign_extension> synthesized.
@@ -423,12 +411,10 @@ Unit <Sign_extension> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 8
+# RAMs                                                 : 5
  256x32-bit single-port RAM                            : 1
  256x32-bit single-port Read Only RAM                  : 1
- 32x1-bit single-port Read Only RAM                    : 2
  32x32-bit dual-port RAM                               : 2
- 64x13-bit single-port Read Only RAM                   : 1
  64x3-bit single-port Read Only RAM                    : 1
 # Adders/Subtractors                                   : 21
  16-bit adder                                          : 1
@@ -441,16 +427,17 @@ Macro Statistics
  2-bit register                                        : 1
  32-bit register                                       : 13
  33-bit register                                       : 2
-# Latches                                              : 109
- 1-bit latch                                           : 109
+# Latches                                              : 103
+ 1-bit latch                                           : 103
 # Comparators                                          : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 315
- 1-bit 2-to-1 multiplexer                              : 214
+# Multiplexers                                         : 266
+ 1-bit 2-to-1 multiplexer                              : 161
  16-bit 2-to-1 multiplexer                             : 3
- 3-bit 2-to-1 multiplexer                              : 4
+ 3-bit 2-to-1 multiplexer                              : 6
  32-bit 2-to-1 multiplexer                             : 90
  33-bit 2-to-1 multiplexer                             : 4
+ 5-bit 2-to-1 multiplexer                              : 2
 # Xors                                                 : 16
  1-bit xor2                                            : 7
  32-bit xor2                                           : 9
@@ -556,42 +543,6 @@ WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.divisor_original_28> of sequential 
 WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.divisor_original_29> of sequential type is unconnected in block <ALU1>.
 WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.divisor_original_30> of sequential type is unconnected in block <ALU1>.
 
-Synthesizing (advanced) Unit <ControlUnit>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_Jump> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 32-word x 1-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <opcode<5:1>>   |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to signal <Jump>          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0080> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 64-word x 13-bit                    |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <opcode>        |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_LinkOut> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 32-word x 1-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <(opcode<5:2>,opcode<0>)> |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to signal <LinkOut>       |          |
-    -----------------------------------------------------------------------
-Unit <ControlUnit> synthesized (advanced).
-
 Synthesizing (advanced) Unit <RegFile>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_register_array> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
@@ -599,7 +550,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_register_array> will be implemented 
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     clkA           | connected to signal <CLK>           | fall     |
+    |     clkA           | connected to signal <CLK>           | rise     |
     |     weA            | connected to signal <RegWrite>      | high     |
     |     addrA          | connected to signal <WriteAddr_Reg> |          |
     |     diA            | connected to signal <WriteData_Reg> |          |
@@ -615,7 +566,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_register_array1> will be implemented
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     clkA           | connected to signal <CLK>           | fall     |
+    |     clkA           | connected to signal <CLK>           | rise     |
     |     weA            | connected to signal <RegWrite>      | high     |
     |     addrA          | connected to signal <WriteAddr_Reg> |          |
     |     diA            | connected to signal <WriteData_Reg> |          |
@@ -765,12 +716,10 @@ WARNING:Xst:2677 - Node <MULTI_CYCLE_PROCESS.divisor_original_30> of sequential 
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 8
+# RAMs                                                 : 5
  256x32-bit single-port distributed RAM                : 1
  256x32-bit single-port distributed Read Only RAM      : 1
- 32x1-bit single-port distributed Read Only RAM        : 2
  32x32-bit dual-port distributed RAM                   : 2
- 64x13-bit single-port distributed Read Only RAM       : 1
  64x3-bit single-port distributed Read Only RAM        : 1
 # Adders/Subtractors                                   : 20
  16-bit adder                                          : 1
@@ -784,12 +733,13 @@ Macro Statistics
  Flip-Flops                                            : 416
 # Comparators                                          : 2
  32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 437
- 1-bit 2-to-1 multiplexer                              : 340
+# Multiplexers                                         : 357
+ 1-bit 2-to-1 multiplexer                              : 255
  16-bit 2-to-1 multiplexer                             : 3
- 3-bit 2-to-1 multiplexer                              : 4
- 32-bit 2-to-1 multiplexer                             : 87
+ 3-bit 2-to-1 multiplexer                              : 6
+ 32-bit 2-to-1 multiplexer                             : 88
  33-bit 2-to-1 multiplexer                             : 3
+ 5-bit 2-to-1 multiplexer                              : 2
 # Xors                                                 : 16
  1-bit xor2                                            : 7
  32-bit xor2                                           : 9
@@ -807,15 +757,44 @@ Optimizing unit <PC> ...
 Optimizing unit <TOP> ...
 
 Optimizing unit <MIPS> ...
+WARNING:Xst:1294 - Latch <WriteData_Reg_30> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_29> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_28> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_27> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_24> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_26> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_25> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_23> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_22> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_21> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_20> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_19> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_18> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_15> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_17> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_16> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_14> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_13> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_12> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_11> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_10> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_9> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_6> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_8> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_7> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_5> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_4> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_3> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_2> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_1> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_0> is equivalent to a wire in block <MIPS>.
+WARNING:Xst:1294 - Latch <WriteData_Reg_31> is equivalent to a wire in block <MIPS>.
 
 Optimizing unit <wrapper> ...
 
 Optimizing unit <alu> ...
 
 Optimizing unit <shifter> ...
-WARNING:Xst:1293 - FF/Latch <MIPS1/PC1/PC_out_1> has a constant value of 0 in block <TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <MIPS1/PC1/PC_out_0> has a constant value of 0 in block <TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <MIPS1/Wrapper1/ALU_Jump_wrapper> of sequential type is unconnected in block <TOP>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -827,8 +806,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 415
- Flip-Flops                                            : 415
+# Registers                                            : 417
+ Flip-Flops                                            : 417
 
 =========================================================================
 
@@ -851,32 +830,32 @@ Top Level Output File Name         : TOP.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3280
+# BELS                             : 3490
 #      GND                         : 1
-#      INV                         : 160
+#      INV                         : 159
 #      LUT1                        : 77
-#      LUT2                        : 116
-#      LUT3                        : 250
-#      LUT4                        : 195
-#      LUT5                        : 324
-#      LUT6                        : 958
+#      LUT2                        : 127
+#      LUT3                        : 287
+#      LUT4                        : 206
+#      LUT5                        : 437
+#      LUT6                        : 963
 #      MUXCY                       : 577
-#      MUXF7                       : 33
+#      MUXF7                       : 67
 #      VCC                         : 1
 #      XORCY                       : 588
-# FlipFlops/Latches                : 522
+# FlipFlops/Latches                : 487
 #      FD                          : 3
 #      FDE                         : 202
-#      FDR                         : 46
+#      FDR                         : 48
 #      FDRE                        : 163
 #      FDS                         : 1
-#      LD                          : 107
+#      LD                          : 70
 # RAMS                             : 46
 #      RAM256X1S                   : 32
 #      RAM32M                      : 10
 #      RAM32X1D                    : 4
-# Clock Buffers                    : 4
-#      BUFG                        : 3
+# Clock Buffers                    : 3
+#      BUFG                        : 2
 #      BUFGP                       : 1
 # IO Buffers                       : 33
 #      IBUF                        : 17
@@ -889,25 +868,25 @@ Selected Device : 7a100tcsg324-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             522  out of  126800     0%  
- Number of Slice LUTs:                 2256  out of  63400     3%  
-    Number used as Logic:              2080  out of  63400     3%  
+ Number of Slice Registers:             487  out of  126800     0%  
+ Number of Slice LUTs:                 2432  out of  63400     3%  
+    Number used as Logic:              2256  out of  63400     3%  
     Number used as Memory:              176  out of  19000     0%  
        Number used as RAM:              176
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2326
-   Number with an unused Flip Flop:    1804  out of   2326    77%  
-   Number with an unused LUT:            70  out of   2326     3%  
-   Number of fully used LUT-FF pairs:   452  out of   2326    19%  
-   Number of unique control sets:        21
+ Number of LUT Flip Flop pairs used:   2526
+   Number with an unused Flip Flop:    2039  out of   2526    80%  
+   Number with an unused LUT:            94  out of   2526     3%  
+   Number of fully used LUT-FF pairs:   393  out of   2526    15%  
+   Number of unique control sets:        20
 
 IO Utilization: 
  Number of IOs:                          34
  Number of bonded IOBs:                  34  out of    210    16%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                4  out of     32    12%  
+ Number of BUFG/BUFGCTRLs:                3  out of     32     9%  
 
 ---------------------------
 Partition Resource Summary:
@@ -927,17 +906,16 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
--------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+-------+
-Clock Signal                                                                                                                                     | Clock buffer(FF name)                 | Load  |
--------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+-------+
-CLK_DIV_PROCESS.clk_counter_1                                                                                                                    | BUFG                                  | 459   |
-CLK_undiv                                                                                                                                        | BUFGP                                 | 2     |
-MIPS1/ControlUnit1/_n0080<12>(MIPS1_ControlUnit1/Mram__n0080121:O)                                                                               | NONE(*)(MIPS1/ControlUnit1/MemWrite)  | 1     |
-MIPS1/LinkOut_Branch_OR_82_o(MIPS1/LinkOut_Branch_OR_82_o1:O)                                                                                    | BUFG(*)(MIPS1/WriteData_Reg_31)       | 37    |
-MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o(MIPS1/Wrapper1/Mmux_Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o11:O)| NONE(*)(MIPS1/Wrapper1/Control_1)     | 5     |
-MIPS1/Wrapper1/ALU1/Mmux_Result11011(MIPS1/Wrapper1/ALU1/Mmux_Result110111:O)                                                                    | BUFG(*)(MIPS1/Wrapper1/ALU1/hi_reg_31)| 64    |
--------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------+-------+
-(*) These 4 clock signal(s) are generated by combinatorial logic,
+-------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+-------+
+Clock Signal                                                                                                                               | Clock buffer(FF name)                   | Load  |
+-------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+-------+
+CLK_DIV_PROCESS.clk_counter_1                                                                                                              | BUFG                                    | 461   |
+CLK_undiv                                                                                                                                  | BUFGP                                   | 2     |
+MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o(MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o1:O)| NONE(*)(MIPS1/Wrapper1/Control_1)       | 5     |
+MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_418_o(MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_418_o1:O)| NONE(*)(MIPS1/Wrapper1/ALU_Jump_wrapper)| 1     |
+MIPS1/Wrapper1/ALU1/Mmux_Result11011(MIPS1/Wrapper1/ALU1/Mmux_Result110111:O)                                                              | BUFG(*)(MIPS1/Wrapper1/ALU1/hi_reg_31)  | 64    |
+-------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -950,8 +928,8 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 18.003ns (Maximum Frequency: 55.546MHz)
-   Minimum input arrival time before clock: 1.217ns
+   Minimum period: 11.552ns (Maximum Frequency: 86.562MHz)
+   Minimum input arrival time before clock: 2.437ns
    Maximum output required time after clock: 1.028ns
    Maximum combinational path delay: No path found
 
@@ -961,32 +939,37 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_DIV_PROCESS.clk_counter_1'
-  Clock period: 18.003ns (frequency: 55.546MHz)
-  Total number of paths / destination ports: 153670561 / 1310
+  Clock period: 11.552ns (frequency: 86.562MHz)
+  Total number of paths / destination ports: 499907387 / 1446
 -------------------------------------------------------------------------
-Delay:               9.002ns (Levels of Logic = 8)
-  Source:            MIPS1/RegFile1/Mram_register_array11 (RAM)
-  Destination:       Mram_DATA_MEM2 (RAM)
-  Source Clock:      CLK_DIV_PROCESS.clk_counter_1 falling
+Delay:               11.552ns (Levels of Logic = 13)
+  Source:            MIPS1/PC1/PC_out_0 (FF)
+  Destination:       MIPS1/RegFile1/Mram_register_array4 (RAM)
+  Source Clock:      CLK_DIV_PROCESS.clk_counter_1 rising
   Destination Clock: CLK_DIV_PROCESS.clk_counter_1 rising
 
-  Data Path: MIPS1/RegFile1/Mram_register_array11 to Mram_DATA_MEM2
+  Data Path: MIPS1/PC1/PC_out_0 to MIPS1/RegFile1/Mram_register_array4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAM32M:WCLK->DOA1    12   1.640   0.493  MIPS1/RegFile1/Mram_register_array11 (Data_Out<1>)
-     LUT4:I3->O           98   0.124   1.106  MIPS1/Mmux_Operand2_wrapper121 (MIPS1/Operand2_wrapper<1>)
-     LUT6:I0->O            1   0.124   0.716  MIPS1/Wrapper1/ALU1/Mmux_Result1618 (MIPS1/Wrapper1/ALU1/Mmux_Result1617)
-     LUT6:I3->O            1   0.124   0.421  MIPS1/Wrapper1/ALU1/Mmux_Result1619 (MIPS1/Wrapper1/ALU1/Mmux_Result1618)
-     LUT6:I5->O            1   0.124   0.421  MIPS1/Wrapper1/ALU1/Mmux_Result16111 (MIPS1/Wrapper1/ALU1/Mmux_Result16110)
-     LUT6:I5->O            4   0.124   0.796  MIPS1/Wrapper1/ALU1/Mmux_Result16113 (Addr_Data<22>)
-     LUT6:I2->O            2   0.124   0.722  GND_5_o_Addr_Data[31]_LessThan_1_o21 (GND_5_o_Addr_Data[31]_LessThan_1_o2)
-     LUT6:I3->O            1   0.124   0.000  MemWrite_dec_DATA_MEM_AND_214_o1_cy_lut (MemWrite_dec_DATA_MEM_AND_214_o1_cy_lut)
-     MUXCY:S->O           32   0.777   0.552  MemWrite_dec_DATA_MEM_AND_214_o1_cy_cy (MemWrite_dec_DATA_MEM_AND_214_o)
-     RAM256X1S:WE              0.490          Mram_DATA_MEM2
+     FDR:C->Q              6   0.478   0.972  MIPS1/PC1/PC_out_0 (MIPS1/PC1/PC_out_0)
+     LUT6:I0->O            6   0.124   0.952  Addr_Instr[31]_GND_5_o_equal_8_o<31>1_1 (Addr_Instr[31]_GND_5_o_equal_8_o<31>11)
+     LUT5:I0->O           19   0.124   0.518  Mmux_Instr111 (Instr<19>)
+     RAM32M:ADDRA3->DOA1   12   0.345   0.493  MIPS1/RegFile1/Mram_register_array11 (Data_Out<1>)
+     LUT4:I3->O           82   0.124   0.699  MIPS1/Mmux_Operand2_wrapper121 (MIPS1/Operand2_wrapper<1>)
+     LUT6:I4->O            3   0.124   0.550  MIPS1/Wrapper1/ALU1/shifter32/OP2<1>321 (MIPS1/Wrapper1/ALU1/shifter32/OP2<1>_mmx_out38)
+     LUT6:I4->O            1   0.124   0.716  MIPS1/Wrapper1/ALU1/Mmux_Result1458 (MIPS1/Wrapper1/ALU1/Mmux_Result1457)
+     LUT6:I3->O            1   0.124   0.421  MIPS1/Wrapper1/ALU1/Mmux_Result14510 (MIPS1/Wrapper1/ALU1/Mmux_Result1459)
+     LUT6:I5->O            1   0.124   0.421  MIPS1/Wrapper1/ALU1/Mmux_Result14512 (MIPS1/Wrapper1/ALU1/Mmux_Result14511)
+     LUT6:I5->O            7   0.124   0.979  MIPS1/Wrapper1/ALU1/Mmux_Result14513 (Addr_Data<19>)
+     LUT6:I0->O           14   0.124   0.506  GND_5_o_Addr_Data[31]_LessThan_1_o21 (GND_5_o_Addr_Data[31]_LessThan_1_o2)
+     LUT6:I5->O           20   0.124   0.524  GND_5_o_Addr_Data[31]_LessThan_1_o23 (GND_5_o_Addr_Data[31]_LessThan_1_o)
+     MUXF7:S->O            1   0.465   0.421  MIPS1/Mmux_WriteData_Reg[31]_PC_out[31]_MUX_503_o11_SW1 (N108)
+     LUT6:I5->O            2   0.124   0.405  MIPS1/Mmux_WriteData_Reg[31]_PC_out[31]_MUX_503_o12 (MIPS1/WriteData_Reg<16>)
+     RAM32M:DIC0               0.323          MIPS1/RegFile1/Mram_register_array13
     ----------------------------------------
-    Total                      9.002ns (3.775ns logic, 5.227ns route)
-                                       (41.9% logic, 58.1% route)
+    Total                     11.552ns (2.975ns logic, 8.577ns route)
+                                       (25.8% logic, 74.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_undiv'
@@ -1012,66 +995,46 @@ Delay:               1.458ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o'
-  Clock period: 2.416ns (frequency: 413.992MHz)
+  Clock period: 1.735ns (frequency: 576.458MHz)
   Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Delay:               2.416ns (Levels of Logic = 2)
-  Source:            MIPS1/Wrapper1/Control_3 (LATCH)
-  Destination:       MIPS1/Wrapper1/Control_3 (LATCH)
+Delay:               1.735ns (Levels of Logic = 1)
+  Source:            MIPS1/Wrapper1/Control_1 (LATCH)
+  Destination:       MIPS1/Wrapper1/Control_1 (LATCH)
   Source Clock:      MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o falling
   Destination Clock: MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o falling
 
-  Data Path: MIPS1/Wrapper1/Control_3 to MIPS1/Wrapper1/Control_3
+  Data Path: MIPS1/Wrapper1/Control_1 to MIPS1/Wrapper1/Control_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q             210   0.625   1.111  MIPS1/Wrapper1/Control_3 (MIPS1/Wrapper1/Control_3)
-     LUT5:I0->O            1   0.124   0.421  MIPS1/Wrapper1/Mmux_Control[5]_ALUControl_in_wrapper[8]_MUX_405_o15_SW0 (N412)
-     LUT6:I5->O            1   0.124   0.000  MIPS1/Wrapper1/Mmux_Control[5]_ALUControl_in_wrapper[8]_MUX_405_o15 (MIPS1/Wrapper1/Control[5]_ALUControl_in_wrapper[8]_MUX_405_o)
-     LD:D                      0.011          MIPS1/Wrapper1/Control_3
+     LD:G->Q             243   0.625   0.975  MIPS1/Wrapper1/Control_1 (MIPS1/Wrapper1/Control_1)
+     LUT6:I2->O            1   0.124   0.000  MIPS1/Wrapper1/Mmux_Control[5]_ALUControl_in_wrapper[8]_MUX_411_o13 (MIPS1/Wrapper1/Control[5]_ALUControl_in_wrapper[8]_MUX_411_o)
+     LD:D                      0.011          MIPS1/Wrapper1/Control_1
     ----------------------------------------
-    Total                      2.416ns (0.884ns logic, 1.532ns route)
-                                       (36.6% logic, 63.4% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'MIPS1/LinkOut_Branch_OR_82_o'
-  Total number of paths / destination ports: 16 / 16
--------------------------------------------------------------------------
-Offset:              1.217ns (Levels of Logic = 3)
-  Source:            DIP<2> (PAD)
-  Destination:       MIPS1/WriteData_Reg_2 (LATCH)
-  Destination Clock: MIPS1/LinkOut_Branch_OR_82_o falling
-
-  Data Path: DIP<2> to MIPS1/WriteData_Reg_2
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             1   0.001   0.421  DIP_2_IBUF (DIP_2_IBUF)
-     LUT6:I5->O            1   0.124   0.536  MIPS1/Mmux_WriteData_Reg[31]_Result_wrapper[31]_MUX_649_o1_SW0 (N8)
-     LUT6:I4->O            1   0.124   0.000  MIPS1/Mmux_WriteData_Reg[31]_Result_wrapper[31]_MUX_649_o1 (MIPS1/WriteData_Reg[31]_Result_wrapper[31]_MUX_649_o)
-     LD:D                      0.011          MIPS1/WriteData_Reg_2
-    ----------------------------------------
-    Total                      1.217ns (0.260ns logic, 0.957ns route)
-                                       (21.4% logic, 78.6% route)
+    Total                      1.735ns (0.760ns logic, 0.975ns route)
+                                       (43.8% logic, 56.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_DIV_PROCESS.clk_counter_1'
-  Total number of paths / destination ports: 30 / 30
+  Total number of paths / destination ports: 64 / 64
 -------------------------------------------------------------------------
-Offset:              1.046ns (Levels of Logic = 1)
-  Source:            RESET (PAD)
-  Destination:       MIPS1/PC1/PC_out_31 (FF)
+Offset:              2.437ns (Levels of Logic = 3)
+  Source:            DIP<11> (PAD)
+  Destination:       MIPS1/RegFile1/Mram_register_array2 (RAM)
   Destination Clock: CLK_DIV_PROCESS.clk_counter_1 rising
 
-  Data Path: RESET to MIPS1/PC1/PC_out_31
+  Data Path: DIP<11> to MIPS1/RegFile1/Mram_register_array2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            30   0.001   0.551  RESET_IBUF (RESET_IBUF)
-     FDR:R                     0.494          MIPS1/PC1/PC_out_2
+     IBUF:I->O             1   0.001   0.939  DIP_11_IBUF (DIP_11_IBUF)
+     LUT6:I0->O            1   0.124   0.716  MIPS1/Mmux_WriteData_Reg[31]_PC_out[31]_MUX_523_o12_SW1 (N239)
+     LUT6:I3->O            2   0.124   0.405  MIPS1/Mmux_WriteData_Reg[31]_PC_out[31]_MUX_523_o12 (MIPS1/WriteData_Reg<11>)
+     RAM32M:DIC1               0.128          MIPS1/RegFile1/Mram_register_array12
     ----------------------------------------
-    Total                      1.046ns (0.495ns logic, 0.551ns route)
-                                       (47.3% logic, 52.7% route)
+    Total                      2.437ns (0.377ns logic, 2.060ns route)
+                                       (15.5% logic, 84.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_undiv'
@@ -1121,11 +1084,10 @@ Clock to Setup on destination clock CLK_DIV_PROCESS.clk_counter_1
                                                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------------------------------------------------------+---------+---------+---------+---------+
-CLK_DIV_PROCESS.clk_counter_1                                      |   12.745|    9.002|    5.179|         |
-MIPS1/ControlUnit1/_n0080<12>                                      |         |    3.513|         |         |
-MIPS1/LinkOut_Branch_OR_82_o                                       |         |         |    1.353|         |
-MIPS1/Wrapper1/ALU1/Mmux_Result11011                               |         |    8.432|         |         |
-MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o|         |    9.809|         |         |
+CLK_DIV_PROCESS.clk_counter_1                                      |   11.552|         |         |         |
+MIPS1/Wrapper1/ALU1/Mmux_Result11011                               |         |    7.707|         |         |
+MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o|         |    9.783|         |         |
+MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_418_o|         |    2.396|         |         |
 -------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock CLK_undiv
@@ -1136,30 +1098,12 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 CLK_undiv      |    1.458|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock MIPS1/ControlUnit1/_n0080<12>
------------------------------+---------+---------+---------+---------+
-                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------------+---------+---------+---------+---------+
-CLK_DIV_PROCESS.clk_counter_1|         |         |    4.055|         |
------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock MIPS1/LinkOut_Branch_OR_82_o
--------------------------------------------------------------------+---------+---------+---------+---------+
-                                                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
--------------------------------------------------------------------+---------+---------+---------+---------+
-CLK_DIV_PROCESS.clk_counter_1                                      |         |         |   13.759|         |
-MIPS1/Wrapper1/ALU1/Mmux_Result11011                               |         |         |    9.482|         |
-MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o|         |         |   10.860|         |
--------------------------------------------------------------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock MIPS1/Wrapper1/ALU1/Mmux_Result11011
 -----------------------------+---------+---------+---------+---------+
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-CLK_DIV_PROCESS.clk_counter_1|         |         |    0.915|         |
+CLK_DIV_PROCESS.clk_counter_1|         |         |    0.908|         |
 -----------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o
@@ -1167,21 +1111,29 @@ Clock to Setup on destination clock MIPS1/Wrapper1/Immediate_wrapper_ALUControl_
                                                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------------------------------------------------------+---------+---------+---------+---------+
-CLK_DIV_PROCESS.clk_counter_1                                      |         |         |    7.638|         |
-MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o|         |         |    2.416|         |
+CLK_DIV_PROCESS.clk_counter_1                                      |         |         |    5.091|         |
+MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_403_o|         |         |    1.735|         |
 -------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock MIPS1/Wrapper1/Immediate_wrapper_ALUControl_in_wrapper[8]_MUX_418_o
+-----------------------------+---------+---------+---------+---------+
+                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------+---------+---------+---------+---------+
+CLK_DIV_PROCESS.clk_counter_1|         |         |    4.868|         |
+-----------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 34.00 secs
-Total CPU time to Xst completion: 33.56 secs
+Total REAL time to Xst completion: 36.00 secs
+Total CPU time to Xst completion: 36.41 secs
  
 --> 
 
-Total memory usage is 499240 kilobytes
+Total memory usage is 500968 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  304 (   0 filtered)
-Number of infos    :   17 (   0 filtered)
+Number of warnings :  326 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
 

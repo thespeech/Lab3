@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/Andre/Documents/GitHub/Lab3/PC.vhd";
+static const char *ng0 = "C:/Lab3/PC.vhd";
 
 
 
@@ -89,7 +89,7 @@ LAB5:    t4 = (t0 + 1512U);
     goto LAB7;
 
 LAB8:    xsi_set_current_line(41, ng0);
-    t4 = (t0 + 4806);
+    t4 = (t0 + 4602);
     t12 = (t0 + 3072);
     t13 = (t12 + 56U);
     t14 = *((char **)t13);

@@ -259,79 +259,45 @@ SignExtender : sign_extension port map
 -- Processor logic
 ----------------------------------------------------------------
 --<Rest of the logic goes here>
-combinational: process (PC_Four, PC_out, Branch, ALU_zero_wrapper, Jump, Instr, AluOp, MemtoReg, InstrtoReg, AluSrc,
-								extend_32, RegDst, ReadData1_Reg, ReadData2_Reg, Result_wrapper, Data_In, ImmControl, ALU_Jump_wrapper, LinkOut)
-
-begin
-
---WriteAddr_Reg<=(others=>'0');
---WriteData_Reg<=(others=>'0');
-
-Immediate_wrapper <= ImmControl;
-PC_Four <= PC_out + "100"; --Instruction incrementer
-Addr_Instr <= PC_out;
-opcode <= Instr(31 downto 26); 
+--Notes:
+	--Variables get their values instantaneously
+	--Signals are scheduled to get RHS after a specified delay
+	--If, Case, Loop --All sequential statements
+	--When...Else, With...Select,all concurrent statements
+----------------------------------------------------------------
+-- Combinational logic -executes at time T and not T
+----------------------------------------------------------------
+--None of these statements should appear on the LHS more than once
+Immediate_wrapper <= ImmControl; --Mapping of immediate signal
+PC_Four <= PC_Out + "100"; --PCadder
+Addr_Instr <= PC_out; --Mapping of PC to Addr_Instr, the output of the entire MIPS processor.
+opcode <= Instr(31 downto 26);
 ReadAddr1_Reg <= Instr(25 downto 21);
-ReadAddr2_Reg <= Instr(20 downto 16);
-ALUControl_in_wrapper(8 downto 6) <= ALUOp(2 downto 0);
-ALUControl_in_wrapper(5 downto 0) <= Instr(5 downto 0); --Combine ALUOp and Instr into the 8-bit form that ALU1 can process
---ALU_InA <= ReadData1_Reg; --Direct input with no shenanigans
-Operand1_wrapper <= ReadData1_Reg; --Direct input with no shenanigans
+ReadAddr2_Reg <= Instr(20 downto 16); --Direct mapping of the accepted parts of the instructino to the register file's inputs.
+ALUControl_in_wrapper(8 downto 6) <= ALUOp(2 downto 0); --ALUOp goes from Control Unit to wrapper.
+ALUControl_in_wrapper(5 downto 0) <= Instr(5 downto 0); --Combine ALUOp and Instr into the 9-bit form that ALU1 can process
+Operand1_wrapper <= ReadData1_Reg; --Direct input with no shenanigans, from the RegFile
 input_16 <= Instr(15 downto 0); --Split up of instructions into their respective parts
-Data_Out <= ReadData2_Reg;
---Addr_Data <= ALU_Out;1
-Addr_Data <= Result_wrapper;
+Data_Out <= ReadData2_Reg; -- The presence or absence of this should not affect internal workings of MIPS
+Addr_Data <= Result_wrapper; --It is connected as it should be in the sche
 
-if ALU_Jump_wrapper = '1' then
-PC_in <= ReadData1_Reg;
-end if;
+PC_in <= ReadData1_Reg when ALU_Jump_wrapper = '1' and Jump = '0' else -- Jump Register [JR], jump to address in register $s with a 1 instruction delay.
+			PC_Four (31 downto 28) & Instr(25 downto 0) & "00" when Jump = '1' else -- Normal jump, BGEZ
+			PC_Four + (extend_32(29 downto 0) & "00") when Branch = '1' and ALU_zero_wrapper = '1' else -- BEQ
+			PC_Four; --Normal instruction increment
 
-if Jump = '1' then
-	if LinkOut = '1' then 
-		WriteAddr_Reg <= "11111";
-		WriteData_Reg <= PC_Out + "1000";
-	end if; --JAL
-	PC_in <= PC_Four(31 downto 28) & Instr(25 downto 0) & "00";
-else
-	if Branch = '1' and ALU_zero_wrapper = '1' then --The AND gate for if branch and > or = 0
-		if LinkOut = '1' and Instr(20) = '1' then --BGEZAL since Instr(20) = 1
-			WriteAddr_Reg <= "11111";
-			WriteData_Reg <= PC_out + "1000"; --Result of LinkOut
-		end if;
-		PC_in <= PC_Four + (extend_32(29 downto 0) & "00"); --BGEZ and J
-	else
-		PC_in <= PC_Four;
-	end if;
-end if; --PC multiplexer
+WriteAddr_Reg <= "11111" when Jump = '1' and LinkOut = '1' else --Register is set to $31 to store the last address;
+				     Instr(15 downto 11) when LinkOut = '0' and RegDst = '1' else
+					  Instr(20 downto 16);
+WriteData_Reg <= PC_out + "1000" when (Jump = '1' and LinkOut = '1') --JAL
+											  or (Branch = '1' and ALU_zero_wrapper = '1' and LinkOut = '1' and Instr(20) = '1') else --BGEZAL 
+				     Instr(15 downto 0) & x"0000" when InstrtoReg = '1' else --LUI
+					  Data_In when InstrtoReg = '0' and MemtoReg = '1' else --On general principle of MemtoReg = 1, apparently.
+					  Result_wrapper when InstrtoReg = '0' and MemtoReg = '0';
+					  
+Operand2_wrapper <= extend_32 when ALUSrc = '1' else
+					  ReadData2_Reg when ALUSrc = '0';
 
-if ALUSrc = '1' then
-	Operand2_wrapper <= extend_32;
-else
-	Operand2_wrapper <= ReadData2_Reg;
-end if; --ALU multiplexer
---
-if LinkOut = '0' then
-if RegDst = '1' then
-	WriteAddr_Reg <= Instr(15 downto 11);
-else
-	WriteAddr_Reg <= Instr(20 downto 16);
-end if; --Write Address Multiplexer
-
-
-if InstrtoReg = '1' then
-	WriteData_Reg <= Instr(15 downto 0) & x"0000";
-else
-	if MemtoReg = '1' then
-		WriteData_Reg <= Data_In;
-	else
-		WriteData_Reg <= Result_wrapper;
-	end if;
-end if; --Data Multiplexer
-end if; --LinkOut=0 end if - Don't let anything mess with PC write data
---	
---
-
-end process;
 
 end arch_MIPS;
 ----------------------------------------------------------------	

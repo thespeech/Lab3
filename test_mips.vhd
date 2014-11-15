@@ -104,7 +104,7 @@ BEGIN
       wait for CLK_period*10;
 
       -- insert stimulus here 
-		-- lw $s0, 4
+		-- lw $s0, 4; $0 is register 16 in unsigned dec. Increment for the rest.
 		Instr <= "10001100000100000000000000000100"; -- op = x23, rs = 0, rt = 16, imm = 4
 		Data_in <= x"00000004";
 		wait for CLK_period*10;
@@ -114,7 +114,7 @@ BEGIN
 		Data_in <= x"00000003";
 		wait for CLK_period*10;
 		
-		-- add $s2, $s0, $s1
+		-- add $s2, $s0, $s1 
 		Instr <= "00000010000100011001000000100000"; -- op = 0, rs = 16, rt = 17, rd = 18, shamt = 0, funct = x20
 		Data_in <= (others => '0');	
 		wait for CLK_period*10;
@@ -135,15 +135,23 @@ BEGIN
 		Data_in <= (others => '0');	
 		wait for CLK_period*10;
 		
-	-- lw $s4, 5
+		-- lw $s4, 5 --Result should be 5 into $s4
 		Instr <= "10001100000101000000000000000101"; -- op = x23, rs = 0, rt = 20, imm = 5
 		Data_in <= x"00000005";
 		wait for CLK_period*10;
 		
-		-- addi $s2, $s4, 0x07
+		-- addi $s2, $s4, 0x07 --Result should be 12 into $s2
 		Instr <= "00100010100100100000000000000111"; -- op = x08, rt = 18, rs = 20, imm = 7
 		Data_in <= (others => '0');
 		wait for CLK_period*10;
+		
+		--and $5, $s4, $s4 --Result should be 5 into $5
+		Instr <= "00000010100101001010100000100100"; -- op = x08, rt = 18, rs = 20, imm = 7
+		Data_in <= (others => '0');
+		wait for CLK_period*10;
+		
+		--and $5, $5, $s3
+		Instr <= "000000 00101 00101 00011 
 		
       wait;
    end process;

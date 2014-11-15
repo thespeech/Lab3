@@ -1,18 +1,18 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Andre/Documents/GitHub/Lab3/test_mips_isim_beh.exe" -prj "C:/Users/Andre/Documents/GitHub/Lab3/test_mips_beh.prj" "work.test_mips" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Lab3/test_mips_isim_beh.exe" -prj "C:/Lab3/test_mips_beh.prj" "work.test_mips" 
 ISim P.20131013 (signature 0x7708f090)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/shifter.vhd" into library work
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/adder.vhd" into library work
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/alu.vhd" into library work
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/wrapper.vhd" into library work
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/Sign_extension.vhd" into library work
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/RegFile.vhd" into library work
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/PC.vhd" into library work
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/ControlUnit.vhd" into library work
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/MIPS.vhd" into library work
-Parsing VHDL file "C:/Users/Andre/Documents/GitHub/Lab3/test_mips.vhd" into library work
+Parsing VHDL file "C:/Lab3/shifter.vhd" into library work
+Parsing VHDL file "C:/Lab3/adder.vhd" into library work
+Parsing VHDL file "C:/Lab3/alu.vhd" into library work
+Parsing VHDL file "C:/Lab3/wrapper.vhd" into library work
+Parsing VHDL file "C:/Lab3/Sign_extension.vhd" into library work
+Parsing VHDL file "C:/Lab3/RegFile.vhd" into library work
+Parsing VHDL file "C:/Lab3/PC.vhd" into library work
+Parsing VHDL file "C:/Lab3/ControlUnit.vhd" into library work
+Parsing VHDL file "C:/Lab3/MIPS.vhd" into library work
+Parsing VHDL file "C:/Lab3/test_mips.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -30,8 +30,8 @@ Compiling architecture behavioral of entity Sign_extension [sign_extension_defau
 Compiling architecture arch_mips of entity MIPS [mips_default]
 Compiling architecture behavior of entity test_mips
 Time Resolution for simulation is 1ps.
-Waiting for 6 sub-compilation(s) to finish...
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 23 VHDL Units
-Built simulation executable C:/Users/Andre/Documents/GitHub/Lab3/test_mips_isim_beh.exe
-Fuse Memory Usage: 33816 KB
-Fuse CPU Usage: 623 ms
+Built simulation executable C:/Lab3/test_mips_isim_beh.exe
+Fuse Memory Usage: 34796 KB
+Fuse CPU Usage: 639 ms
